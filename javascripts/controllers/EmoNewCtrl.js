@@ -13,4 +13,4 @@ app.controller("EmoNewCtrl", function($scope, $rootScope, $location, EmoFactory)
 	};
 });
 
-console.log("EmoNewCtrl")
+console.log("EmoNewCtrl");

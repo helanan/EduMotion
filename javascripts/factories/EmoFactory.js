@@ -6,12 +6,12 @@ app.factory("EmoFactory", function($q, $http, FIREBASE_CONFIG){
 	 return $q((resolve, reject) => {
 	 	$http.get(`${FIREBASE_CONFIG.databaseURL}/emotions.json?orderBy="uid"&equalTo="${emoId}"`)
 	 	.success(function(response){
-	 		let emos = [];
+	 		let emotions = [];
 	 		Object.keys(response).forEach(function(key){
 	 			response[key].id = key;
-	 			emos.push(response[key]);
+	 			emotions.push(response[key]);
 	 		});
-	 	  resolve(emos);
+	 	  resolve(emotions);
 	 	})
 	 	.error(function(errorResponse){
 	 	  reject(errorResponse);
@@ -24,7 +24,7 @@ app.factory("EmoFactory", function($q, $http, FIREBASE_CONFIG){
 			JSON.stringify({
 				assignedTo: newEmo.assignedTo,
 				isSelected: newEmo.isSelected,
-				emotion: newEmos.students,
+				emotion: newEmotions.students,
 				uid: newEmo.uid
 			})
 		)
@@ -63,7 +63,7 @@ var getSingleEmo = function(emoId){
 
  var editEmo = function(editEmo){
 	return $q((resolve, reject)=>{
-		$http.put(`${FIREBASE_CONFIG.databaseURL}/emotionss/${editEmo.id}.json`,
+		$http.put(`${FIREBASE_CONFIG.databaseURL}/emotions/${editEmo.id}.json`,
 			JSON.stringify({
 				assignedTo: editEmo.assignedTo,
 				isSelected: editEmo.isSelected,

@@ -6,7 +6,7 @@ let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
 	} else {
 		reject();
 	}
-})
+});
 
 app.run(function($rootScope, $location, FIREBASE_CONFIG, AuthFactory){
   firebase.initializeApp(FIREBASE_CONFIG);
@@ -35,31 +35,31 @@ app.config(function($routeProvider){
 			templateUrl: 'partials/auth.html',
 			controller:'AuthCtrl',
 		})
-		.when('/user/list', {
-			templateUrl: 'partials/teacher-view.html',
-			controller: 'TeacherViewCtrl',
-			resolve: {isAuth}
-		})
-		.when('/students/new', {
-			templateUrl: 'partials/student-new.html',
-			controller: 'BoardNewCtrl',
-			resolve: {isAuth}
-		})
-		.when('/students/view/:id', {
-			templateUrl: 'partials/studentlist-view.html',
-			controller: 'StudentListViewCtrl',
-			resolve: {isAuth}
-		})
-		.when('/students/edit/:id', {
-			templateUrl: 'partials/student-new.html',
-			controller:'StudentEditCtrl',
-			resolve: {isAuth}
-		})
-		.when('/logout', {
-			templateUrl: 'partials/auth.html',
-			controller: 'AuthCtrl',
-			resolve: {isAuth}
-		})
+		// .when('/user/list', {
+		// 	templateUrl: 'partials/teacher-view.html',
+		// 	controller: 'TeacherViewCtrl',
+		// 	resolve: {isAuth}
+		// })
+		// .when('/students/new', {
+		// 	templateUrl: 'partials/student-new.html',
+		// 	controller: 'BoardNewCtrl',
+		// 	resolve: {isAuth}
+		// })
+		// .when('/students/view/:id', {
+		// 	templateUrl: 'partials/studentlist-view.html',
+		// 	controller: 'StudentListViewCtrl',
+		// 	resolve: {isAuth}
+		// })
+		// .when('/students/edit/:id', {
+		// 	templateUrl: 'partials/student-new.html',
+		// 	controller:'StudentEditCtrl',
+		// 	resolve: {isAuth}
+		// })
+		// .when('/logout', {
+		// 	templateUrl: 'partials/auth.html',
+		// 	controller: 'AuthCtrl',
+		// 	resolve: {isAuth}
+		// })
 		.otherwise('/auth');
 });
 
