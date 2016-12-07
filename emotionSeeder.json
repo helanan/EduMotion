@@ -1,0 +1,108 @@
+{
+	"students": {
+		"student0": {
+			"name": "Bob",
+			"isSelected": true,
+			"assignedTo": "Helana",
+			"uid": ""
+		},
+		"student1": {
+			"name": "James",
+			"isSelected": true,
+			"assignedTo": "Meg",
+			"uid": ""
+		},
+		"student2": {
+			"name": "Jenny",
+			"isSelected": false,
+			"assignedTo": "Sandy",
+			"uid": ""
+		},
+		"student3": {
+			"name": "Craig",
+			"isSelected": true,
+			"assignedTo": "Meg",
+			"uid": ""
+		},
+		"student4": {
+			"name": "Zoe",
+			"isSelected": false,
+			"assignedTo": "Meg",
+			"uid": ""
+		},
+		"student5": {
+			"name": "Pearl",
+			"isSelected": true,
+			"assignedTo": "Helana",
+			"uid": ""
+		},
+		"student6": {
+			"name": "Helana",
+			"isSelected": false,
+			"assignedTo": "Sandy",
+			"uid": ""
+		},
+		"student7": {
+			"name": "Brenden",
+			"isSelected": true,
+			"assignedTo": "Meg",
+			"uid": ""
+
+		},
+		"student8": {
+			"name": "Meg",
+			"isSelected": true,
+			"assignedTo": "Helana",
+			"uid": ""
+
+		},
+		"student9": {
+			"name": "Henry",
+			"isSelected": true,
+			"assignedTo": "Meg",
+			"uid": ""
+		},
+		"student10": {
+			"name": "Amanda",
+			"isSelected": true,
+			"assignedTo": "Sandy",
+			"uid": ""
+		},
+		"student11": {
+			"name": "Emma",
+			"isSelected": true,
+			"assignedTo": "Helana",
+			"uid": ""
+		}
+	},
+	"emotions": {
+		"emo0": {
+			"value": "1",
+			"uid": "",
+			"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+			"studentId": ""
+		},
+		"emo1": {
+			"value": "2",
+			"uid": "",
+			"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+			"studentId": ""
+		},
+		"emo2": {
+			"value": "3",
+			"uid": "",
+			"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+			"studentId": ""
+		}
+	},
+	"users": {
+		"user0": {
+			"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
+			"username": "b"
+		},
+		"user1": {
+			"uid": "H0C07jOGufgaKTUeyvatYx81VPF2",
+			"username": "a"
+		}
+	}
+}
