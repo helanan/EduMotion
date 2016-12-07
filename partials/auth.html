@@ -1,13 +1,16 @@
-<div class="col-xs-6 col-xs-offset-3">
-  <div class="row">
+<div class="row">
+<div class="col s12">
+<div class="row">
+
+
     <button class="btn btn-info col-xs-6" ng-click="setLoginContainer()">Login</button>
     <button class="btn btn-success col-xs-6" ng-click="setRegisterContainer()">Register</button>
 </div>
   <div class="row">
     <form ng-show="loginContainer">
       <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" class="col-xs-offset-1 col-xs-10" placeholder="Email address" ng-model="login.email" required autofocus>
+        <input placeholder="Email address" id="email" type="email" class="validate" ng-model="login.email">
+        <label for="email_address">Email Address</label>
       </div>
       <div class="form-group">
         <label>Password</label>
