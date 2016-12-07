@@ -1,7 +1,7 @@
 "use strict";
 
 app.controller("EmoViewCtrl", function($scope, $routeParams, EmoFactory){
-	$scope.selectedEmotion = {};
+	$scope.selectedEmo = {};
 	let emoId = $routeParams.id;
 
 	EmoFactory.getSingleEmo(emoId).then(function(oneEmo){
