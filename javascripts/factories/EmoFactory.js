@@ -22,10 +22,10 @@ app.factory("EmoFactory", function($q, $http, FIREBASE_CONFIG){
 	return $q((resolve, reject)=>{
 		$http.post(`${FIREBASE_CONFIG.databaseURL}/emotions.json`,
 			JSON.stringify({
-				assignedTo: newEmo.assignedTo,
-				isSelected: newEmo.isSelected,
-				emotion: newEmotions.students,
-				uid: newEmo.uid
+				value: newEmo.value,
+				uid: newEmo.uid,
+				url: newEmo.url,
+				studentId: newEmo.studentId
 			})
 		)
 		.success(function(postResponse){
@@ -62,13 +62,13 @@ var getSingleEmo = function(emoId){
 };
 
  var editEmo = function(editEmo){
-	return $q((resolve, reject)=>{
+	return $q((resolve, reject) =>{
 		$http.put(`${FIREBASE_CONFIG.databaseURL}/emotions/${editEmo.id}.json`,
 			JSON.stringify({
-				assignedTo: editEmo.assignedTo,
-				isSelected: editEmo.isSelected,
-				pins: editEmo.student,
-				uid: editEmo.uid
+				value: editEmo.value,
+				uid: editEmo.uid,
+				url: editEmo.url,
+				studentId: editEmo.studentId
 			})
 		)
 		.success(function(editResponse){
@@ -83,4 +83,3 @@ var getSingleEmo = function(emoId){
 
  return {getEmoList:getEmoList, postNewEmo:postNewEmo, deleteEmo:deleteEmo, getSingleEmo:getSingleEmo, editEmo:editEmo};
 });
-

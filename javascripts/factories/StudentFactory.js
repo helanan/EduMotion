@@ -18,13 +18,14 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
 	 	});
 	});
   };
+
  var postNewStudent = function(newStudent){
 	return $q((resolve, reject)=>{
 		$http.post(`${FIREBASE_CONFIG.databaseURL}/students.json`,
 			JSON.stringify({
-				assignedTo: newStudent.assignedTo,
+				name: newStudent.name,
 				isSelected: newStudent.isSelected,
-				emo: newStudent.emo,
+				assignedTo: newStudent.assignedTo,
 				uid: newStudent.uid
 			})
 		)
@@ -65,9 +66,9 @@ var getSingleStudent = function(studentId){
 	return $q((resolve, reject)=>{
 		$http.put(`${FIREBASE_CONFIG.databaseURL}/students/${editStudent.id}.json`,
 			JSON.stringify({
-				assignedTo: editStudent.assignedTo,
+				name: editStudent.name,
 				isSelected: editStudent.isSelected,
-				emo: editStudent.emo,
+				assignedTo: editStudent.assignedTo,
 				uid: editStudent.uid
 			})
 		)
@@ -83,4 +84,3 @@ var getSingleStudent = function(studentId){
 
  return {getStudentList:getStudentList, postNewStudent:postNewStudent, deleteStudent:deleteStudent, getSingleStudent:getSingleStudent, editStudent:editStudent};
 });
-

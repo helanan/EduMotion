@@ -4,12 +4,12 @@ app.controller("EmoEditCtrl", function($scope, $location, $routeParams, EmoFacto
 	$scope.newValue= {};
 	let emoId = $routeParams.id;
 
-	EmoFactory.getSingleItem(emoId).then(function(oneEmo){
+	EmoFactory.getSingleEmo(emoId).then(function(oneEmo){
 		oneEmo.id = emoId;
 		$scope.newValue = oneEmo;
 	});
 
-	$scope.addNewemo = function(){
+	$scope.addNewEmo = function(){
 		EmoFactory.editEmo($scope.newValue).then(function(response){
 			$scope.newValue = {};
 			$location.url("/emotions/list");

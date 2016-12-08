@@ -5,7 +5,7 @@ app.controller("EmoViewCtrl", function($scope, $routeParams, EmoFactory){
 	let emoId = $routeParams.id;
 
 	EmoFactory.getSingleEmo(emoId).then(function(oneEmo){
-		oneEmo.id=emoId;
+		oneEmo.id = emoId;
 		$scope.selectedEmo = oneEmo;
 	});
 });
