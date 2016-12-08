@@ -1,16 +1,14 @@
 "use strict";
 
 app.controller("EmoNewCtrl", function($scope, $rootScope, $location, EmoFactory){
-	$scope.newEmo = {};
+  	$scope.newValue = {};
 
 	$scope.addNewEmo = function(){
-		$scope.newEmo.isSelected = false;
-		$scope.newEmo.uid = $rootScope.user.uid;
-		EmoFactory.postNewEmo($scope.newEmo).then(function(emoId){
-			$location.url("/emotions/list");
-			$scope.newEmo = {};
-		});
-	};
+	  $scope.newValue.isCompleted = false;
+	  $scope.newValue.uid = $rootScope.student.uid;
+	  EmoFactory.postNewEmo($scope.newValue).then(function(emoId){
+	    $location.url("/emotions/list");
+	    $scope.newValue = {};
+	  });
+  	};
 });
-
-console.log("EmoNewCtrl");

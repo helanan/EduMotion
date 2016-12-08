@@ -1,16 +1,17 @@
 h1 {
-    color: green;  
+    color: green;
     text-align: center;
   }
 
-div{
-  .navbar-header {
-    @extend .grey, .lighten-4;
+
+.navbar-header {
+   @extend .grey, .lighten-4;
   }
 
 
 .search-bar {
   text-align: center;
-  input{
-      margin-bottom: 20px;
+
+  input {
+   margin-bottom: 20px;
   }
