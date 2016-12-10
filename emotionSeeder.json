@@ -16,7 +16,7 @@
 			"name": "Jenny",
 			"isSelected": false,
 			"assignedTo": "Sandy",
-			"uid": ""
+			"uid": "IBEbRKSe49XrWW15BrcOlpZgzFJ2"
 		},
 		"student3": {
 			"name": "Craig",
@@ -40,7 +40,7 @@
 			"name": "Helana",
 			"isSelected": false,
 			"assignedTo": "Sandy",
-			"uid": ""
+			"uid": "IBEbRKSe49XrWW15BrcOlpZgzFJ2"
 		},
 		"student7": {
 			"name": "Brenden",
@@ -66,7 +66,7 @@
 			"name": "Amanda",
 			"isSelected": true,
 			"assignedTo": "Sandy",
-			"uid": ""
+			"uid": "IBEbRKSe49XrWW15BrcOlpZgzFJ2"
 		},
 		"student11": {
 			"name": "Emma",
@@ -78,21 +78,18 @@
 	"emotions": {
 		"emo0": {
 			"value": "1",
-			"uid": "Dj3NHfngNbRuN3vcpoc3mfG1vlz2",
 			"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
-			"studentId": ""
+			"studentId": "student0"
 		},
 		"emo1": {
 			"value": "2",
-			"uid": "Dj3NHfngNbRuN3vcpoc3mfG1vlz2",
 			"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
-			"studentId": ""
+			"studentId": "student1"
 		},
 		"emo2": {
 			"value": "3",
-			"uid": "Dj3NHfngNbRuN3vcpoc3mfG1vlz2",
 			"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
-			"studentId": ""
+			"studentId": "student1"
 		}
 	},
 	"users": {

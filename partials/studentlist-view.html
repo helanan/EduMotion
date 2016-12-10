@@ -26,7 +26,7 @@
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="col-xs-1"><input type="checkbox" name="" ng-model="student.isSelected" ng-change="inputChange(student)"></div>
-			<div class="col-xs-9"><a href="#/students/view/{{student.id}}">{{student.pin}}</a></div>
+			<div class="col-xs-9"><a href="#/students/view/{{student.id}}">{{student.value}}</a></div>
 			<div class="col-xs-1">{{student.assignedTo}}</div>
 			<div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deleteStudent(student.id)"></button></div>
 		</div>

@@ -12,7 +12,7 @@ app.controller("EmoEditCtrl", function($scope, $location, $routeParams, EmoFacto
 	$scope.addNewemo = function(){
 		EmoFactory.editEmo($scope.newValue).then(function(response){
 			$scope.newValue = {};
-			$location.url("/emotions/list");
+			$location.url("/emotion/list");
 		});
 	};
 });

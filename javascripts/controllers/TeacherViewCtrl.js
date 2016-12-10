@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("TeacherViewCtrl", function($scope, $rootScope, UserFactory){
+app.controller("TeacherViewCtrl", function($scope, $rootScope, StudentFactory){
 	$scope.students = [];
 
 	let getStudents = function(){
