@@ -22,10 +22,17 @@ app.factory("EmoFactory", function($q, $http, FIREBASE_CONFIG){
 	return $q((resolve, reject)=>{
 		$http.post(`${FIREBASE_CONFIG.databaseURL}/emotions.json`,
 			JSON.stringify({
+<<<<<<< HEAD
 				assignedTo: newEmotion.assignedTo,
 				isSelected: newEmotion.isSelected,
 				emotion: newEmotion.students,
 				studentId: newEmotion.studentId
+=======
+				value: newEmo.value,
+				uid: newEmo.uid,
+				url: newEmo.url,
+				studentId: newEmo.studentId
+>>>>>>> 9c08756148b309fc1c648ba8597d630245ece61d
 			})
 		)
 		.success(function(postResponse){
@@ -61,6 +68,7 @@ var getSingleEmotion = function(emotionId){
 	});
 };
 
+<<<<<<< HEAD
  var editEmotions = function(editEmotion){
 	return $q((resolve, reject)=>{
 		$http.put(`${FIREBASE_CONFIG.databaseURL}/emotions/${editEmotion.id}.json`,
@@ -69,6 +77,16 @@ var getSingleEmotion = function(emotionId){
 				isSelected: editEmotion.isSelected,
 				pins: editEmotion.student,
 				studentId: editEmotion.studentId
+=======
+ var editEmo = function(editEmo){
+	return $q((resolve, reject) =>{
+		$http.put(`${FIREBASE_CONFIG.databaseURL}/emotions/${editEmo.id}.json`,
+			JSON.stringify({
+				value: editEmo.value,
+				uid: editEmo.uid,
+				url: editEmo.url,
+				studentId: editEmo.studentId
+>>>>>>> 9c08756148b309fc1c648ba8597d630245ece61d
 			})
 		)
 		.success(function(editResponse){

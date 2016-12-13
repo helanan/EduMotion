@@ -18,6 +18,28 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
         });
     });
   };
+<<<<<<< HEAD
+=======
+
+ var postNewStudent = function(newStudent){
+	return $q((resolve, reject)=>{
+		$http.post(`${FIREBASE_CONFIG.databaseURL}/students.json`,
+			JSON.stringify({
+				name: newStudent.name,
+				isSelected: newStudent.isSelected,
+				assignedTo: newStudent.assignedTo,
+				uid: newStudent.uid
+			})
+		)
+		.success(function(postResponse){
+		 resolve(postResponse);
+		})
+		.error(function(postError){
+			reject(postError);
+		});
+	});
+ };
+>>>>>>> 9c08756148b309fc1c648ba8597d630245ece61d
 
   var postNewStudent = function(newStudent){
     return $q((resolve, reject) =>{
@@ -50,6 +72,7 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
     });
   };
 
+<<<<<<< HEAD
   var getSingleStudent = function(studentId){
     return $q((resolve, reject) => {
       $http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
@@ -61,6 +84,26 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
       });
     });
   };
+=======
+ var editStudent = function(editStudent){
+	return $q((resolve, reject)=>{
+		$http.put(`${FIREBASE_CONFIG.databaseURL}/students/${editStudent.id}.json`,
+			JSON.stringify({
+				name: editStudent.name,
+				isSelected: editStudent.isSelected,
+				assignedTo: editStudent.assignedTo,
+				uid: editStudent.uid
+			})
+		)
+		.success(function(editResponse){
+		 resolve(editResponse);
+		})
+		.error(function(editError){
+			reject(editError);
+		});
+	});
+ };
+>>>>>>> 9c08756148b309fc1c648ba8597d630245ece61d
 
   var editStudent = function(editStudent){
     return $q((resolve, reject) =>{
