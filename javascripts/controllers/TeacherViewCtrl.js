@@ -1,27 +1,11 @@
 "use strict";
 
-app.controller("TeacherViewCtrl", function($scope, $rootScope, StudentFactory){
-	$scope.students = [];
+app.controller("TeacherViewCtrl", function($scope, $routeParams, StudentFactory){
+	$scope.selectedStudent = {};
+	let studentId = $routeParams.id;
 
-	let getStudents = function(){
-		StudentFactory.getStudentList($rootScope.user.uid).then(function(fbStudents){
-		$scope.students = fbStudents;
+	StudentFactory.getSingleStudent(studentId).then(function(oneStudent){
+		oneStudent.id=studentId;
+		$scope.selectedStudent = oneStudent;
 	});
-};
-
-getStudents();
-
-$scope.deleteStudent = function(studentId){
-		StudentFactory.deleteStudent(studentId).then(function(response){
-			getStudents();
-		});
-	};
-
-	$scope.inputChange = function(thingy){
-		StudentFactory.editStudent(thingy).then(function(response){
-		 	getStudents();
-		});
-	};
 });
-
-console.log("TeacherViewCtrl Loaded");

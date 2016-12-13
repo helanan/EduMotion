@@ -35,14 +35,14 @@ app.config(function($routeProvider) {
             templateUrl: 'partials/auth.html',
             controller: 'AuthCtrl',
         })
-        .when('/students/list', {
-            templateUrl: 'partials/teacher-view.html',
-            controller: 'StudentListViewCtrl',
+        .when('/students/view/{{student.id}}', {
+            templateUrl: 'partials/student-list.html',
+            controller: 'StudentListCtrl',
             resolve: {
                 isAuth
             }
         })
-        .when('/new', {
+        .when('students/new', {
             templateUrl: 'partials/student-new.html',
             controller: 'StudentNewCtrl',
             resolve: {

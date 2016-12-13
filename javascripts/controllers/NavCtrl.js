@@ -8,7 +8,7 @@ app.controller("NavCtrl", function($scope) {
 	},
     {
     	name:"My Students",
-    	url:"/students/list"
+    	url:"/students/view"
 	},
     {
     	name:"Emotional Log",
