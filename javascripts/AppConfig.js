@@ -35,30 +35,51 @@ app.config(function($routeProvider) {
             templateUrl: 'partials/auth.html',
             controller: 'AuthCtrl',
         })
-        .when('/students/list', {
-            templateUrl: 'partials/teacher-view.html',
-            controller: 'StudentListViewCtrl',
-            resolve: {
-                isAuth
-            }
-        })
-        .when('/new', {
+        .when('/student/new', {
             templateUrl: 'partials/student-new.html',
             controller: 'StudentNewCtrl',
             resolve: {
                 isAuth
             }
         })
-        .when('/view/:id', {
-            templateUrl: 'partials/studentlist-view.html',
-            controller: 'StudentListViewCtrl',
+        .when('/student/view/:studentId', {
+            templateUrl: 'partials/student-view.html',
+            controller: 'StudentViewCtrl',
             resolve: {
                 isAuth
             }
         })
-        .when('/edit/:id', {
+        .when('/student/edit/:studentId', {
             templateUrl: 'partials/student-new.html',
             controller: 'StudentEditCtrl',
+            resolve: {
+                isAuth
+            }
+        })
+        .when('/student/list', {
+            templateUrl: 'partials/student-list.html',
+            controller: 'StudentListCtrl',
+            resolve: {
+                isAuth
+            }
+        })
+        .when('/student/:studentId/emotion/new', {
+            templateUrl: 'partials/emotion-new.html',
+            controller: 'EmotionNewCtrl',
+            resolve: {
+                isAuth
+            }
+        })
+        .when('/student/:studentId/emotion/:emotionId', {
+            templateUrl: 'partials/emotion-view.html',
+            controller: 'EmotionViewCtrl',
+            resolve: {
+                isAuth
+            }
+        })
+        .when('/student/:studentId/emotion/edit/:emotionId', {
+            templateUrl: 'partials/emotion-new.html',
+            controller: 'EmotionEditCtrl',
             resolve: {
                 isAuth
             }
