@@ -1,6 +1,7 @@
 "use strict";
 
 app.controller("EmotionViewCtrl", function($scope, $routeParams, EmotionFactory){
+$location.url("/emotions/new");
 	$scope.emotions = {};
 	let emotionId = $routeParams.emotions.Id;
 

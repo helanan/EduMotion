@@ -1,17 +1,15 @@
 "use strict";
 
 app.controller("StudentNewCtrl", function($scope, $rootScope, $location, StudentFactory){
-	$scope.newStudent= {};
-	let studentId = $routeParams.id;
+	$scope.newStudent = {};
 
 	$scope.addNewStudent = function(){
-								$scope.newStudent.name = $rootScope.student.name;
-								$scope.newStudent.studentId = $rootScope.student.studentId;
+		$scope.newStudent.uid = $rootScope.user.uid;
 								StudentFactory.postNewStudent($scope.newStudent).then(function(studentId){
-									  $location.url("/students/new");
+									  $location.url("/student/list");
 									$scope.newStudent = {};
 		});
 	};
 });
 
-console.log("StudentNewCtrl")
+console.log("StudentNewCtrl");

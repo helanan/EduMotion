@@ -34,7 +34,7 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
 //Firebase: Register a new user with email and password
   let registerWithEmail = (user) => {
     return $q((resolve, reject) => {
-      fireb21ase.auth().createUserWithEmailAndPassword(user.email, user.password)
+      firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
         .then((authData) =>{
           resolve(authData);
         })

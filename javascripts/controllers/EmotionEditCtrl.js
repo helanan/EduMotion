@@ -1,7 +1,7 @@
 "use strict";
 
-app.controller("EmotionEditCtrl", function($scope, $rootScope, EmotionFactory){
-  $scope.editEmotion= [];
+app.controller("EmotionEditCtrl", function($scope, $location, $routeParams, EmotionFactory) {
+  $scope.newEmotion= [];
 
   let getEmotions = function(){
     EmotionFactory.getEmotionList($rootScope.student.emotionId).then(function(fbEmotions){
@@ -10,19 +10,18 @@ app.controller("EmotionEditCtrl", function($scope, $rootScope, EmotionFactory){
   };
 
   getEmotions();
-
   $scope.deleteEmotion = function(emotionId){
     EmotionFactory.deleteEmotion(emotionId).then(function(response){
       getEmotions();
     });
   };
 
-  $scope.inputChange = function(thingy){
-    EmoFactory.editEmotion(thingy).then(function(response){
+  $scope.inputChange = function(inputDiff){
+    EmotionFactory.editEmotion(inputDiff).then(function(response){
       getEmotions();
     });
   };
-  $location.url("/emotions/new");
   $scope.newEmotions = {};
+  $location.url("/students/list");
 
 });

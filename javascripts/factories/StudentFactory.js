@@ -1,6 +1,7 @@
 "use strict";
 
 app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
+let studentId = {};
 
 	var getStudentList = function(studentId){
 	 return $q((resolve, reject) => {
@@ -24,10 +25,11 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
 
 
  var postNewStudent = function(newStudent){
+	 console.log("newStudent", newStudent);
 	return $q((resolve, reject)=>{
 		$http.post(`${FIREBASE_CONFIG.databaseURL}/students.json`,
 			JSON.stringify({
-				name: newStudent.name,
+				studentName: newStudent.studentName,
 				uid: newStudent.uid
 			})
 		)

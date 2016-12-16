@@ -6,7 +6,7 @@ app.factory("EmotionFactory", function($q, $http, FIREBASE_CONFIG){
 	 return $q((resolve, reject) => {
 	 	$http.get(`${FIREBASE_CONFIG.databaseURL}/emotions.json?orderBy="uid"&equalTo="${emotionId}"`)
 	 	.success(function(response){
-			
+
 	 		let emotions = [];
 	 		Object.keys(response).forEach(function(key){
 	 			response[key].id = key;
@@ -63,7 +63,7 @@ var getSingleEmotion = function(emotionId){
 
  var editEmotion = function(editEmotion){
 	return $q((resolve, reject)=>{
-		$http.put(`${FIREBASE_CONFIG.databaseURL}/emotions/${editEmotion.id}.json`,
+		$http.put(`${FIREBASE_CONFIG.databaseURL}/emotions/${emotion.id}.json`,
 			JSON.stringify({
 				value: editEmotion.value,
 				url: editEmotion.url,

@@ -8,7 +8,7 @@ app.controller("StudentEditCtrl", function($scope, $location, $routeParams, Stud
 		oneStudent.id = studentId;
 		$scope.newStudent = oneStudent;
 	});
-console.log("getSingleStudent", getSingleStudent);
+
 	$scope.addNewStudent = function(){
 		StudentFactory.editStudent($scope.newStudent).then(function(response){
 			$scope.newStudent = {};

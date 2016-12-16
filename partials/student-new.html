@@ -1,17 +1,7 @@
 <h3>New Students</h3>
     <div class="form-group">
-      <li class="student" ng-repeat="student in students">
-        <button type="button" class="remove-entry"
-          ng-click="removeStudent(student)"> Delete Student </button>
-              {{student.lastName}}, {{student.firstName}}<br />
-              Title: {{student.title}}<br />
-              Phone: {{student.phone}}<br />
-              Email: {{student.email}}
-
-            </li>
-
         <label>Name:</label>
-        <input type="text" class="form-control" placeholder="Mary Joe" ng-model="newStudent.name">
+        <input type="text" class="form-control" placeholder="Mary Joe" ng-model="newStudent.studentName">
     </div>
 
     <div class="form-group">
