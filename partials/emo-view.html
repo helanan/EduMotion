@@ -1,4 +1,39 @@
-<h1>Emotion: {{selectedEmo.student}}</h1>
-	<button class="btn btn-info"><a ng-href="#/students/edit/{{selectedEmo.id}}">Edit</a></button>
-<h2>Helana's Boards: {{selectedEmo.assignedTo}}</h2>
-<h2>My Boards: {{selectedEmo.isSelected}}</h2>
+<h1>Emo View</h1>
+<div class="col-xs-6 col-xs-offset-3">
+	<div class="row">
+		<button class="btn btn-info col-xs-6" ng-click="listEmotions()">Show Emotions</button>
+		<button class="btn btn-success col-xs-6" ng-click="hideEmotions()">Hide Emotions</button>
+	</div>
+	<div class="row">
+	<form ng-show="Emotions">
+		<div class="form-group">
+			<label>Email Address</label>
+			<input type="email" class="col-xs-offset-1 col-xs-10" placeholder="Email address" ng-model="login.email" required autofocus>
+		</div>
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" class="col-xs-offset-1 col-xs-10" placeholder="Password" ng-model="login.password" required>
+		</div>
+		<div class="form-group">
+			<a class="btn btn-lg btn-info col-xs-offset-1 col-xs-10" ng-click="loginUser(login)">Login</a>
+		</div>
+	</form>
+	<form ng-show="registerContainer">
+		<div class="form-group">
+			<label>Email Address</label>
+			<input type="email" class="col-xs-offset-1 col-xs-10" placeholder="Email address" ng-model="register.email" required autofocus>
+		</div>
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" class="col-xs-offset-1 col-xs-10" placeholder="Password" ng-model="register.password" required>
+		</div>
+		<div class="form-group">
+			<label>Username</label>
+			<input type="text" class="col-xs-offset-1 col-xs-10" placeholder="Username" ng-model="register.username" required>
+		</div>
+		<div class="form-group">
+			<a class="btn btn-lg btn-success col-xs-offset-1 col-xs-10" ng-click="registerUser(register)">Submit Registration</a>
+		</div>
+	</form>
+	</div>
+</div>

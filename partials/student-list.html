@@ -1,0 +1,33 @@
+<h1>Student List View</h1>
+<div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+        <div class="input-group">
+            <span class="input-group-btn">
+                <button class="btn btn-default"><i class="fa fa-search"></i></button>
+            </span>
+            <input type="text" class="form-control" placeholder="Search for ..." ng-model="searchText">
+        </div>
+    </div>
+</div>
+
+<h3>Students</h3>
+<div ng-repeat="student in students | filter: {isCompleted:false} | filter: searchText">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-xs-9"><a href="#/students/list">{{student.name}}</a></div>
+            <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deleteStudent(student.id)"></button></div>
+        </div>
+    </div>
+</div>
+
+<h3>Delete Students</h3>
+<div ng-repeat="student in students | filter: {}">
+	<div class="panel panel-default">
+	    <div class="panel-body">
+	        <div class="col-xs-1" ng-model="deleteStudent"></div>
+	        <div class="col-xs-9"><a href="#/students/view/{{student.id}}">{{student.name}}</a></div>
+	        <div class="col-xs-1">{{student.studentId}}</div>
+	        <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deleteItem(student.id)"></button></div>
+	    </div>
+	</div>
+</div>

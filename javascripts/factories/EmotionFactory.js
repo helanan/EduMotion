@@ -1,11 +1,12 @@
 "use strict";
 
-app.factory("EmoFactory", function($q, $http, FIREBASE_CONFIG){
+app.factory("EmotionFactory", function($q, $http, FIREBASE_CONFIG){
 
-	var getEmoList = function(emoId){
+	var getEmotionList = function(emotionId){
 	 return $q((resolve, reject) => {
-	 	$http.get(`${FIREBASE_CONFIG.databaseURL}/emotions.json?orderBy="uid"&equalTo="${emoId}"`)
+	 	$http.get(`${FIREBASE_CONFIG.databaseURL}/emotions.json?orderBy="uid"&equalTo="${emotionId}"`)
 	 	.success(function(response){
+			
 	 		let emotions = [];
 	 		Object.keys(response).forEach(function(key){
 	 			response[key].id = key;
@@ -18,14 +19,13 @@ app.factory("EmoFactory", function($q, $http, FIREBASE_CONFIG){
 	 	});
 	});
   };
- var postNewEmo = function(newEmo){
+ var postNewEmotion = function(newEmotion){
 	return $q((resolve, reject)=>{
 		$http.post(`${FIREBASE_CONFIG.databaseURL}/emotions.json`,
 			JSON.stringify({
-				assignedTo: newEmo.assignedTo,
-				isSelected: newEmo.isSelected,
-				emotion: newEmotions.students,
-				uid: newEmo.uid
+				value: postNewEmotion.value,
+				url: postNewEmotion.url,
+				studentId: postNewEmotion.student.id
 			})
 		)
 		.success(function(postResponse){
@@ -37,9 +37,9 @@ app.factory("EmoFactory", function($q, $http, FIREBASE_CONFIG){
 	});
  };
 
-var deleteEmo = function(emoId){
+var deleteEmotion = function(studentId){
 	return $q((resolve, reject) => {
-		$http.delete(`${FIREBASE_CONFIG.databaseURL}/emotions/${emoId}.json`)
+		$http.delete(`${FIREBASE_CONFIG.databaseURL}/emotions/${studentId}.json`)
 		.success(function(deleteResponse){
 			resolve(deleteResponse);
 		})
@@ -49,9 +49,9 @@ var deleteEmo = function(emoId){
 	});
 };
 
-var getSingleEmo = function(emoId){
+var getSingleEmotion = function(emotionId){
 	return $q((resolve, reject) => {
-		$http.get(`${FIREBASE_CONFIG.databaseURL}/emotions/${emoId}.json`)
+		$http.get(`${FIREBASE_CONFIG.databaseURL}/emotions/${emotionId}.json`)
 		.success(function(getSingleResponse){
 			resolve(getSingleResponse);
 		})
@@ -61,14 +61,13 @@ var getSingleEmo = function(emoId){
 	});
 };
 
- var editEmo = function(editEmo){
+ var editEmotion = function(editEmotion){
 	return $q((resolve, reject)=>{
-		$http.put(`${FIREBASE_CONFIG.databaseURL}/emotions/${editEmo.id}.json`,
+		$http.put(`${FIREBASE_CONFIG.databaseURL}/emotions/${editEmotion.id}.json`,
 			JSON.stringify({
-				assignedTo: editEmo.assignedTo,
-				isSelected: editEmo.isSelected,
-				pins: editEmo.student,
-				uid: editEmo.uid
+				value: editEmotion.value,
+				url: editEmotion.url,
+				emotionId: editEmotion.emotionId
 			})
 		)
 		.success(function(editResponse){
@@ -81,6 +80,5 @@ var getSingleEmo = function(emoId){
  };
 
 
- return {getEmoList:getEmoList, postNewEmo:postNewEmo, deleteEmo:deleteEmo, getSingleEmo:getSingleEmo, editEmo:editEmo};
+ return {getEmotionList:getEmotionList, postNewEmotion:postNewEmotion, deleteEmotion:deleteEmotion, getSingleEmotion:getSingleEmotion, editEmotion:editEmotion};
 });
-

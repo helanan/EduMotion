@@ -1,0 +1,17 @@
+<h3>Student-View</h3>
+  <div ng-controller="StudentListCtrl">
+      <h1>Student List View</h1>
+      <input type="text" ng-model="filterString">
+      <input type="button" ng-click="setFilter()" value="Filter">
+      <table>
+        <tr>
+          <th ng-click="setSort('name')">Name</th>
+          <th ng-click="setSort('class')">Model</th>
+        </tr>
+        <tr ng-repeat=
+                          "student in filteredStudents | orderBy:column:revers">
+                          <td>{{student.name}}</td>
+                          <td>{{student.class}}</td>
+        </tr>
+      </table>
+    </div>

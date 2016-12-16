@@ -1,105 +1,63 @@
 {
 	"students": {
-		"student0": {
-			"name": "Bob",
-			"isSelected": true,
-			"assignedTo": "Helana",
-			"uid": "Dj3NHfngNbRuN3vcpoc3mfG1vlz2"
-		},
-		"student1": {
-			"name": "James",
-			"isSelected": true,
-			"assignedTo": "Meg",
-			"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2"
-		},
-		"student2": {
-			"name": "Jenny",
-			"isSelected": false,
-			"assignedTo": "Sandy",
-			"uid": "IBEbRKSe49XrWW15BrcOlpZgzFJ2"
-		},
-		"student3": {
-			"name": "Craig",
-			"isSelected": true,
-			"assignedTo": "Meg",
-			"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2"
-		},
-		"student4": {
-			"name": "Zoe",
-			"isSelected": false,
-			"assignedTo": "Meg",
-			"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2"
-		},
-		"student5": {
-			"name": "Pearl",
-			"isSelected": true,
-			"assignedTo": "Helana",
-			"uid": "Dj3NHfngNbRuN3vcpoc3mfG1vlz2"
-		},
-		"student6": {
-			"name": "Helana",
-			"isSelected": false,
-			"assignedTo": "Sandy",
-			"uid": "IBEbRKSe49XrWW15BrcOlpZgzFJ2"
-		},
-		"student7": {
-			"name": "Brenden",
-			"isSelected": true,
-			"assignedTo": "Meg",
-			"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2"
-
-		},
-		"student8": {
-			"name": "Meg",
-			"isSelected": true,
-			"assignedTo": "Helana",
-			"uid": "Dj3NHfngNbRuN3vcpoc3mfG1vlz2"
-
-		},
-		"student9": {
-			"name": "Henry",
-			"isSelected": true,
-			"assignedTo": "Meg",
-			"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2"
-		},
-		"student10": {
-			"name": "Amanda",
-			"isSelected": true,
-			"assignedTo": "Sandy",
-			"uid": "IBEbRKSe49XrWW15BrcOlpZgzFJ2"
-		},
-		"student11": {
-			"name": "Emma",
-			"isSelected": true,
-			"assignedTo": "Helana",
-			"uid": "Dj3NHfngNbRuN3vcpoc3mfG1vlz2"
-		}
+									"student0": {
+										"name": "Bob",
+										"uid": "Dj3NHfngNbRuN3vcpoc3mfG1vlz2"
+									},
+									"student1": {
+										"name": "James",
+										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2"
+									},
+									"student2": {
+										"name": "Jenny",
+										"uid": "IBEbRKSe49XrWW15BrcOlpZgzFJ2"
+									},
+									"student3": {
+										"name": "Craig",
+										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2"
+									},
+									"student4": {
+										"name": "Zoe",
+										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2"
+									},
+									"student5": {
+										"name": "Pearl",
+										"uid": "Dj3NHfngNbRuN3vcpoc3mfG1vlz2"
+									},
+									"student6": {
+										"name": "Helana",
+										"uid": "IBEbRKSe49XrWW15BrcOlpZgzFJ2"
+									},
+									"student7": {
+										"name": "Brenden",
+										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2"
+									}
 	},
 	"emotions": {
-		"emo0": {
-			"value": "1",
-			"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
-			"studentId": "student0"
-		},
-		"emo1": {
-			"value": "2",
-			"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
-			"studentId": "student1"
-		},
-		"emo2": {
-			"value": "3",
-			"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
-			"studentId": "student1"
-		}
+									"emotion0": {
+										"value": "1",
+										"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+										"studentId": "student0"
+									},
+									"emotion1": {
+										"value": "2",
+										"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+										"studentId": "student1"
+									},
+									"emotion2": {
+										"value": "3",
+										"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+										"studentId": "student1"
+									}
 	},
 	"users": {
-		"user0": {
-			"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
-			"username": "b"
-		},
-		"user1": {
-			"uid": "Dj3NHfngNbRuN3vcpoc3mfG1vlz2",
-			"username": "a"
-		}
+									"user0": {
+										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
+										"username": "b"
+									},
+									"user1": {
+										"uid": "Dj3NHfngNbRuN3vcpoc3mfG1vlz2",
+										"username": "a"
+									}
 	}
 }
