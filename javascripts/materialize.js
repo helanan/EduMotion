@@ -1,5 +1,4 @@
-"use strict";
-  $(document).ready(function() {
-    Materialize.updateTextFields();
-  });
-      
+// "use strict";
+//   $(document).ready(function() {
+//     Materialize.updateTextFields();
+//   });

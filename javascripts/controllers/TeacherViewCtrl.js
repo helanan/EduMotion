@@ -1,11 +1,11 @@
 "use strict";
 
-app.controller("StudentListViewCtrl", function($scope, $routeParams, StudentFactory){
+app.controller("TeacherViewCtrl", function($scope, $routeParams, StudentFactory){
 	$scope.selectedStudent = {};
-	let StudentId = $routeParams.id;
+	let studentId = $routeParams.id;
 
 	StudentFactory.getSingleStudent(studentId).then(function(oneStudent){
-		oneStudent.id = studentId;
+		oneStudent.id=studentId;
 		$scope.selectedStudent = oneStudent;
 	});
 });

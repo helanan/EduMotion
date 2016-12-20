@@ -4,15 +4,15 @@ app.controller("NavCtrl", function($scope) {
     $scope.navItems = [
     {
     	name: "Logout",
-		url:"#/logout"
-	}, 
+		  url:"#/logout"
+	},
     {
     	name:"My Students",
-    	url:"/students/list"
-	}, 
+    	url:"/students/view"
+	},
     {
     	name:"Emotional Log",
-    	url:"/students/emolog"
+    	url:"/emotions/list"
 	}
    ];
 });

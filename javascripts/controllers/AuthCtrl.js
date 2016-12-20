@@ -3,6 +3,10 @@
 app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, UserFactory) {
     $scope.loginContainer = true;
     $scope.registerContainer = false;
+    $scope.login = {
+      email: "helanan@gmail.com",
+      password: "H1elana15"
+    };
 
 
     if ($location.path() === "/logout") {
