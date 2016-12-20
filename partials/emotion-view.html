@@ -1,3 +1,18 @@
-<div class="" ng-controller="EmotionViewCtrl</div>">
-<h1>Emotion View</h1>
+<h1>Emo View</h1>
+<div class="col-xs-6 col-xs-offset-3">
+	<div class="row">
+		<button class="btn btn-info col-xs-6" ng-click="listEmotions()">Show Emotions</button>
+		<button class="btn btn-success col-xs-6" ng-click="hideEmotions()">Hide Emotions</button>
+	</div>
+	<div class="row">
+	<form ng-show="Emotions">
+	</form>
+	</div>
+</div>
+<div class="" ng-controller="EmotionViewCtrl"</div>
+<div ng-init="emotions=[]">
+<ul>
+	<li ng-repeat="emotion in emotions">
+	{{emotion}}
+</ul>
 </div>

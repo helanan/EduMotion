@@ -2,6 +2,7 @@
 
 app.controller("StudentListCtrl", function($scope, $rootScope, StudentFactory){
           $scope.students= [];
+
           let getStudents = function(){
           StudentFactory.getStudentList($rootScope.user.uid).then(function(fbStudents){
             $scope.students = fbStudents;
@@ -16,8 +17,8 @@ app.controller("StudentListCtrl", function($scope, $rootScope, StudentFactory){
       });
     };
 
-    $scope.inputChange = function(inputDiff){
-      StudentFactory.editStudent(inputDiff).then(function(response){
+    $scope.inputChange = function(thingy){
+      StudentFactory.editStudent(thingy).then(function(response){
         getStudents();
       });
     };

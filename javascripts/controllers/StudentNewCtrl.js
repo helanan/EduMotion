@@ -1,15 +1,15 @@
 "use strict";
 
 app.controller("StudentNewCtrl", function($scope, $rootScope, $location, StudentFactory){
-	$scope.newStudent = {};
+	$scope.newTask = {};
 
 	$scope.addNewStudent = function(){
-		$scope.newStudent.uid = $rootScope.user.uid;
-								StudentFactory.postNewStudent($scope.newStudent).then(function(studentId){
-									  $location.url("/student/list");
-									$scope.newStudent = {};
+		$scope.newTask.uid = $rootScope.user.uid;
+		StudentFactory.postNewStudent($scope.newTask).then(function(studentId){
+		 $location.url("/student/list/");
+		$scope.newTask = {};
 		});
 	};
 });
 
-console.log("StudentNewCtrl");
+console.log("StudentNewCtrl Loaded");

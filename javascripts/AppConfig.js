@@ -1,4 +1,3 @@
-
 "use strict";
 
 let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
@@ -17,8 +16,7 @@ app.run(function($rootScope, $location, FIREBASE_CONFIG, AuthFactory) {
         let logged = AuthFactory.isAuthenticated();
         let appTo;
 
-        if (currRoute.originalPath) {
-
+        if(currRoute.originalPath){
             appTo = currRoute.originalPath.indexOf('/auth') !== -1;
         }
 
@@ -27,14 +25,20 @@ app.run(function($rootScope, $location, FIREBASE_CONFIG, AuthFactory) {
             $location.path('/auth');
         }
     });
-
 });
 
 app.config(function($routeProvider) {
     $routeProvider
         .when('/auth', {
             templateUrl: 'partials/auth.html',
-            controller: 'AuthCtrl',
+            controller: 'AuthCtrl'
+        })
+        .when('/student/list/:studentId', {
+            templateUrl: 'partials/student-list.html',
+            controller: 'StudentListCtrl',
+            resolve: {
+                isAuth
+            }
         })
         .when('/student/new', {
             templateUrl: 'partials/student-new.html',
@@ -43,14 +47,8 @@ app.config(function($routeProvider) {
                 isAuth
             }
         })
-        .when('/student/view/:studentId', {
-            templateUrl: 'partials/student-view.html',
-            controller: 'StudentViewCtrl',
-            resolve: {
-                isAuth
-            }
-        })
-        .when('/student/edit/:studentId', {
+
+        .when('/students/view/{{studentId}}', {
             templateUrl: 'partials/student-new.html',
             controller: 'StudentEditCtrl',
             resolve: {

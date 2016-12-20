@@ -1,18 +1,16 @@
-"use strict";
-
-app.controller("StudentEditCtrl", function($scope, $location, $routeParams, StudentFactory){
-	$scope.editStudent = {};
+app.controller("ItemEditCtrl", function($scope, $location, $routeParams, StudentFactory){
+	$scope.newTask = {};
 	let studentId = $routeParams.id;
 
 	StudentFactory.getSingleStudent(studentId).then(function(oneStudent){
 		oneStudent.id = studentId;
-		$scope.newStudent = oneStudent;
+		$scope.newTask = oneStudent;
 	});
 
 	$scope.addNewStudent = function(){
-		StudentFactory.editStudent($scope.newStudent).then(function(response){
-			$scope.newStudent = {};
-			$location.url("/students/list");
+		StudentFactory.editStudent($scope.newTask).then(function(response){
+			$scope.newTask = {};
+			$location.url("/students/view/{{studentId}}");
 		});
 	};
 });

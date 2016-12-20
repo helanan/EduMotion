@@ -4,8 +4,8 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
     $scope.loginContainer = true;
     $scope.registerContainer = false;
     $scope.login = {
-      email: "helana@helana.com",
-      password: "121586"
+      email: "jervis@cat.com",
+      password: "jervis",
     };
 
 
@@ -15,17 +15,17 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
         $location.url("/auth");
     }
 
-    let logMeIn = function(loginStuff) {
-        AuthFactory.authenticate(loginStuff).then(function(didLogin) {
-            console.log("didLogin", didLogin);
-            return UserFactory.getUser(didLogin.uid);
-        }).then(function(userCreds) {
-            $rootScope.user = userCreds;
-            $scope.login = {};
-            $scope.register = {};
-            $location.url("/student/new");
-        });
-    };
+    let logMeIn = function(loginStuff){
+    		AuthFactory.authenticate(loginStuff).then(function(didLogin){
+    			console.log("didLogin", didLogin);
+    			return UserFactory.getUser(didLogin.uid);
+    		}).then(function(userCreds){
+    			$rootScope.user = userCreds;
+    			$scope.login = {};
+    			$scope.register = {};
+    			$location.url("/student/new");
+    		});
+    	};
 
 
     $scope.setLoginContainer = function() {
@@ -49,5 +49,6 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
 
     $scope.loginUser = function(loginNewUser) {
         logMeIn(loginNewUser);
+        console.log("logMeIn", logMeIn);
     };
 });

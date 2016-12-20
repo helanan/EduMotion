@@ -1,7 +1,7 @@
 "use strict";
 
 app.controller("EmotionEditCtrl", function($scope, $location, $routeParams, EmotionFactory) {
-  $scope.newEmotion= [];
+  $scope.newEmotion= {};
 
   let getEmotions = function(){
     EmotionFactory.getEmotionList($rootScope.student.emotionId).then(function(fbEmotions){

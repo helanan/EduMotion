@@ -1,36 +1,33 @@
 "use strict";
 
 app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
-let studentId = {};
 
-	var getStudentList = function(studentId){
+	var getStudentList = function(userId){
 	 return $q((resolve, reject) => {
-	 	$http.get(`${FIREBASE_CONFIG.databaseURL}/students.json?orderBy="uid"&equalTo="${studentId}"`)
+	 	$http.get(`${FIREBASE_CONFIG.databaseURL}/students.json?orderBy="uid"&equalTo="${userId}"`)
 	 	.success(function(response){
+			let students = [];
+			 		Object.keys(response).forEach(function(key){
+			 			response[key].id = key;
+			 			students.push(response[key]);
+			 		});
+	 	  resolve(students);
+	 	})
 
-									let students = [];
-									 		Object.keys(response).forEach(function(key){
-									 			response[key].id = key;
-									 			students.push(response[key]);
-									 		});
-							 	  resolve(students);
-							 	})
-
-							 	.error(function(errorResponse){
-							 	  reject(errorResponse);
-							 	});
+	 	.error(function(errorResponse){
+	 	  reject(errorResponse);
+	 	});
 	});
-  };
-
-
+};
 
  var postNewStudent = function(newStudent){
-	 console.log("newStudent", newStudent);
 	return $q((resolve, reject)=>{
 		$http.post(`${FIREBASE_CONFIG.databaseURL}/students.json`,
 			JSON.stringify({
 				studentName: newStudent.studentName,
-				uid: newStudent.uid
+				uid: newStudent.uid,
+				task: newStudent.task,
+				classroomName: newStudent.classroomName,
 			})
 		)
 		.success(function(postResponse){
@@ -41,7 +38,6 @@ let studentId = {};
 		});
 	});
  };
-	console.log("postNewStudent", postNewStudent);
 
 var deleteStudent = function(studentId){
 	return $q((resolve, reject) => {
@@ -69,10 +65,12 @@ var getSingleStudent = function(studentId){
 
  var editStudent = function(editStudent){
 	return $q((resolve, reject)=>{
-		$http.put(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`,
+		$http.put(`${FIREBASE_CONFIG.databaseURL}/student/${editStudent.id}.json`,
 			JSON.stringify({
-				name: editStudent.name,
-				uid: editStudent.uid
+				studentName: editStudent.studentName,
+				task: editStudent.task,
+				uid: editStudent.uid,
+				classroomName: editStudent.classroomName
 			})
 		)
 		.success(function(editResponse){

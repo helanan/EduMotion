@@ -1,36 +1,52 @@
 {
 	"students": {
 									"student0": {
+										"task":"Emotions...",
 										"studentName": "Bob",
-										"uid": "Dj3NHfngNbRuN3vcpoc3mfG1vlz2"
+										"uid": "iBnGP7NgXmZZer8vB7yR5QgW4nl1",
+										"classroomName": "Bears"
 									},
 									"student1": {
+										"task":"Emotions...",
 										"studentName": "James",
-										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2"
+										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
+										"classroomName": "Pigs"
 									},
 									"student2": {
+										"task":"Emotions...",
 										"studentName": "Jenny",
-										"uid": "IBEbRKSe49XrWW15BrcOlpZgzFJ2"
+										"uid": "IiBnGP7NgXmZZer8vB7yR5QgW4nl1",
+										"classroomName": "Bears"
 									},
 									"student3": {
+										"task":"Emotions...",
 										"studentName": "Craig",
-										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2"
+										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
+										"classroomName": "Pigs"
 									},
 									"student4": {
+										"task":"Emotions...",
 										"studentName": "Zoe",
-										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2"
+										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
+										"classroomName": "Tigers"
 									},
 									"student5": {
+										"task":"Emotions...",
 										"studentName": "Pearl",
-										"uid": "Dj3NHfngNbRuN3vcpoc3mfG1vlz2"
+										"uid": "iBnGP7NgXmZZer8vB7yR5QgW4nl1",
+										"classroomName": "Bears"
 									},
 									"student6": {
+										"task":"Emotions...",
 										"studentName": "Helana",
-										"uid": "IBEbRKSe49XrWW15BrcOlpZgzFJ2"
+										"uid": "IBEbRKSe49XrWW15BrcOlpZgzFJ2",
+										"classroomName": "Pigs"
 									},
 									"student7": {
+										"task":"Emotions...",
 										"studentName": "Brenden",
-										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2"
+										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
+										"classroomName": "Tigers"
 									}
 	},
 	"emotions": {

@@ -10,12 +10,11 @@
     </div>
 </div>
 
-<div ng-repeat="student in students">
+<div ng-repeat="student in students | filter: {studentName:studentName} | filter: searchText">
 	<div class="panel panel-default">
 	    <div class="panel-body">
-	        <div class="col-xs-1" ng-model="deleteStudent"></div>
-	        <div class="col-xs-9"><a href="#/student/view/{{student.id}}">{{student.studentName}}</a></div>
-	        <div class="col-xs-1">{{student.studentId}}</div>
+	        <div class="col-xs-9"><a href="#/students/view/{{student.id}}">{{student.task}}</a></div>
+	        <div class="col-xs-1">{{student.studentName}}</div>
 	        <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deleteItem(student.id)"></button></div>
 	    </div>
 	</div>
