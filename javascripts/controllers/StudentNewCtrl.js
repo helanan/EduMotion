@@ -5,8 +5,9 @@ app.controller("StudentNewCtrl", function($scope, $rootScope, $location, Student
 
 	$scope.addNewStudent = function(){
 		$scope.newTask.uid = $rootScope.user.uid;
+		$scope.newClassroomName = $rootScope.user.classroomName;
 		StudentFactory.postNewStudent($scope.newTask).then(function(studentId){
-		 $location.url("/student/list/");
+		 $location.url("/students/list/");
 		$scope.newTask = {};
 		});
 	};
