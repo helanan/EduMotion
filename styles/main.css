@@ -1,71 +1,34 @@
-body h1 {
-  color: green;
-  text-align: center; }
+/*    --------------------------------------------------
+	:: General
+	-------------------------------------------------- */
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: #353535;
+      background-image: url("EduMotion.jpg");
+}
 
-.search-bar {
-  text-align: center; }
-  .search-bar input {
-    margin-bottom: 20px; }
+#nav {
+     padding-left: 15px;
+}
 
-#incomplete-tasks, #completed-tasks {
-  padding-left: 40px;
-  padding-right: 40px; }
 
-.new-text-container {
-  padding: 20px 0px; }
+h1 {
+     padding-left: 41%;
+}
 
-.newtodo-input {
-  padding-top: 5px; }
+.btn btn-primary btn-lg col-xs-2 {
+     padding-left: 50%;
+}
 
-.inputTask {
-  display: none;
-  width: 93%;
-  margin-left: 10px;
-  margin-top: 6px; }
-
-.inputLabel {
-  font-size: 18px;
-  line-height: 40px;
-  width: 237px;
-  padding: 0 0 0 11px; }
-
-.checkboxStyle {
-  margin-top: 15px !important; }
-
-h3 {
-  color: #333;
-  font-weight: 700;
-  font-size: 15px;
-  border-bottom: 2px solid #333;
-  padding: 30px 0 10px;
-  margin: 0; }
-
-li * {
-  float: left; }
-
-li, h3 {
-  clear: both;
-  list-style: none; }
-
-label[for='new-task'] {
-  display: block;
-  margin: 0 0 20px; }
-
-input#new-task {
-  float: left;
-  width: 318px; }
-
-li {
-  overflow: hidden;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee; }
-
-#completed-tasks label {
-  text-decoration: line-through;
-  color: #888; }
-
-ul li.editMode input[type=text] {
-  display: block; }
-
-ul li.editMode label {
-  display: none; }
+.content h1 {
+	text-align: center;
+}
+.content .content-footer p {
+	color: #6d6d6d;
+    font-size: 12px;
+    text-align: center;
+}
+.content .content-footer p a {
+	color: inherit;
+	font-weight: bold;
+}
