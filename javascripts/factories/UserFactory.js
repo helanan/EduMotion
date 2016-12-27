@@ -1,88 +1,45 @@
 "use strict";
+app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG){
 
-app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
-
-	var postNewStudent = function(newStudent){
-    	return $q((resolve, reject)=>{
-    		$http.post(`${FIREBASE_CONFIG.databaseURL}/students.json`,
-    			JSON.stringify({
-				task: newStudent.task,
-				uid: newStudent.uid,
-    				classroomName: newStudent.classroomName,
-				image: newStudent.image,
-    			})
-    		)
-    		.success(function(postResponse){
-    		 resolve(postResponse);
-    		})
-    		.error(function(postError){
-    			reject(postError);
-    		});
-    	});
-  };
-
-	var getStudentList = function(userId){
-	 return $q((resolve, reject) => {
-	 	$http.get(`${FIREBASE_CONFIG.databaseURL}/students.json?orderBy="uid"&equalTo="${userId}"`)
-	 	.success(function(response){
-			let students = [];
-			Object.keys(response).forEach(function(key){
-			 			response[key].id = key;
-			 			students.push(response[key]);
-			});
-	 	  resolve(students);
-	 	})
-
-	 	.error(function(errorResponse){
-	 	  reject(errorResponse);
-	 	});
-	});
-};
-
-var deleteStudent = function(studentId){
-	return $q((resolve, reject) => {
-		$http.delete(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
-		.success(function(deleteResponse){
-			resolve(deleteResponse);
-		})
-		.error(function(deleteError){
-			reject(deleteError);
-		});
-	});
-};
-
-var getSingleStudent = function(studentId){
-	return $q((resolve, reject) => {
-		$http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
-		.success(function(getSingleResponse){
-			resolve(getSingleResponse);
-		})
-		.error(function(getSingleError){
-			reject(getSingleError);
-		});
-	});
-};
-
- var editStudent = function(editStudent){
-	return $q((resolve, reject) => {
-		$http.put(`${FIREBASE_CONFIG.databaseURL}/students/${editStudent.id}.json`,
-			JSON.stringify({
-				task: editStudent.task,
-				uid: editStudent.uid,
-				classroomName: editStudent.classroomName,
-				image: editStudent.image,
+	let addUser = (authData) => {
+		return $q((resolve, reject) => {
+			$http.post(`${FIREBASE_CONFIG.databaseURL}/users.json`,
+			  JSON.stringify({
+				uid: authData.uid,
+				username: authData.username
+				})
+			)
+			.success(function(storeUserSuccess){
+				resolve(storeUserSuccess);
 			})
-		)
-		.success(function(editResponse){
-		 resolve(editResponse);
-	 })
-		.error(function(editError){
-			reject(editError);
+			.error(function(storeUserError){
+				reject(storeUserError);
+
+			});
+
 		});
-	});
- };
+
+	};
 
 
- return {postNewStudent:postNewStudent, getStudentList:getStudentList, deleteStudent:deleteStudent, getSingleStudent:getSingleStudent, editStudent:editStudent};
+	let getUser = (userId) =>{
+		return $q((resolve, reject) => {
+			$http.get(`${FIREBASE_CONFIG.databaseURL}/users.json?orderBy="uid"&equalTo="${userId}"`)
+				.success(function(userObject){
+					let users = [];
+					Object.keys(userObject).forEach(function(key){
+						users.push(userObject[key]);
+					});
+					resolve(users[0]);
+				})
+				.error(function(error){
+					reject(error);
+				});
+			});
+
+		};
+	return {addUser:addUser, getUser:getUser};
+
 });
-console.log("StudentFactoryLoaded");
+
+console.log("UserFactoryLoaded");
