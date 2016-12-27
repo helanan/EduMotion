@@ -63,7 +63,7 @@ var getSingleEmotion = function(emotionId){
 
  var editEmotion = function(editEmotion){
 	return $q((resolve, reject)=>{
-		$http.put(`${FIREBASE_CONFIG.databaseURL}/emotions/${emotion.id}.json`,
+		$http.put(`${FIREBASE_CONFIG.databaseURL}/emotions/${editEmotion}.json`,
 			JSON.stringify({
 				value: editEmotion.value,
 				url: editEmotion.url,
