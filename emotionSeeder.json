@@ -1,52 +1,52 @@
 {
 	"students": {
 									"student0": {
-										"task":"Emotions...",
-										"studentName": "Bob",
+										"task": "Bob",
 										"uid": "iBnGP7NgXmZZer8vB7yR5QgW4nl1",
-										"classroomName": "Bears"
+										"classroomName": "Bears",
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
 									},
 									"student1": {
-										"task":"Emotions...",
-										"studentName": "James",
+										"task": "James",
 										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
-										"classroomName": "Pigs"
+										"classroomName": "Pigs",
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
 									},
 									"student2": {
-										"task":"Emotions...",
-										"studentName": "Jenny",
+										"task": "Jenny",
 										"uid": "IiBnGP7NgXmZZer8vB7yR5QgW4nl1",
-										"classroomName": "Bears"
+										"classroomName": "Bears",
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
 									},
 									"student3": {
-										"task":"Emotions...",
-										"studentName": "Craig",
+										"task": "Craig",
 										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
-										"classroomName": "Pigs"
+										"classroomName": "Pigs",
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
 									},
 									"student4": {
-										"task":"Emotions...",
-										"studentName": "Zoe",
+										"task": "Zoe",
 										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
-										"classroomName": "Tigers"
+										"classroomName": "Tigers",
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
 									},
 									"student5": {
-										"task":"Emotions...",
-										"studentName": "Pearl",
+										"task": "Pearl",
 										"uid": "iBnGP7NgXmZZer8vB7yR5QgW4nl1",
-										"classroomName": "Bears"
+										"classroomName": "Bears",
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
 									},
 									"student6": {
-										"task":"Emotions...",
-										"studentName": "Helana",
+										"task": "Helana",
 										"uid": "IBEbRKSe49XrWW15BrcOlpZgzFJ2",
-										"classroomName": "Pigs"
+										"classroomName": "Pigs",
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
 									},
 									"student7": {
-										"task":"Emotions...",
-										"studentName": "Brenden",
+										"task": "Brenden",
 										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
-										"classroomName": "Tigers"
+										"classroomName": "Tigers",
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
 									}
 	},
 	"emotions": {
