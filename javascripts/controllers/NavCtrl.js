@@ -6,13 +6,17 @@ app.controller("NavCtrl", function($scope){
   		name:"Logout",
 		url:"#/logout"
   	},
+     {
+  		name:"New Student",
+		url:"#/students/new"
+	},
   	{
   		name:"All Students",
   		url:"#/students/list"
   	},
-  	{
-  		name:"New Student",
-		url:"#/students/new"
-	}
+     {
+        name:"Edit Students",
+        url:"#/students/view/:id"
+   }
   ];
 });
