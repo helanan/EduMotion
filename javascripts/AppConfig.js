@@ -29,18 +29,12 @@ app.run(function($rootScope, $location, FIREBASE_CONFIG, AuthFactory) {
 
 app.config(function($routeProvider) {
     $routeProvider
-        .when('/auth', {
+    .when('/auth', {
             templateUrl: 'partials/auth.html',
             controller: 'AuthCtrl'
         })
-        .when('/student/list/:studentId', {
-            templateUrl: 'partials/student-list.html',
-            controller: 'StudentListCtrl',
-            resolve: {
-                isAuth
-            }
-        })
-        .when('/student/new', {
+
+     .when('/students/new', {
             templateUrl: 'partials/student-new.html',
             controller: 'StudentNewCtrl',
             resolve: {
@@ -48,36 +42,52 @@ app.config(function($routeProvider) {
             }
         })
 
-        .when('/students/view/{{studentId}}', {
-            templateUrl: 'partials/student-new.html',
-            controller: 'StudentEditCtrl',
-            resolve: {
-                isAuth
-            }
-        })
-        .when('/student/list', {
+        .when('/students/list', {
             templateUrl: 'partials/student-list.html',
             controller: 'StudentListCtrl',
             resolve: {
                 isAuth
             }
         })
-        .when('/student/:studentId/emotion/new', {
+
+        .when('/students/list/:studentId', {
+            templateUrl: 'partials/student-list.html',
+            controller: 'StudentListCtrl',
+            resolve: {
+                isAuth
+            }
+        })
+
+        .when('/students/view/:id',{
+			templateUrl: 'partials/student-view.html',
+			controller:'StudentViewCtrl',
+			resolve: {isAuth}
+		})
+
+        .when('/students/edit/:Id', {
+            templateUrl: 'partials/student-new.html',
+            controller: 'StudentEditCtrl',
+            resolve: {
+                isAuth
+            }
+        })
+
+        .when('/students/:studentId/emotion/new', {
             templateUrl: 'partials/emotion-new.html',
             controller: 'EmotionNewCtrl',
             resolve: {
                 isAuth
             }
         })
-        .when('/student/:studentId/emotion/:emotionId', {
+        .when('/students/:studentId/emotion/:emotionId', {
             templateUrl: 'partials/emotion-view.html',
             controller: 'EmotionViewCtrl',
             resolve: {
                 isAuth
             }
         })
-        .when('/student/:studentId/emotion/edit/:emotionId', {
-            templateUrl: 'partials/emotion-new.html',
+        .when('/students/:studentId/emotion/edit/:emotionId', {
+            templateUrl: 'partials/emotion-view.html',
             controller: 'EmotionEditCtrl',
             resolve: {
                 isAuth
