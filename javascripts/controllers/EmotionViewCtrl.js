@@ -9,4 +9,4 @@ $location.url("/emotions/new");
 		oneEmotion.id=emotionId;
 		$scope.selectedEmotion = oneEmotion;
 	});
-});
+})
