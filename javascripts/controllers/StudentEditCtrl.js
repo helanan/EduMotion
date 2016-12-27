@@ -1,4 +1,6 @@
-app.controller("ItemEditCtrl", function($scope, $location, $routeParams, StudentFactory){
+"use strict";
+
+app.controller("StudentEditCtrl", function($scope, $location, $routeParams, StudentFactory){
 	$scope.newTask = {};
 	let studentId = $routeParams.id;
 
@@ -10,7 +12,7 @@ app.controller("ItemEditCtrl", function($scope, $location, $routeParams, Student
 	$scope.addNewStudent = function(){
 		StudentFactory.editStudent($scope.newTask).then(function(response){
 			$scope.newTask = {};
-			$location.url("/students/view/{{studentId}}");
+			$location.url("/students/list");
 		});
 	};
 });
