@@ -18,47 +18,43 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
         });
     });
   };
-<<<<<<< HEAD
-=======
 
- var postNewStudent = function(newStudent){
-	return $q((resolve, reject)=>{
-		$http.post(`${FIREBASE_CONFIG.databaseURL}/students.json`,
-			JSON.stringify({
-				name: newStudent.name,
-				isSelected: newStudent.isSelected,
-				assignedTo: newStudent.assignedTo,
-				uid: newStudent.uid
-			})
-		)
-		.success(function(postResponse){
-		 resolve(postResponse);
-		})
-		.error(function(postError){
-			reject(postError);
-		});
-	});
- };
->>>>>>> 9c08756148b309fc1c648ba8597d630245ece61d
-
-  var postNewStudent = function(newStudent){
-    return $q((resolve, reject) =>{
-      $http.post(`${FIREBASE_CONFIG.databaseURL}/students.json`,
-         JSON.stringify({
-					 name: newStudent.name,
-            isSelected: newStudent.isSelected,
-						assignedTo: newStudent.assignedTo,
-            uid: newStudent.uid
-         })
-       )
-        .success(function(postResponse){
-          resolve(postResponse);
-        })
-        .error(function(postError){
-          reject(postError);
-        });
-    });
+	var postNewStudent = function(newStudent){
+    	return $q((resolve, reject)=>{
+    		$http.post(`${FIREBASE_CONFIG.databaseURL}/students.json`,
+    			JSON.stringify({
+				task: newStudent.task,
+				uid: newStudent.uid,
+    				classroomName: newStudent.classroomName,
+				image: newStudent.image,
+    			})
+    		)
+    		.success(function(postResponse){
+    		 resolve(postResponse);
+    		})
+    		.error(function(postError){
+    			reject(postError);
+    		});
+    	});
   };
+
+	var getStudentList = function(userId){
+	 return $q((resolve, reject) => {
+	 	$http.get(`${FIREBASE_CONFIG.databaseURL}/students.json?orderBy="uid"&equalTo="${userId}"`)
+	 	.success(function(response){
+			let students = [];
+			Object.keys(response).forEach(function(key){
+			 			response[key].id = key;
+			 			students.push(response[key]);
+			});
+	 	  resolve(students);
+	 	})
+
+	 	.error(function(errorResponse){
+	 	  reject(errorResponse);
+	 	});
+	});
+};
 
   var deleteStudent = function(studentId){
     return $q((resolve, reject) => {
@@ -72,7 +68,6 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
     });
   };
 
-<<<<<<< HEAD
   var getSingleStudent = function(studentId){
     return $q((resolve, reject) => {
       $http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
@@ -84,45 +79,26 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
       });
     });
   };
-=======
+
  var editStudent = function(editStudent){
-	return $q((resolve, reject)=>{
+	return $q((resolve, reject) => {
 		$http.put(`${FIREBASE_CONFIG.databaseURL}/students/${editStudent.id}.json`,
 			JSON.stringify({
-				name: editStudent.name,
-				isSelected: editStudent.isSelected,
-				assignedTo: editStudent.assignedTo,
-				uid: editStudent.uid
+				task: editStudent.task,
+				uid: editStudent.uid,
+				classroomName: editStudent.classroomName,
+				image: editStudent.image,
 			})
 		)
 		.success(function(editResponse){
 		 resolve(editResponse);
-		})
+	 })
 		.error(function(editError){
 			reject(editError);
 		});
 	});
  };
->>>>>>> 9c08756148b309fc1c648ba8597d630245ece61d
 
-  var editStudent = function(editStudent){
-    return $q((resolve, reject) =>{
-      $http.put(`${FIREBASE_CONFIG.databaseURL}/students/${editStudent.id}.json`,
-         JSON.stringify({
-					 name: newStudent.name,
-						isSelected: newStudent.isSelected,
-					 assignedTo: newStudent.assignedTo,
-						uid: newStudent.uid
-         })
-       )
-        .success(function(editResponse){
-          resolve(editResponse);
-        })
-        .error(function(editError){
-          reject(editError);
-        });
-    });
-  };
-
-  return {getStudentList:getStudentList, postNewStudent:postNewStudent, deleteStudent:deleteStudent, getSingleStudent:getSingleStudent, editStudent:editStudent};
+ return {postNewStudent:postNewStudent, getStudentList:getStudentList, deleteStudent:deleteStudent, getSingleStudent:getSingleStudent, editStudent:editStudent};
 });
+console.log("StudentFactoryLoaded");

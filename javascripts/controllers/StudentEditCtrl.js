@@ -1,20 +1,18 @@
 "use strict";
 
 app.controller("StudentEditCtrl", function($scope, $location, $routeParams, StudentFactory){
-	$scope.newName = {};
+	$scope.newTask = {};
 	let studentId = $routeParams.id;
 
 	StudentFactory.getSingleStudent(studentId).then(function(oneStudent){
 		oneStudent.id = studentId;
-		$scope.newName = oneStudent;
+		$scope.newTask = oneStudent;
 	});
 
 	$scope.addNewStudent = function(){
-		StudentFactory.editStudent($scope.newName.then(function(response){
-			$scope.newName = {};
+		StudentFactory.editStudent($scope.newTask).then(function(response){
+			$scope.newTask = {};
 			$location.url("/students/list");
 		});
 	};
 });
-
-console.log("StudentEditCtrl")

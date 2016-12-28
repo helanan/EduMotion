@@ -1,37 +1,49 @@
 <!doctype html>
+<html lang="en">
+<html xmlns:ng="http://angularjs.org">
 <head>
 	<meta charset="utf-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>EduMotion</title>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	         <link rel="stylesheet" type="text/css" href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+
+	         <!-- <link rel="stylesheet" type="text/css" href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
 	         <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
-<body>
-<body>
 		<body ng-app="EduMotionApp">
 		<div ng-include="'./partials/navbar.html'"></div>
 
 			<div class="row">
-			    <h1>EduMotion</h1>
 			    <div class="col-xs-offset-2 col-xs-8" ng-view></div>
 			</div>
 
+<footer>
+  <small>
+    Designed and developed by Helana Nosrat.
+  </small>
+  <small>
+    &copy; 2016 EduMotion - All rights reserved
+  </small>
+</footer>
+
 	<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 		  <script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
- <script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+ <!-- <script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
 
 		<script type="text/javascript" src="/lib/bower_components/angular/angular.min.js"></script>
 		 <script type="text/javascript" src="/lib/bower_components/angular-route/angular-route.min.js"></script>
+		<script src="https://use.fontawesome.com/262703d384.js"></script>
+
 
 <script type="text/javascript" src="/javascripts/app.js"></script>
 <script type="text/javascript" src="/javascripts/AppConstants.js"></script>
 <script type="text/javascript" src="/javascripts/AppConfig.js"></script>
 <script type="text/javascript" src="/javascripts/factories/AuthFactory.js"></script>
-
-<script type="text/javascript" src="/javascripts/factories/StudentFactory.js"></script>
 <script type="text/javascript" src="/javascripts/factories/UserFactory.js"></script>
-<script type="text/javascript" src="/javascripts/factories/EmoFactory.js"></script>
+<script type="text/javascript" src="/javascripts/factories/StudentFactory.js"></script>
+
 <script type="text/javascript" src="/javascripts/controllers/AuthCtrl.js"></script>
 <script type="text/javascript" src="/javascripts/controllers/NavCtrl.js"></script>
 <script type="text/javascript" src="/javascripts/controllers/TeacherViewCtrl.js"></script>
@@ -42,6 +54,16 @@
 <script type="text/javascript" src="/javascripts/controllers/EmoNewCtrl.js"></script>
 <script type="text/javascript" src="/javascripts/controllers/EmoListCtrl.js"></script>
 <script type="text/javascript" src="/javascripts/controllers/EmoEditCtrl.js"></script>
+<script type="text/javascript" src="/javascripts/controllers/StudentNewCtrl.js"></script>
+<script type="text/javascript" src="/javascripts/controllers/StudentListCtrl.js"></script>
+<script type="text/javascript" src="/javascripts/controllers/StudentEditCtrl.js"></script>
+<script type="text/javascript" src="/javascripts/controllers/StudentViewCtrl.js"></script>
+
+<script type="text/javascript" src="/javascripts/controllers/EmotionNewCtrl.js"></script>
+<script type="text/javascript" src="/javascripts/controllers/EmotionViewCtrl.js"></script>
+<script type="text/javascript" src="/javascripts/controllers/EmotionEditCtrl.js"></script>
+
+<script type="text/javascript" src="/javascripts/factories/EmotionFactory.js"></script>
 
 </body>
 </html>

@@ -15,17 +15,17 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
         $location.url("/auth");
     }
 
-    let logMeIn = function(loginStuff) {
-        AuthFactory.authenticate(loginStuff).then(function(didLogin) {
-            console.log("didLogin", didLogin);
-            return UserFactory.getUser(didLogin.uid);
-        }).then(function(userCreds) {
-            $rootScope.user = userCreds;
-            $scope.login = {};
-            $scope.register = {};
-            $location.url("/students/list");
-        });
-    };
+    let logMeIn = function(loginStuff){
+    		AuthFactory.authenticate(loginStuff).then(function(didLogin){
+    			console.log("didLogin", didLogin);
+    			return UserFactory.getUser(didLogin.uid);
+    		}).then(function(userCreds){
+    			$rootScope.user = userCreds;
+    			$scope.login = {};
+    			$scope.register = {};
+    			$location.url("/students/new");
+    		});
+    	};
 
 
     $scope.setLoginContainer = function() {
@@ -49,5 +49,6 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
 
     $scope.loginUser = function(loginNewUser) {
         logMeIn(loginNewUser);
+        console.log("logMeIn", logMeIn);
     };
 });

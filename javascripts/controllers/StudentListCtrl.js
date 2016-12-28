@@ -1,6 +1,7 @@
 "use strict";
 
 app.controller("StudentListCtrl", function($scope, $rootScope, StudentFactory){
+<<<<<<< HEAD
   $scope.students = [];
 
   let getStudents = function(){

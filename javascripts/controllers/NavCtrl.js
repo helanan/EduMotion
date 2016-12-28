@@ -1,18 +1,22 @@
 "use strict";
 
-app.controller("NavCtrl", function($scope) {
-    $scope.navItems = [
-    {
-    	name: "Logout",
-		  url:"#/logout"
+app.controller("NavCtrl", function($scope){
+  $scope.navStudents = [
+  	{
+  		name:"Logout",
+		url:"#/logout"
+  	},
+     {
+  		name:"New Student",
+		url:"#/students/new"
 	},
-    {
-    	name:"My Students",
-    	url:"/students/view"
-	},
-    {
-    	name:"Emotional Log",
-    	url:"/emotions/list"
-	}
-   ];
+  	{
+  		name:"All Students",
+  		url:"#/students/list"
+  	},
+     {
+        name:"Edit Students",
+        url:"#/students/view/:id"
+   }
+  ];
 });
