@@ -93,6 +93,13 @@ app.config(function($routeProvider) {
                 isAuth
             }
         })
+        .when('/ratings/new', {
+            templateUrl: 'partials/rating-view.html',
+            controller: 'RatingViewCtrl',
+            resolve: {
+                isAuth
+            }
+        })
         .when('/logout', {
             templateUrl: 'partials/auth.html',
             controller: 'AuthCtrl',
