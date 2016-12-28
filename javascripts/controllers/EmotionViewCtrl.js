@@ -1,9 +1,8 @@
 "use strict";
 
 app.controller("EmotionViewCtrl", function($scope, $routeParams, EmotionFactory){
-$location.url("/emotions/new");
-	$scope.emotions = {};
-	let emotionId = $routeParams.emotions.Id;
+	$scope.selectedEmotion = {};
+	let emotionId = $routeParams.id;
 
 	EmotionFactory.getSingleEmotion(emotionId).then(function(oneEmotion){
 		oneEmotion.id=emotionId;
