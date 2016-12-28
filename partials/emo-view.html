@@ -1,4 +1,11 @@
-<h1>Emotion: {{selectedEmo.student}}</h1>
-	<button class="btn btn-info"><a ng-href="#/students/edit/{{selectedEmo.id}}">Edit</a></button>
-<h2>My Students Emotions: {{selectedEmo.assignedTo}}</h2>
-<h2>My Students: {{selectedEmo.isSelected}}</h2>
+<h1>My Emotion Logged: {{selectedEmotion.studentId}}</h1>
+
+<h2>Emotion Info:</h2>
+     <p>Emotion Image: {{selectedEmotion.emotionImage}}</p>
+     <p>Emotion Score: {{selectedEmotion.score}}</p>
+     <p>Emotion Status: {{selectedEmotion.emotionStatusl}}</p>
+     <p>Emotion Color: {{selectedEmotion.emotionColor}}</p>
+     <p>Activity Loved: {{selectedEmotion.activityLoved}}</p>
+     <p>Activity Hates: {{selectedEmotion.parentLast}}</p>
+
+	<button class="btn btn-info"><a ng-href="#/students/:studentId/emotions/edit{{selectedEmotion.id}}">Edit</a></button>
