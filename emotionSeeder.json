@@ -4,66 +4,155 @@
 										"task": "Bob",
 										"uid": "iBnGP7NgXmZZer8vB7yR5QgW4nl1",
 										"classroomName": "Bears",
-										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+										"grade": "5th",
+										"age": "8",
+										"parentFirst": "Meg",
+										"parentLast": "Backus",
+										"parentEmail": "mbackus@gmail.com",
+										"address": "293 South Ivy Lane City: Glen Mills State: PA Zip: 37216",
+										"phone": "267-443-8860",
+										"emergancy contact": "610-459-0433",
+										"totalScore": 0
 									},
 									"student1": {
 										"task": "James",
 										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
 										"classroomName": "Pigs",
-										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+										"grade": "5th",
+										"age": "8",
+										"parentFirst": "Meg",
+										"parentLast": "Backus",
+										"parentEmail": "mbackus@gmail.com",
+										"address": "293 South Ivy Lane City: Glen Mills State: PA Zip: 37216",
+										"phone": "267-443-8860",
+										"emergancy contact": "610-459-0433",
+										"totalScore": 0
 									},
 									"student2": {
 										"task": "Jenny",
 										"uid": "IiBnGP7NgXmZZer8vB7yR5QgW4nl1",
 										"classroomName": "Bears",
-										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+										"grade": "5th",
+										"age": "8",
+										"parentFirst": "Meg",
+										"parentLast": "Backus",
+										"parentEmail": "mbackus@gmail.com",
+										"address": "293 South Ivy Lane City: Glen Mills State: PA Zip: 37216",
+										"phone": "267-443-8860",
+										"emergancy contact": "610-459-0433",
+										"totalScore": 0
 									},
 									"student3": {
 										"task": "Craig",
 										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
 										"classroomName": "Pigs",
-										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+										"grade": "5th",
+										"age": "8",
+										"parentFirst": "Meg",
+										"parentLast": "Backus",
+										"parentEmail": "mbackus@gmail.com",
+										"address": "293 South Ivy Lane City: Glen Mills State: PA Zip: 37216",
+										"phone": "267-443-8860",
+										"emergancy contact": "610-459-0433",
+										"totalScore": 0
 									},
 									"student4": {
 										"task": "Zoe",
 										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
 										"classroomName": "Tigers",
-										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+										"grade": "5th",
+										"age": "8",
+										"parentFirst": "Meg",
+										"parentLast": "Backus",
+										"parentEmail": "mbackus@gmail.com",
+										"address": "293 South Ivy Lane City: Glen Mills State: PA Zip: 37216",
+										"phone": "267-443-8860",
+										"emergancy contact": "610-459-0433",
+										"totalScore": 0
 									},
 									"student5": {
 										"task": "Pearl",
 										"uid": "iBnGP7NgXmZZer8vB7yR5QgW4nl1",
 										"classroomName": "Bears",
-										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+										"grade": "5th",
+										"age": "8",
+										"parentFirst": "Meg",
+										"parentLast": "Backus",
+										"parentEmail": "mbackus@gmail.com",
+										"address": "293 South Ivy Lane City: Glen Mills State: PA Zip: 37216",
+										"phone": "267-443-8860",
+										"emergancy contact": "610-459-0433",
+										"totalScore": 0
 									},
 									"student6": {
 										"task": "Helana",
 										"uid": "IBEbRKSe49XrWW15BrcOlpZgzFJ2",
 										"classroomName": "Pigs",
-										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+										"grade": "5th",
+										"age": "8",
+										"parentFirst": "Meg",
+										"parentLast": "Backus",
+										"parentEmail": "mbackus@gmail.com",
+										"address": "293 South Ivy Lane City: Glen Mills State: PA Zip: 37216",
+										"phone": "267-443-8860",
+										"emergancy contact": "610-459-0433",
+										"totalScore": 0
 									},
 									"student7": {
 										"task": "Brenden",
 										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
 										"classroomName": "Tigers",
-										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png"
+										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+										"grade": "5th",
+										"age": "8",
+										"parentFirst": "Meg",
+										"parentLast": "Backus",
+										"parentEmail": "mbackus@gmail.com",
+										"address": "293 South Ivy Lane City: Glen Mills State: PA Zip: 37216",
+										"phone": "267-443-8860",
+										"emergancy contact": "610-459-0433",
+										"totalScore": 0
 									}
 	},
 	"emotions": {
 									"emotion0": {
-										"rating": "1",
-										"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
-										"studentId": "student0"
+										"task": "10",
+										"emotionImage": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+										"studentId": "student0",
+										"emotionStatus": "Loves",
+										"emotionColor": "Red",
+										"activity": "math",
+										"assignedTo": "Student0",
+										"isCompleted": false
+
+
 									},
 									"emotion1": {
-										"rating": "2",
-										"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
-										"studentId": "student1"
+										"task": "15",
+										"emotionImage": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+										"studentId": "student1",
+										"emotionStatus": "Loves",
+										"emotionColor": "Red",
+										"activity": "math",
+										"assignedTo": "Student0",
+										"isCompleted": false
 									},
 									"emotion2": {
-										"rating": "3",
-										"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
-										"studentId": "student1"
+										"task": "20",
+										"emotionImage": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
+										"studentId": "student3",
+										"emotionStatus": "Loves",
+										"emotionColor": "Red",
+										"activity": "math",
+										"assignedTo": "Student0",
+										"isCompleted": false
 									}
 	},
 	"users": {
