@@ -51,17 +51,17 @@
 	},
 	"emotions": {
 									"emotion0": {
-										"value": "1",
+										"rating": "1",
 										"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
 										"studentId": "student0"
 									},
 									"emotion1": {
-										"value": "2",
+										"rating": "2",
 										"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
 										"studentId": "student1"
 									},
 									"emotion2": {
-										"value": "3",
+										"rating": "3",
 										"url": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
 										"studentId": "student1"
 									}

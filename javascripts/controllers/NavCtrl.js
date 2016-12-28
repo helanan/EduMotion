@@ -17,6 +17,10 @@ app.controller("NavCtrl", function($scope){
      {
         name:"Edit Students",
         url:"#/students/view/:id"
-   }
+   },
+   {
+      name:"Rating Emotions",
+      url:"#/ratings/new"
+}
   ];
 });
