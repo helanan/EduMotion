@@ -1,16 +1,8 @@
 "use strict";
 
-app.controller("EmoNewCtrl", function($scope, $rootScope, $location, EmoFactory){
-  	$scope.newValue = {};
+app.controller("EmotionNewCtrl", function($scope, $rootScope, $location, EmotionFactory){
+    $location.url("/emotions/new");
+    $scope.emotions = {};
 
-	$scope.addNewEmo = function(){
-	  $scope.newValue.isSelected = false;
-	  $scope.newValue.uid = $rootScope.student.uid;
-	  EmoFactory.postNewEmo($scope.newValue).then(function(emoId){
-	    $location.url("/emotions/list");
-	    $scope.newValue = {};
-	  });
-  	};
+let emotionId = $rootScope.emotionId;
 });
-
-console.log("EmoNewCtrl")
