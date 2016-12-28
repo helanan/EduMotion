@@ -2,23 +2,6 @@
 
 app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
 
-  var getStudentList = function(studentId){
-    return $q((resolve, reject) => {
-      $http.get(`${FIREBASE_CONFIG.databaseURL}/students.json?orderBy="uid"&equalTo="${studentId}"`)
-        .success(function(response){
-            let students = [];
-            Object.keys(response).forEach(function(key){
-              response[key].id = key;
-              items.push(response[key]);
-            });
-          resolve(items);
-        })
-        .error(function(errorResponse){
-          reject(errorResponse);
-        });
-    });
-  };
-
 	var postNewStudent = function(newStudent){
     	return $q((resolve, reject)=>{
     		$http.post(`${FIREBASE_CONFIG.databaseURL}/students.json`,
@@ -56,29 +39,29 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
 	});
 };
 
-  var deleteStudent = function(studentId){
-    return $q((resolve, reject) => {
-      $http.delete(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
-      .success(function(deleteResponse){
-        resolve(deleteResponse);
-      })
-      .error(function(deleteError){
-        reject(deleteError);
-      });
-    });
-  };
+var deleteStudent = function(studentId){
+	return $q((resolve, reject) => {
+		$http.delete(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
+		.success(function(deleteResponse){
+			resolve(deleteResponse);
+		})
+		.error(function(deleteError){
+			reject(deleteError);
+		});
+	});
+};
 
-  var getSingleStudent = function(studentId){
-    return $q((resolve, reject) => {
-      $http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
-      .success(function(getSingleResponse){
-        resolve(getSingleResponse);
-      })
-      .error(function(getSingleError){
-        reject(getSingleError);
-      });
-    });
-  };
+var getSingleStudent = function(studentId){
+	return $q((resolve, reject) => {
+		$http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
+		.success(function(getSingleResponse){
+			resolve(getSingleResponse);
+		})
+		.error(function(getSingleError){
+			reject(getSingleError);
+		});
+	});
+};
 
  var editStudent = function(editStudent){
 	return $q((resolve, reject) => {
@@ -98,6 +81,7 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	});
  };
+
 
  return {postNewStudent:postNewStudent, getStudentList:getStudentList, deleteStudent:deleteStudent, getSingleStudent:getSingleStudent, editStudent:editStudent};
 });

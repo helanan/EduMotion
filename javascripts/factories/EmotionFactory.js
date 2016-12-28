@@ -2,7 +2,6 @@
 
 app.factory("EmotionFactory", function($q, $http, FIREBASE_CONFIG){
 
-
 	var getEmotionList = function(emotionId){
 	 return $q((resolve, reject) => {
 	 	$http.get(`${FIREBASE_CONFIG.databaseURL}/emotions.json?orderBy="uid"&equalTo="${emotionId}"`)
@@ -24,10 +23,9 @@ app.factory("EmotionFactory", function($q, $http, FIREBASE_CONFIG){
 	return $q((resolve, reject)=>{
 		$http.post(`${FIREBASE_CONFIG.databaseURL}/emotions.json`,
 			JSON.stringify({
-				value: newEmo.value,
-				uid: newEmo.uid,
-				url: newEmo.url,
-				studentId: newEmo.studentId
+				value: postNewEmotion.value,
+				url: postNewEmotion.url,
+				studentId: postNewEmotion.student.id
 			})
 		)
 		.success(function(postResponse){
@@ -39,9 +37,9 @@ app.factory("EmotionFactory", function($q, $http, FIREBASE_CONFIG){
 	});
  };
 
-var deleteEmotion = function(emotionId){
+var deleteEmotion = function(studentId){
 	return $q((resolve, reject) => {
-		$http.delete(`${FIREBASE_CONFIG.databaseURL}/emotions/${emotionId}.json`)
+		$http.delete(`${FIREBASE_CONFIG.databaseURL}/emotions/${studentId}.json`)
 		.success(function(deleteResponse){
 			resolve(deleteResponse);
 		})
@@ -63,14 +61,13 @@ var getSingleEmotion = function(emotionId){
 	});
 };
 
- var editEmotions = function(editEmotion){
+ var editEmotion = function(editEmotion){
 	return $q((resolve, reject)=>{
-		$http.put(`${FIREBASE_CONFIG.databaseURL}/emotions/${editEmotion.id}.json`,
+		$http.put(`${FIREBASE_CONFIG.databaseURL}/emotions/${editEmotion}.json`,
 			JSON.stringify({
-				assignedTo: editEmotion.assignedTo,
-				isSelected: editEmotion.isSelected,
-				pins: editEmotion.student,
-				studentId: editEmotion.studentId
+				value: editEmotion.value,
+				url: editEmotion.url,
+				emotionId: editEmotion.emotionId
 			})
 		)
 		.success(function(editResponse){
@@ -81,6 +78,7 @@ var getSingleEmotion = function(emotionId){
 		});
 	});
  };
+
 
  return {getEmotionList:getEmotionList, postNewEmotion:postNewEmotion, deleteEmotion:deleteEmotion, getSingleEmotion:getSingleEmotion, editEmotion:editEmotion};
 });
