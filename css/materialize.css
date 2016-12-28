@@ -1,0 +1,25 @@
+
+/*    --------------------------------------------------
+	:: General
+	-------------------------------------------------- */
+body {
+	font-family: 'Poppins', sans-serif;
+	color: #353535;
+      background-image: url("EduMotionEdited.jpg");
+}
+
+#nav {
+     padding-left: 15px;
+}
+
+
+h1 {
+     padding-left: 41%;
+}
+
+@import "partials/auth.html";
+$color1: #343e3d;
+$color2: #607466;
+$color3: #aedcc0;
+$color4: #7bd389;
+$color5: #38e4ae;
