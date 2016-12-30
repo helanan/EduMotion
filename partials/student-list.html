@@ -1,9 +1,4 @@
-<div class="container">
-<div class="row">
-<h1 class="page-headers">Student List View</h1>
-<section class="content">
-
-    <div class="col-xs-8 col-xs-offset-2">
+<h1 class=" col s12 center-align">Student List View</h1>
          	<div class="panel panel-default">
                <div class="panel-body">
         <div class="input-group">
@@ -15,20 +10,24 @@
     </div>
 </div>
 
-<div ng-repeat="student in students | filter: {studentName:studentName} | filter: searchText">
-	<div class="panel panel-default">
-	    <div class="card-panel">
-               <div class="col-xs-1"><input type="checkbox" name="" ng-model="student.id" ng-change="inputChange(student)"></div>
-	        <div class="blue-text text-darken-2"><a class="orange-text text-darken-2" href="#/students/view/{{student.id}}">{{student.task}}</a></div>
-	        <div class="col-xs-1">Class: {{student.classroomName}}</div>
-             <div class="col-xs-1">Grade: {{student.gradeLevel}}</div>
-             <div class="col-xs-1">Emotion Score: {{student.totalScore}}</div>
-             <div class="col-xs-1">{{student.image}}</div>
+<ul class="collection hoverable" ng-repeat="student in students | filter: {studentName:studentName} | filter: searchText">
 
-	        <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deleteStudent(student.id)"></button></div>
-	    </div>
-	</div>
-</div>
-</div>
-</section>
-</div>
+          <li class="collection-item avatar">
+               <img class="circle responsive-img" src="{{student.image}}" alt=" ">
+             <span class="title grey-text text-darken-2"><a class="orange-text text-darken-2" href="#/students/view/{{student.id}}">{{student.task}}</a></span>
+             <div class="col s12">Team: {{student.classroomName}}<a href="#" class="secondary-content"></a></div>
+             <div class="col s12">Grade Level: {{student.gradeLevel}}<a href="#" class="secondary-content"></a></div>
+             <div class="col s12">Emotion Score: {{student.totalScore}}<a href="#!" class="secondary-content"><i class="material-icons">mood</i></a></div>
+</li>
+	        <div class=""><button class="btn btn-danger fa fa-trash-o secondary -content" ng-click="deleteStudent(student.id)"></button></div>
+</ul>
+
+<div class="fixed-action-btn horizontal">
+          <a class="btn-floating btn-large waves-effect waves-light red hoverable" ng-click="addNewStudent()" href="#/students/new"><i class="material-icons">add</i></a>
+          <ul>
+                <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+                <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+              </ul>
+     </div>
