@@ -1,6 +1,7 @@
-<h1>Student: {{selectedStudent.task}}</h1>
+<div class="col s12 m8 l9">
+<h1 class="center-align">Student: {{selectedStudent.task}}</h1>
 <button class="btn btn-info"><a ng-href="#/students/edit/{{selectedStudent.id}}">Edit</a></button>
-<h2>Student Info:</h2>
+<h2 class="center-align">Student Info:</h2>
      <p>Student Image: {{selectedStudent.studentImage}}</p>
      <p>Class: {{selectedStudent.classroomName}}</p>
      <p>Grade: {{selectedStudent.gradeLevel}}</p>
@@ -8,3 +9,4 @@
      <p>Parent First Name: {{selectedStudent.parentFirst}}</p>
      <p>Parent First Name: {{selectedStudent.parentLast}}</p>
      <p>Parent Email: {{selectedStudent.parentEmail}}</p>
+</div>
