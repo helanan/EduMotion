@@ -10,6 +10,14 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
 				uid: newStudent.uid,
     				classroomName: newStudent.classroomName,
 				image: newStudent.image,
+				grade: newStudent.grade,
+				parentFirst: newStudent.parentFirst,
+				parentLast: newStudent.parentLast,
+				parentEmail: newStudent.parentEmail,
+				address: newStudent.address,
+				phone: newStudent.phone,
+				emergancyContact: newStudent.emergancyContact,
+				totalScore: newStudent.totalScore
     			})
     		)
     		.success(function(postResponse){
@@ -71,6 +79,14 @@ var getSingleStudent = function(studentId){
 				uid: editStudent.uid,
 				classroomName: editStudent.classroomName,
 				image: editStudent.image,
+				grade: editStudent.grade,
+				parentFirst: editStudent.parentFirst,
+				parentLast: editStudent.parentLast,
+				parentEmail: editStudent.parentEmail,
+				address: editStudent.address,
+				phone: editStudent.phone,
+				emergancyContact: editStudent.emergancyContact,
+				totalScore: editStudent.totalScore
 			})
 		)
 		.success(function(editResponse){
