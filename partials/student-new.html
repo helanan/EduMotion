@@ -1,37 +1,31 @@
 <h3 class="center-align">New Students</h3>
-    <div class="form-group">
-        <label>Name:</label>
-        <input type="text" class="form-control" placeholder="Add Student Name" ng-model="newTask.task">
+    <div class="row">
+     <form class="col s12">
+           <div class="row">
+                 <div class="input-field col s6">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.task">
+                       <label for="name">Name:</label>
+                  </div>
+                <div class="input-field col s6">
+                     <i class="material-icons prefix">account_circle</i>
+                     <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.classroomName">
+                     <label for="Team Name">Team Name</label>
     </div>
-
-    <div class="form-group">
-        <label class="center-align">Class Name</label>
-        <input type="text" class="form-control" placeholder="Add Class Name" ng-model="newTask.classroomName">
+     <div class="input-field col s6">
+           <i class="material-icons prefix">account_circle</i>
+        <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.image">
+        <label for="Student Image">Student Image</label>
     </div>
-
-    <div class="form-group">
-        <label class="center-align">Student Image</label>
-        <input type="text" class="form-control" placeholder="Add Student Image" ng-model="newTask.image">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">phone</i>
+      <input id="icon_telephone" type="tel" class="validate">
+      <label for="icon_telephone">Telephone</label>
     </div>
+</div>
+</div>
+</form>
+</div>
 
     <button type="button" class="btn btn-primary btn-lg col3" ng-click="addNewStudent()">Add New Student</button>
     </div>
-
-<form ng-hide>
-
-       <div class="row">
-         <form class="col s12">
-           <div class="row">
-             <div class="input-field col s6">
-               <i class="material-icons prefix">account_circle</i>
-               <input id="icon_prefix" type="text" class="validate">
-               <label for="icon_prefix">First Name</label>
-             </div>
-             <div class="input-field col s6">
-               <i class="material-icons prefix">phone</i>
-               <input id="icon_telephone" type="tel" class="validate">
-               <label for="icon_telephone">Telephone</label>
-             </div>
-           </div>
-         </form>
-       </div>

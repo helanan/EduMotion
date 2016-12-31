@@ -9,17 +9,15 @@
   <div class="row">
       <form class="valign-wrapper col s12" ng-show="loginContainer">
            <div class="row">
-                <div class="input-field col s6">
-                     <input type="email" placeholder="Email Address" ng-model="login.email" required autofocus>
-                     <label for="emailAddress">Email Address</label>
+                <div class="input-field col s12">
+                     <input id="email" type="email" class="validate" ng-model="login.email">
+                     <label for="email" data-error="wrong" data-success="right">Email</label>
           </div>
-          <div class="input-field col s6">
-              <input type="password" placeholder="Password" ng-model="login.password" required>
-              <label for="Password">Password</label>
+          <div class="input-field col s12">
+              <input id="password" type="password" class="validate" ng-model="login.password">
+              <label for="password" data-error="wrong" data-success="right">Password</label>
           </div>
-          <div class="input-field col s6">
               <a class="btn btn-lg btn-success col s3" ng-click="loginUser(login)">Login</a>
-          </div>
      </div>
       </form>
 </div>
