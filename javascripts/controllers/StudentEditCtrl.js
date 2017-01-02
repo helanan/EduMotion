@@ -1,7 +1,10 @@
 "use strict";
 
 app.controller("StudentEditCtrl", function($scope, $location, $routeParams, StudentFactory){
+	$scope.title = "Edit Item";
+	$scope.submitButtonText = "Update"
 	$scope.newTask = {};
+	
 	let studentId = $routeParams.id;
 
 	StudentFactory.getSingleStudent(studentId).then(function(oneStudent){
