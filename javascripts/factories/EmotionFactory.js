@@ -49,7 +49,7 @@ app.factory("EmotionFactory", function($q, $http, FIREBASE_CONFIG){
 
   var deleteEmotion = function(emotionId){
     return $q((resolve, reject) => {
-      $http.delete(`${FIREBASE_CONFIG.databaseURL}/Emotions/${emotionId}.json`)
+      $http.delete(`${FIREBASE_CONFIG.databaseURL}/emotions/${emotionId}.json`)
       .success(function(deleteResponse){
         resolve(deleteResponse);
       })
