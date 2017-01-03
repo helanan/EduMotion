@@ -1,10 +1,10 @@
 "use strict";
 
-app.controller("EmoListCtrl", function($scope, $rootScope, EmoFactory){
+app.controller("EmotionListCtrl", function($scope, $rootScope, EmoFactory){
   $scope.emotions = [];
 
   let getEmotions= function(){
-  EmoFactory.getEmotionList($rootScope.student.studentId).then(function(fbEmotions){
+  EmoFactory.getEmotionList($rootScope.emotion.emotionId).then(function(fbEmotions){
       $scope.emotions = fbEmotions;
     });
   };

@@ -72,13 +72,22 @@ app.config(function($routeProvider) {
             }
         })
 
-        .when('/students/:studentId/emotions/new', {
+        .when('/emotions/new', {
             templateUrl: 'partials/emotion-new.html',
             controller: 'EmotionNewCtrl',
             resolve: {
                 isAuth
             }
         })
+
+        .when('/emotions/list', {
+            templateUrl: 'partials/emotion-list.html',
+            controller: 'EmotionListCtrl',
+            resolve: {
+               isAuth
+            }
+        })
+
         .when('/students/:studentId/emotions/:emotionId', {
             templateUrl: 'partials/emotion-view.html',
             controller: 'EmotionViewCtrl',

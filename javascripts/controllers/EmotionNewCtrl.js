@@ -5,9 +5,10 @@ app.controller("EmotionNewCtrl", function($scope, $rootScope, $location, Emotion
 
 	$scope.addNewEmotion = function(){
 	  $scope.newTask.isCompleted = false;
-	  $scope.newTask.uid = $rootScope.student.id;
+	  $scope.newTask.studentId = $rootScope.emotionId;
+
 	  EmotionFactory.postNewEmotion($scope.newTask).then(function(emotionId){
-	    $location.url("/emotions/list");
+	    $location.url("/emotions/list/");
 	    $scope.newTask = {};
 	  });
   	};
