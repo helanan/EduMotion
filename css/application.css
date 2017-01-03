@@ -50,6 +50,21 @@ a:visited {
 a:hover {
   color: rgba(255, 169, 73, 0.5); }
 
+.btn--default {
+  background-color: #52bab3; }
+
+.btn--success {
+  background-color: #5ece7f; }
+
+.btn--error {
+  background-color: #e67478; }
+
+.btn--warning {
+  background-color: #ff784f; }
+
+.btn--info {
+  background-color: #9279c3; }
+
 .main-header {
   padding-top: 170px;
   height: 850px;

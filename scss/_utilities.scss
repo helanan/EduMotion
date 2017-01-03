@@ -15,3 +15,9 @@
 }
 
 // Mixins
+@each $theme, $color in $ui-colors {
+     .btn--#{$theme} {
+          background-color: $color;
+     }
+
+}
