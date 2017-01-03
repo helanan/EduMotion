@@ -25,10 +25,6 @@ app.controller("NavCtrl", function($scope){
 {
    name:"All Emotions",
    url:"#/emotions/list"
-},
-{
-   name:"TeacherDashboard",
-   url:"#/users/list"
 }
   ];
 });

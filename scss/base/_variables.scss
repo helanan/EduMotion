@@ -6,11 +6,21 @@ $grey           : #878787;
 $regent-st-blue : #add8e6;
 $river-bed      : #48525c;
 $yellow-orange  : #ffa949;
+$fountain-blue  : #52bab3;
+$emerald        : #5ece7f;
+$sunglo         : #e67478;
+$coral          : #ff784f;
+$purple-majesty : #9279c3;
+$scooter        : #39add1;
 
 // Functional color variables
 
 $color-prim         : $yellow-orange;
 $color-sec          : $river-bed;
+$color-prim2   : $fountain-blue;
+$color-sec2 : $scooter;
+$color-accent    : $emerald;
+$color-shadow    : rgba($black, .2);
 
 $color-text-light   : $white;
 $color-text-base    : $grey;
@@ -25,11 +35,25 @@ $color-link-visited : $regent-st-blue;
 $color-shadow       : rgba($black,.8);
 $color-body         : $white;
 
+
+
 // Font stacks
 
 $stack-sans-serif : Helvetica, Arial, sans-serif;
 $stack-helvetica  : 'Helvetica Neue', $stack-sans-serif;
 $stack-abolition  : 'Abolition Regular', $stack-sans-serif;
+$font-url--google : 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900';
+$font-family--primary: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family--secondary  : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Font Weights
+
+$font-weight--thin       : 100;
+$font-weight--light      : 300;
+$font-weight--medium     : 400;
+$font-weight--bold       : 700;
+$font-weight--ultra-bold : 900;
+
 
 // Border radius
 
@@ -44,3 +68,13 @@ $path-font : '../fonts';
 
 $brk-narrow : '(max-width: 768px)';
 $brk-wide   : '(max-width: 1024px)';
+
+//UI Colors
+
+$ui-colors: (
+     default : $fountain-blue,
+     success : $emerald,
+     error : $sunglo,
+     warning : $coral,
+     info : $purple-majesty
+);
