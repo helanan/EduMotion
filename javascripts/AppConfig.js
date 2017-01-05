@@ -50,21 +50,13 @@ app.config(function($routeProvider) {
             }
         })
 
-        .when('/students/list/:studentId', {
-            templateUrl: 'partials/student-list.html',
-            controller: 'StudentListCtrl',
-            resolve: {
-                isAuth
-            }
-        })
-
-        .when('/students/view/:id',{
+        .when('/students/:studentId/view',{
 			templateUrl: 'partials/student-view.html',
 			controller:'StudentViewCtrl',
 			resolve: {isAuth}
 		})
 
-        .when('/students/edit/:Id', {
+        .when('/students/:studentId/edit', {
             templateUrl: 'partials/student-new.html',
             controller: 'StudentEditCtrl',
             resolve: {
@@ -79,18 +71,9 @@ app.config(function($routeProvider) {
                 isAuth
             }
         })
-
-        .when('/emotions/list', {
+        .when('/students/:studentId/emotions/list', {
             templateUrl: 'partials/emotion-list.html',
             controller: 'EmotionListCtrl',
-            resolve: {
-               isAuth
-            }
-        })
-
-        .when('/students/:studentId/emotions/:emotionId', {
-            templateUrl: 'partials/emotion-view.html',
-            controller: 'EmotionViewCtrl',
             resolve: {
                 isAuth
             }

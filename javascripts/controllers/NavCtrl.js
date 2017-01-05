@@ -14,17 +14,5 @@ app.controller("NavCtrl", function($scope){
   		name:"All Students",
   		url:"#/students/list"
   	},
-     {
-        name:"Edit Students",
-        url:"#/students/view/:id"
-   },
-   {
-      name:"New Emotion",
-      url:"#/emotions/new"
-},
-{
-   name:"All Emotions",
-   url:"#/emotions/list"
-}
   ];
 });
