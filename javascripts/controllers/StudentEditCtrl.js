@@ -4,8 +4,8 @@ app.controller("StudentEditCtrl", function($scope, $location, $routeParams, Stud
 	$scope.title = "Edit Item";
 	$scope.submitButtonText = "Update"
 	$scope.newTask = {};
-	
-	let studentId = $routeParams.id;
+
+	let studentId = $routeParams.studentId;
 
 	StudentFactory.getSingleStudent(studentId).then(function(oneStudent){
 		oneStudent.id = studentId;

@@ -14,10 +14,10 @@
 
           <li class="collection-item avatar">
                <img class="circle responsive-img" src="{{student.image}}" alt=" ">
-             <span class="title grey-text text-darken-2"><a class="orange-text text-darken-2" href="#/students/view/{{student.id}}">{{student.task}}</a></span>
-             <div class="col s12">Team: {{student.classroomName}}<a href="#" class="secondary-content"></a></div>
-             <div class="col s12">Grade Level: {{student.gradeLevel}}<a href="#" class="secondary-content"></a></div>
-             <div class="col s12">Emotion Score: {{student.totalScore}}<a href="#!" class="secondary-content"><i class="material-icons">mood</i></a></div>
+             <span class="title grey-text text-darken-2"><a class="orange-text text-darken-2" href="#/students/{{student.id}}/view">{{student.task}}</a></span>
+             <div class="col s12">Team: {{student.classroomName}}<a href="" class="secondary-content"></a></div>
+             <div class="col s12">Grade Level: {{student.gradeLevel}}<a href="" class="secondary-content"></a></div>
+             <div class="col s12">Emotion Score: {{student.totalScore}}<a href="#/students/{{student.id}}/emotions/new" class="secondary-content"><i class="material-icons">mood</i></a></div>
 </li>
 	        <div class=""><button class="btn btn-danger fa fa-trash-o secondary -content" ng-click="deleteStudent(student.id)"></button></div>
 </ul>
