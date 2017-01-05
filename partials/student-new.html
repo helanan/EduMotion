@@ -4,24 +4,57 @@
            <div class="row">
                  <div class="input-field col s6">
                       <i class="material-icons prefix">account_circle</i>
-                      <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.task">
-                       <label for="name">Name:</label>
+                      <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.uid">
+                       <label for="Name">Student Name:</label>
                   </div>
                 <div class="input-field col s6">
-                     <i class="material-icons prefix">account_circle</i>
-                     <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.classroomName">
-                     <label for="Team Name">Team Name</label>
+                     <i class="material-icons prefix">class_name</i>
+                     <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.newclassroomName">
+                     <label for="Class Name">Class Name</label>
     </div>
      <div class="input-field col s6">
-           <i class="material-icons prefix">account_circle</i>
-        <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.image">
+           <i class="material-icons prefix">insert_photo</i>
+        <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.newImage">
         <label for="Student Image">Student Image</label>
     </div>
-    <div class="input-field col s6">
-      <i class="material-icons prefix">phone</i>
-      <input id="icon_telephone" type="tel" class="validate">
-      <label for="icon_telephone">Telephone</label>
+  <div class="input-field col s6">
+      <i class="material-icons prefix">filter_1</i>
+      <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.newGrade">
+      <label for="grade">Grade Level</label>
+ </div>
+
+<div class="input-field col s6">
+       <i class="material-icons prefix">person</i>
+       <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.newParentFirst">
+       <label for="Parent First Name">Parent First Name:</label>
+</div>
+
+<div class="input-field col s6">
+     <i class="material-icons prefix">person_outline</i>
+     <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.newParentLast">
+      <label for="Telephone">Parent Last Name:</label>
+</div>
+
+<div class="input-field col s6">
+       <i class="material-icons prefix">email</i>
+       <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.newParentEmail">
+       <label for="icon_telephone">Parent Email:</label>
     </div>
+    <div class="input-field col s6">
+           <i class="material-icons prefix">location_city</i>
+           <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.newAddress">
+           <label for="icon_telephone">Student Address:</label>
+        </div>
+            <div class="input-field col s6">
+                  <i class="material-icons prefix">flag</i>
+                  <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.newEmergancyContact">
+                  <label for="icon_telephone">Emergency Contact</label>
+               </div>
+               <div class="input-field col s6">
+                      <i class="material-icons prefix">child_care</i>
+                      <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newTask.newTotalScore">
+                      <label for="icon_telephone">Emotion Score</label>
+                   </div>
 </div>
 </div>
 </form>
