@@ -1,12 +1,44 @@
 <h3>New Emotion</h3>
     <div class="form-group">
         <label>Emotion Name:</label>
-        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.emotionName">
-    </div>
-
-    <div class="form-group">
-        <label>Class Name</label>
         <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.emotionId">
     </div>
 
+    <div class="form-group">
+        <label>Upload Custom Image:</label>
+        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.image">
+    </div>
+
+    <div class="form-group">
+        <label>Assign To:</label>
+        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.assignedTo">
+    </div>
+
+
+    <div class="form-group">
+        <label>Activity Completed:</label>
+        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.task">
+    </div>
+
+    <div class="form-group">
+        <label>Score:</label>
+        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.score">
+    </div>
+
     <button type="button" class="btn btn-primary btn-lg col-xs-2" ng-click="addNewEmotion()">Add New Emotion</button>
+
+<!--
+    <body ng-app="emotionListApp">
+      <h1 ng-click="helloWorld()">My Emotions</h1>
+        <emotions></emotions>
+     -->
+
+<!-- 
+    isCompleted: newEmotion.isCompleted,
+
+    studentId: newEmotion.studentId,
+    status: newEmotion.emotionStatus,
+    color: newEmotion.emotionColor,
+    activityLoved: newEmotion.activityLoved,
+    activityHates: newEmotion.activityHates,
+    totalScore: newEmotion.totalScore -->

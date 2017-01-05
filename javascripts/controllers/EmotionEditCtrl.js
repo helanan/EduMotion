@@ -22,6 +22,6 @@ app.controller("EmotionEditCtrl", function($scope, $location, $routeParams, Emot
     });
   };
   $scope.newEmotions = {};
-  $location.url("/students/emotions/list");
+  $location.url("/users/emotions/list");
 
 });
