@@ -64,7 +64,7 @@ app.config(function($routeProvider) {
             }
         })
 
-        .when('/emotions/new', {
+        .when('/students/:studentId/emotions/new', {
             templateUrl: 'partials/emotion-new.html',
             controller: 'EmotionNewCtrl',
             resolve: {
