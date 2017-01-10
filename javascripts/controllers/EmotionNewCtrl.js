@@ -1,15 +1,15 @@
 "use strict";
 
 app.controller("EmotionNewCtrl", function($scope, $rootScope, $location, EmotionFactory){
-  	$scope.newTask = {};
+  	$scope.newFullName = {};
 
 	$scope.addNewEmotion = function(){
-	  $scope.newTask.isCompleted = false;
-	  $scope.newTask.studentId = $rootScope.emotionId;
+	  $scope.newFullName.isCompleted = false;
+	  $scope.newFullName.studentId = $rootScope.emotionId;
 
-	  EmotionFactory.postNewEmotion($scope.newTask).then(function(emotionId){
+	  EmotionFactory.postNewEmotion($scope.newFullName).then(function(emotionId){
 	    $location.url("/emotions/list/");
-	    $scope.newTask = {};
+	    $scope.newFullName = {};
 	  });
   	};
 });

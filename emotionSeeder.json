@@ -1,7 +1,7 @@
 {
 	"students": {
 									"student0": {
-										"task": "Bob",
+										"fullName": "Bob",
 										"uid": "iBnGP7NgXmZZer8vB7yR5QgW4nl1",
 										"classroomName": "Bears",
 										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
@@ -16,7 +16,7 @@
 										"totalScore": 0
 									},
 									"student1": {
-										"task": "James",
+										"fullName": "James",
 										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
 										"classroomName": "Pigs",
 										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
@@ -31,7 +31,7 @@
 										"totalScore": 0
 									},
 									"student2": {
-										"task": "Jenny",
+										"fullName": "Jenny",
 										"uid": "IiBnGP7NgXmZZer8vB7yR5QgW4nl1",
 										"classroomName": "Bears",
 										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
@@ -46,7 +46,7 @@
 										"totalScore": 0
 									},
 									"student3": {
-										"task": "Craig",
+										"fullName": "Craig",
 										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
 										"classroomName": "Pigs",
 										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
@@ -61,7 +61,7 @@
 										"totalScore": 0
 									},
 									"student4": {
-										"task": "Zoe",
+										"fullName": "Zoe",
 										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
 										"classroomName": "Tigers",
 										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
@@ -76,7 +76,7 @@
 										"totalScore": 0
 									},
 									"student5": {
-										"task": "Pearl",
+										"fullName": "Pearl",
 										"uid": "iBnGP7NgXmZZer8vB7yR5QgW4nl1",
 										"classroomName": "Bears",
 										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
@@ -91,7 +91,7 @@
 										"totalScore": 0
 									},
 									"student6": {
-										"task": "Helana",
+										"fullName": "Helana",
 										"uid": "IBEbRKSe49XrWW15BrcOlpZgzFJ2",
 										"classroomName": "Pigs",
 										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
@@ -106,7 +106,7 @@
 										"totalScore": 0
 									},
 									"student7": {
-										"task": "Brenden",
+										"fullName": "Brenden",
 										"uid": "bUgEzH9hxaXcgUUSRRUVcxkm7wE2",
 										"classroomName": "Tigers",
 										"image": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
@@ -123,7 +123,7 @@
 	},
 	"emotions": {
 									"emotion0": {
-										"task": "10",
+										"fullName": "10",
 										"emotionImage": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
 										"studentId": "student0",
 										"emotionStatus": "Loves",
@@ -135,7 +135,7 @@
 
 									},
 									"emotion1": {
-										"task": "15",
+										"fullName": "15",
 										"emotionImage": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
 										"studentId": "student1",
 										"emotionStatus": "Loves",
@@ -145,7 +145,7 @@
 										"isCompleted": false
 									},
 									"emotion2": {
-										"task": "20",
+										"fullName": "20",
 										"emotionImage": "http://res.cloudinary.com/emma/image/upload/v1477765162/TODO_p4izbh.png",
 										"studentId": "student3",
 										"emotionStatus": "Loves",

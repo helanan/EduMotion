@@ -6,7 +6,7 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
     	return $q((resolve, reject)=>{
     		$http.post(`${FIREBASE_CONFIG.databaseURL}/students.json`,
     			JSON.stringify({
-				task: newStudent.task,
+				fullName: newStudent.fullName,
 				uid: newStudent.uid,
     				classroomName: newStudent.classroomName,
 				image: newStudent.image,
@@ -16,7 +16,7 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
 				parentEmail: newStudent.parentEmail,
 				address: newStudent.address,
 				phone: newStudent.phone,
-				emergancyContact: newStudent.emergancyContact,
+				emergancyContact: newStudent.emergencyContact,
 				totalScore: newStudent.totalScore
     			})
     		)
@@ -75,7 +75,7 @@ var getSingleStudent = function(studentId){
 	return $q((resolve, reject) => {
 		$http.put(`${FIREBASE_CONFIG.databaseURL}/students/${editStudent.id}.json`,
 			JSON.stringify({
-				task: editStudent.task,
+				fullName: editStudent.fullName,
 				uid: editStudent.uid,
 				classroomName: editStudent.classroomName,
 				image: editStudent.image,

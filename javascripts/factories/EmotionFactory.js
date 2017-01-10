@@ -6,7 +6,7 @@ app.factory("EmotionFactory", function($q, $http, FIREBASE_CONFIG){
        return $q((resolve, reject) =>{
     	$http.post(`${FIREBASE_CONFIG.databaseURL}/emotions.json`,
     	   JSON.stringify({
-		  task: newEmotion.task,
+		  fullName: newEmotion.fullName,
     		 assignedTo: newEmotion.assignedTo,
     		 isCompleted: newEmotion.isCompleted,
     		 emotionImage: newEmotion.image,
@@ -75,7 +75,7 @@ app.factory("EmotionFactory", function($q, $http, FIREBASE_CONFIG){
     return $q((resolve, reject) =>{
       $http.put(`${FIREBASE_CONFIG.databaseURL}/emotions/${editEmotion.id}.json`,
          JSON.stringify({
-				task: editEmotion.task,
+				fullName: editEmotion.fullName,
 		  		assignedTo: editEmotion.assignedTo,
 		  		isCompleted: editEmotion.isCompleted,
 		  		emotionImage: editEmotion.image,

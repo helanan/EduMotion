@@ -10,11 +10,11 @@
     </div>
 </div>
 
-<ul class="collection hoverable" ng-repeat="emotion in emotions | filter: {emotionTask:emotionTask} | filter: searchText">
+<ul class="collection hoverable" ng-repeat="emotion in emotions | filter: {emotionFullName:emotionFullName} | filter: searchText">
 
           <li class="collection-item avatar">
                <img class="circle responsive-img" src="{{emotion.image}}" alt=" ">
-             <span class="title grey-text text-darken-2"><a class="orange-text text-darken-2" href="#/emotions/view/{{emotion.id}}">{{emotion.task}}</a></span>
+             <span class="title grey-text text-darken-2"><a class="orange-text text-darken-2" href="#/emotions/view/{{emotion.id}}">{{emotion.FullName}}</a></span>
              <div class="col s12">Assigned To: {{emotion.assignedTo}}<a href="#" class="secondary-content"></a></div>
              <div class="col s12">Grade Level: {{emotion.activityLoved}}<a href="#" class="secondary-content"></a></div>
              <div class="col s12">Emotion Score: {{emotion.score}}<a href="#!" class="secondary-content"><i class="material-icons">mood</i></a></div>

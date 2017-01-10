@@ -1,9 +1,9 @@
-.tips {
+.column {
   @extend %columns;
   float: left;
 }
 
-.resorts {
+.two {
   @extend %columns;
   float: right;
 }
