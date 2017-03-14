@@ -20,29 +20,30 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
 				totalScore: newStudent.totalScore
     			})
     		)
-    		.success(function(postResponse){
+    		.then(function(postResponse){
     		 resolve(postResponse);
     		})
-    		.error(function(postError){
+    		.then(function(postError){
     			reject(postError);
     		});
     	});
   };
 
 	var getStudentList = function(userId){
+		let students = [];
+		console.log("students created", students);
 	 return $q((resolve, reject) => {
 	 	$http.get(`${FIREBASE_CONFIG.databaseURL}/students.json?orderBy="uid"&equalTo="${userId}"`)
-	 	.success(function(response){
-			let students = [];
-			Object.keys(response).forEach(function(key){
-			 			response[key].id = key;
-			 			students.push(response[key]);
+	 	.then((studentObject) => {
+			let studentCollection = studentObject.data;
+			Object.keys(studentCollection).forEach((key) => {
+			 			studentCollection[key].id = key;
+			 			students.push(studentCollection[key]);
 			});
 	 	  resolve(students);
 	 	})
-
-	 	.error(function(errorResponse){
-	 	  reject(errorResponse);
+		.catch((error) => {
+	 	  reject(error);
 	 	});
 	});
 };
@@ -50,10 +51,11 @@ app.factory("StudentFactory", function($q, $http, FIREBASE_CONFIG){
 var deleteStudent = function(studentId){
 	return $q((resolve, reject) => {
 		$http.delete(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
-		.success(function(deleteResponse){
+		.then(function(deleteResponse){
+			//double check may need to ass splice
 			resolve(deleteResponse);
 		})
-		.error(function(deleteError){
+		.then(function(deleteError){
 			reject(deleteError);
 		});
 	});
@@ -62,10 +64,10 @@ var deleteStudent = function(studentId){
 var getSingleStudent = function(studentId){
 	return $q((resolve, reject) => {
 		$http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
-		.success(function(getSingleResponse){
+		.then(function(getSingleResponse){
 			resolve(getSingleResponse);
 		})
-		.error(function(getSingleError){
+		.then((getSingleError) => {
 			reject(getSingleError);
 		});
 	});
@@ -89,10 +91,10 @@ var getSingleStudent = function(studentId){
 				totalScore: editStudent.totalScore
 			})
 		)
-		.success(function(editResponse){
+		.then(function(editResponse){
 		 resolve(editResponse);
 	 })
-		.error(function(editError){
+		.then(function(editError){
 			reject(editError);
 		});
 	});

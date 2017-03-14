@@ -18,7 +18,7 @@ app.controller("StudentListCtrl", function($scope, $rootScope, StudentFactory){
     };
 
     $scope.inputChange = function(studentId){
-      StudentFactory.editStudent(thingy).then(function(response){
+      StudentFactory.editStudent(studentId).then(function(response){
         getStudents();
       });
     };

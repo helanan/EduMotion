@@ -9,10 +9,10 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG){
 				username: authData.username
 				})
 			)
-			.success(function(storeUserSuccess){
+			.then(function(storeUserSuccess){
 				resolve(storeUserSuccess);
 			})
-			.error(function(storeUserError){
+			.then(function(storeUserError){
 				reject(storeUserError);
 
 			});
@@ -22,22 +22,32 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG){
 	};
 
 
-	let getUser = (userId) =>{
+	let getUser = (userId) => {
 		return $q((resolve, reject) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/users.json?orderBy="uid"&equalTo="${userId}"`)
-				.success(function(userObject){
+				.then(function(userObject) {
+					console.log('resolved', userObject); // "resolved, 10"
 					let users = [];
+					console.log("Users created :", users);
 					Object.keys(userObject).forEach(function(key){
 						users.push(userObject[key]);
 					});
 					resolve(users[0]);
 				})
-				.error(function(error){
+
+				.then(function(error){
 					reject(error);
 				});
 			});
 
 		};
+
+		let provider = new firebase.auth.GoogleAuthProvider();
+
+let authWithProvider= function(){
+		return firebase.auth().signInWithPopup(provider);
+	};
+
 	return {addUser:addUser, getUser:getUser};
 
 });

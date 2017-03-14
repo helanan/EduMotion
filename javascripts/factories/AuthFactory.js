@@ -1,10 +1,12 @@
 "use strict";
 
 app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
+
   let currentUserData = null;
 
 //Firebase: Determine if user is authenticated.
   let isAuthenticated = () => {
+      console.log("AuthFactory: isAuthenticated");
       return firebase.auth().currentUser ? true : false;
   };
 
@@ -22,11 +24,15 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
   let authenticate = (credentials) => {
     return $q((resolve, reject) => {
       firebase.auth().signInWithEmailAndPassword(credentials.email, credentials.password)
-        .then((authData) =>{
+        .then((authData) => {
           resolve(authData);
         })
-        .catch((error)=>{
+        .catch( error => {
           reject(error);
+          console.lerror( 'onRejected function called: ', error);
+        })
+        .then( () => {
+          console.log("I am always called even if the prior then promise rejects");
         });
     });
   };

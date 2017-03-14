@@ -1,20 +1,5 @@
+/*===========================
+index page
+============================*/
 
-/*    --------------------------------------------------
-	:: General
-	-------------------------------------------------- */
-body {
-	font-family: 'Poppins', sans-serif;
-	color: #353535;
-      background-image: url("EduMotionEdited.jpg");
-}
-
-#nav {
-     padding-left: 15px;
-}
-
-
-h1 {
-     padding-left: 41%;
-}
-
-@import "partials/auth.html";
+/*# sourceMappingURL=materialize.css.map */

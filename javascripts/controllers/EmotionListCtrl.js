@@ -11,16 +11,16 @@ app.controller("EmotionListCtrl", function($scope, $rootScope, EmoFactory){
 
   getEmotions();
 
-  $scope.deleteEmotion = function(emotionId){
-    EmotionFactory.deleteEmotion(emotionId).then(function(response){
-      getEmotions();
-    });
-  };
+  // $scope.deleteEmotion = function(emotionId){
+  //   EmotionFactory.deleteEmotion(emotionId).then(function(response){
+  //     getEmotions();
+  //   });
+  // };
 
   $scope.inputChange = function(thingy){
     EmoFactory.editEmotion(thingy).then(function(response){
       getEmotions();
-    })
+    });
   };
 
 });
