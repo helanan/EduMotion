@@ -2,6 +2,8 @@
 
 app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
 
+console.log("AuthFactory loaded first");
+
   let currentUserData = null;
 
 //Firebase: Determine if user is authenticated.
@@ -29,10 +31,9 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
         })
         .catch( error => {
           reject(error);
-          console.lerror( 'onRejected function called: ', error);
+          console.error( 'rejected function called: ', error);
         })
         .then( () => {
-          console.log("I am always called even if the prior then promise rejects");
         });
     });
   };
@@ -40,11 +41,11 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
 //Firebase: Register a new user with email and password
   let registerWithEmail = (user) => {
     return $q((resolve, reject) => {
-      firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
+      firebase.auth().createUserWithEmailAndPassword(user.email, user.password, user.displayName)
         .then((authData) =>{
           resolve(authData);
         })
-        .catch((error)=>{
+        .catch((error) => {
           reject(error);
         });
     });
@@ -64,7 +65,5 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
     });
   };
 
-  return {isAuthenticated:isAuthenticated, getUser:getUser, logout:logout, registerWithEmail:registerWithEmail, authenticate:authenticate, authenticateGoogle: authenticateGoogle};
+  return {isAuthenticated, getUser, logout, registerWithEmail, authenticate, authenticateGoogle};
 });
-
-console.log("AuthFactory loaded");

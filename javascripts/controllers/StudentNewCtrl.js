@@ -2,8 +2,10 @@
 
 app.controller("StudentNewCtrl", function($scope, $rootScope, $location, StudentFactory, AuthFactory){
 
-let user = AuthFactory.getUser();
+console.log("Controller: Student New Controller Loaded");
 
+let user = AuthFactory.getUser();
+console.log("User: ", "Email: " + user.email, "uid: " + user.uid, "Display Name: " + user.displayName, "Email Verified: " + user.emailVerified);
 //binding to Student New Partial
 $scope.title = "Add A New Student";
 $scope.btnText = "Submit";
@@ -21,59 +23,19 @@ $scope.newStudentObject = {
 		totalScore: "0",
 		uid: user
 	};
-	console.log("new full name", $scope.newStudentObject);
-
-
-
-console.log("students obj loaded");
-	// $scope.newClassroomName = {};
-	// $scope.newImage = {};
-	// $scope.newGrade = {};
-	// $scope.newParentFirst = {};
-	// $scope.newParentLast = {};
-	// $scope.newParentEmail = {};
-	// $scope.newAddress = {};
-	// $scope.newPhone = {};
-	// $scope.newEmergancyContact = {};
-	// $scope.newTotalScore = {};
-
-
-
-		// $scope.newFullName.classroomName = $rootScope.classroomName;
-		// $scope.newFullName.image = $rootScope.image;
-		// $scope.newFullName.grade = $rootScope.grade;
-		// $scope.newFullName.parentFirst = $rootScope.parentFirst;
-		// $scope.newFullName.parentLast = $rootScope.parentLast;
-		// $scope.newFullName.parentEmail = $rootScope.parentEmail;
-		// $scope.newFullName.newAddress = $rootScope.address;
-		// $scope.newFullName.newPhone = $rootScope.phone;
-		// $scope.newFullName.emergencyContact = $rootScope.emergencyContact;
-		// $scope.newFullName.totalScore= $rootScope.totalScore;
+	console.log("newStudentObj called: A New Student Object has now been created with empty properties", $scope.newStudentObject);
 
 $scope.addNewStudent = function() {
-	console.log("add new student");
+	console.log("Lets call the function to add a new student");
 
-		StudentFactory.postNewStudent($scope.newFullName)
+		StudentFactory.postNewStudent($scope.newStudentObject)
 		.then(function(response) {
 		 $location.url("/students/list/");
+		 console.log("Lets post a new student to /students/list");
 	 });
-	 $scope.newFullName = {};
+	console.log("New Student Added with the newStudentObject: ", $scope.newStudentObject);
+	 $scope.newStudentObject = {};
+
+	 console.log("cleared the scoped data!", $scope.newStudentObject);
  };
-
  });
-// 		$scope.newFullName = {};
-// 		$scope.newClassroomName = {};
-// 		$scope.newImage = {};
-// 		$scope.newGrade = {};
-// 		$scope.newParentFirst = {};
-// 		$scope.newParentLast = {};
-// 		$scope.newParentEmail = {};
-// 		$scope.newAddress = {};
-// 		$scope.newPhone = {};
-// 		$scope.newEmergancyContact = {};
-// 		$scope.newTotalScore = {};
-// 		});
-// 	};
-// });
-
-console.log("StudentNewCtrl Loaded");

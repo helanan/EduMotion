@@ -1,5 +1,7 @@
 "use strict";
+
 app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG){
+console.log("Factory: User Factory Loaded");
 
 	let addUser = (authData) => {
 		return $q((resolve, reject) => {
@@ -11,45 +13,50 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG){
 			)
 			.then(function(storeUserSuccess){
 				resolve(storeUserSuccess);
+				console.log("User Has Been Stored Successfully!", storeUserSuccess);
 			})
 			.then(function(storeUserError){
 				reject(storeUserError);
-
+				console.log("User Has NOT been stored", storeUserError);
 			});
-
 		});
-
 	};
 
 
 	let getUser = (userId) => {
+		console.log("Get User By Thier userId: ", userId);
 		return $q((resolve, reject) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/users.json?orderBy="uid"&equalTo="${userId}"`)
 				.then(function(userObject) {
-					console.log('resolved', userObject); // "resolved, 10"
 					let users = [];
-					console.log("Users created :", users);
+					console.log("User Array Initiaized :", users);
 					Object.keys(userObject).forEach(function(key){
 						users.push(userObject[key]);
+						console.log("add a user object key on to each firebase key");
 					});
 					resolve(users[0]);
+					//resolved and added the users at their index
 				})
 
-				.then(function(error){
+				.catch(function(error){
 					reject(error);
 				});
 			});
-
 		};
 
+//This function handles google sign in
+//TODO: make sure its linked to google button in partial
 		let provider = new firebase.auth.GoogleAuthProvider();
+		// console.log("provider: ", provider);
 
-let authWithProvider= function(){
-		return firebase.auth().signInWithPopup(provider);
-	};
+		let authWithProvider = function(){
+			console.log("log in with google", authWithProvider);
+				return firebase.auth().signInWithPopup(provider);
 
-	return {addUser:addUser, getUser:getUser};
+			};
+
+	return {addUser, getUser, authWithProvider};
 
 });
 
-console.log("UserFactoryLoaded");
+console.log("User Factory Loaded Third");
