@@ -15,7 +15,6 @@ console.log("Factory: Student Factory Loaded");
 			Object.keys(studentCollection).forEach((key) => {
 						studentCollection[key].id = key;
 						students.push(studentCollection[key]);
-						console.log("userrr", user);
 			});
 			resolve(students);
 			console.log("students", students);
@@ -65,6 +64,9 @@ console.log("Factory: Student Factory Loaded");
 	};
 
  var updateStudent = (studentId, editedStudent) => {
+	 console.log("studentId", studentId);
+	 console.log("editedStudent", editedStudent);
+	 console.log(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`);
 	return $q(function(resolve, reject){
 		$http.patch(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`,
 			angular.toJson(editedStudent))

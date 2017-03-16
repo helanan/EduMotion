@@ -10,4 +10,3 @@ app.controller("StudentViewCtrl", function($scope, $routeParams, AuthFactory, St
 		$scope.selectedStudent = oneStudent;
 	});
 });
-console.log("Student View Control Loaded Fifth");
