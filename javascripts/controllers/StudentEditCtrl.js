@@ -3,9 +3,8 @@
 
 app.controller("StudentEditCtrl", function($scope, $location, $routeParams, StudentFactory){
 
-
-//scope the new student object to an empty object
-//TODO: is this correct? wouldnt it clear values?
+	$scope.title = "Edit Student";
+	$scope.btnText = "Update";
 	$scope.newStudentObject = {};
 
 
@@ -13,14 +12,17 @@ app.controller("StudentEditCtrl", function($scope, $location, $routeParams, Stud
 	let studentId = $routeParams.studentId;
 
 
-	StudentFactory.getSingleStudent(studentId).then(function(oneStudent){
-		oneStudent.id = studentId;
-		$scope.newStudentObject = oneStudent;
+	StudentFactory.getSingleStudent(studentId)
+	.then(function successCallback(response){
+		console.log("getSingleItemresponse", response);
+		$scope.newStudentObject = response;
 	});
 
 	$scope.addNewStudent = function(){
-		StudentFactory.editStudent($scope.newFullName).then(function(response){
-			$scope.newStudentObject = {};
+		StudentFactory.updateStudent($routeParams.studentId, $scope.newStudentObject)
+		.then(function successCallback(response){
+			console.log(response);
+			// $scope.newStudentObject = {};
 			$location.url("/students/list");
 		});
 	};

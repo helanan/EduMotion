@@ -9,11 +9,9 @@ app.controller("StudentListCtrl", function($scope, $rootScope, StudentFactory, A
   let user = AuthFactory.getUser();
 
 
-
-
-
   StudentFactory.getStudentList(user)
   .then(function(studentCollection){
+    console.log("studentCollection", studentCollection);
     $scope.students = studentCollection;
   });
 

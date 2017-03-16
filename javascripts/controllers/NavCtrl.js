@@ -4,18 +4,24 @@ app.controller("NavCtrl", function($scope){
 
 
   $scope.navStudents = [
-  	{
-  		name:"Logout",
-		  url:"#/logout"
+
+    {
+  		name:"My Students",
+  		url:"#!/students/list"
   	},
      {
   		name:"New Student",
-		  url:"#/students/new"
-	},
-  	{
-  		name:"All Students",
-  		url:"#/students/list"
-  	},
+		  url:"#!/students/new"
+	   },
+     {
+  		name:"My Students Emotions",
+		  url:"#!/students/:studentId/emotions/new"
+	   },
+    {
+      name:"Logout",
+      url:"#!/logout"
+    },
+
   ];
 });
 

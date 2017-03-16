@@ -3,7 +3,7 @@
                <div class="panel-body">
         <div class="input-group">
             <span class="input-group-btn">
-                <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+                <button type="button" class="btn btn-default"> <i class="small material-icons">search</i></button>
             </span>
             <input type="text" class="form-control" placeholder="Search for ..." ng-model="searchText">
         </div>
@@ -13,13 +13,13 @@
 <ul class="collection hoverable" ng-repeat="student in students | filter: {studentName:studentName} | filter: searchText">
 
           <li class="collection-item avatar">
-               <img class="circle responsive-img" src="{{studentId.img}}" alt=" ">
-             <span class="title grey-text text-darken-2"><a class="orange-text text-darken-2" href="#/students/{{student.id}}/view">{{studentId.fullName}}</a></span>
-             <div class="col s12">Team: {{studentId.classroomName}}<a href="" class="secondary-content"></a></div>
-             <div class="col s12">Grade Level: {{studentId.gradeLevel}}<a href="" class="secondary-content"></a></div>
-             <div class="col s12">Emotion Score: {{studentId.totalScore}}<a href="#/students/{{student.id}}/emotions/new" class="secondary-content"><i class="material-icons">mood</i></a></div>
+               <img class="circle responsive-img" src="{{student.image}}" alt=" ">
+             <span class="title grey-text text-darken-2"><a class="orange-text text-darken-2" ng-href="#!/students/{{student.id}}/view">{{student.fullName}}</a></span>
+             <div class="col s12">Team: {{student.classroomName}}<a href="" class="secondary-content"></a></div>
+             <div class="col s12">Grade Level: {{student.gradeLevel}}<a href="" class="secondary-content"></a></div>
+             <div class="col s12">Emotion Score: {{student.totalScore}}<a href="#/students/{{student.id}}/emotions/new" class="secondary-content"><i class="material-icons">mood</i></a></div><br><br>
 </li>
-	        <div class=""><button class="btn btn-danger fa fa-trash-o secondary -content" ng-click="deleteStudent(student.id)"></button></div>
+	        <div class=""><button class="btn btn-default" ng-click="deleteStudent(student.id)"><i class="small material-icons">delete</i></button></div>
 </ul>
 
 <div class="fixed-action-btn horizontal">

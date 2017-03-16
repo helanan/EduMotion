@@ -11,10 +11,11 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
   };
 console.log("Login Email & Password: ", $scope.login);
 //if the location path is logout call logout, clear the user creds and take the user back to the auth screen
-    if ($location.path() === "#/logout") {
+    if ($location.path() === "#!/logout") {
         AuthFactory.logout();
+        console.log("User Logged Out");
         $rootScope.user = {};
-        $location.url("#/auth");
+        $location.url("#!/auth");
     }
 
 //variable logMeIn: creates a function called "loginStuff", authenticates the loginStuff, then create a promise of "didLogin"
@@ -28,7 +29,6 @@ console.log("Login Email & Password: ", $scope.login);
     			$scope.login = {};
     			$scope.register = {};
     			$location.url("/students/new");
-          console.log("redirected to /students/new");
     		});
     	};
 

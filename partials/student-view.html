@@ -1,7 +1,6 @@
 <div class="col s12 m8 l9">
-<h1 class="center-align">Student: {{selectedStudent.fullName}}</h1>
-<button class="btn btn-info"><a ng-href="#/students/{{selectedStudent.id}}/edit">Edit</a></button>
-<h2 class="center-align">Student Info:</h2>
+<h1 class="center-align">{{selectedStudent.fullName}}</h1>
+<h4 class="center-align">Student Details</h2>
      <p>Student Image: {{selectedStudent.studentImage}}</p>
      <p>Class: {{selectedStudent.classroomName}}</p>
      <p>Grade: {{selectedStudent.gradeLevel}}</p>
@@ -9,8 +8,9 @@
      <p>Parent First Name: {{selectedStudent.parentFirst}}</p>
      <p>Parent Last Name: {{selectedStudent.parentLast}}</p>
      <p>Parent Email: {{selectedStudent.parentEmail}}</p>
-     <p>Emergancy Contact: {{selectedStudent.emergancyContact}}</p>
+     <p>Emergency Contact: {{selectedStudent.emergencyContact}}</p>
      <p>Student Address: {{selectedStudent.address}}</p>
      <p>Student Phone: {{selectedStudent.phone}}</p>
-     <p>Student Emotion Total Score: {{selectedStudent.totalScore}}
+     <p>Student Emotion Total Score: {{selectedStudent.totalScore}}</br><br>
+<button class="btn btn-info"><a ng-href="#!/students/{{selectedStudent.id}}/edit"><i class="small material-icons">mode_edit</i>Edit Student</a></button>
 </div>
