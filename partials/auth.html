@@ -1,47 +1,57 @@
 <div class="primary-content">
-<div><img src="img/EduMotion2.jpg" alt="EduMotion Logo"</div>
-
-
-     <div class="row">
-      <button class="btn btn-info col s2" ng-click="setLoginContainer()">Login</button>
-      <button class="btn btn-success col s2" ng-click="setRegisterContainer()">Register</button>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container" id="sub-container">
+      <br><br>
+      <h1 class="header center orange-text" id="home-page-title">EduMotion</h1>
+      <div class="row center">
+        <h5 class="header col s12 light" id="home-page-sub-title">Accelerating Students through Emotional Intelligence</h5>
+      </div>
+      <br><br>
+    </div>
   </div>
+    <div><img src="img/EduMotion2.jpg" alt="EduMotion Logo" </div>
 
-  <div class="row">
-      <form class="valign-wrapper col s12" ng-show="loginContainer">
-           <div class="row">
-                <div class="input-field col s12">
-                     <input id="email" type="email" class="validate" ng-model="login.email">
-                     <label for="email" data-error="wrong" data-success="right">Email</label>
-          </div>
-          <div class="input-field col s12">
-              <input id="password" type="password" class="validate" ng-model="login.password">
-              <label for="password" data-error="wrong" data-success="right">Password</label>
-          </div>
-              <a class="btn btn-lg btn-success col s3" ng-click="loginUser(login)">Login</a>
-     </div>
-      </form>
-</div>
 
- <div class="row">
-      <form class="valign-wrapper col s12" ng-show="registerContainer">
-          <div class="row">
-               <div class="input-field col s6">
-              <input type="email" placeholder="Email address" ng-model="register.email" required autofocus>
-               <label for="emailAddress">Email Address</label>
-          </div>
-          <div class="input-field col s6">
-              <input type="password" placeholder="Password" ng-model="register.password" required>
-              <label for="Password">Password</label>
-          </div>
-          <div class="input-field col s6">
-              <input type="text" placeholder="Username" ng-model="register.username" required>
-               <label for="Username">Username</label>
-          </div>
-          <div class="input-field col s6">
-              <a class="btn btn-lg btn-success col s6" ng-click="registerUser(register)">Submit Registration</a>
-          </div>
-     </div>
- </form>
-</div>
-</div>
+        <div class="row">
+            <button class="btn btn-info col s2" ng-click="setLoginContainer()">Login</button><br><br>
+            <button class="btn btn-success col s2" ng-click="setRegisterContainer()">Register</button>
+        </div>
+
+        <div class="row">
+            <form class="valign-wrapper col s12" ng-show="loginContainer">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="email" type="email" class="validate" ng-model="login.email">
+                        <label for="email" data-error="wrong" data-success="right">Email: </label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="password" type="password" class="validate" ng-model="login.password">
+                        <label for="password" data-error="wrong" data-success="right">Password: </label>
+                    </div>
+                    <a class="btn btn-lg btn-success col s3" ng-click="loginUser(login)">Login</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <form class="valign-wrapper col s12" ng-show="registerContainer">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="email" placeholder="Email address" ng-model="register.email" required autofocus>
+                        <label for="emailAddress">Email Address</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="password" placeholder="Password" ng-model="register.password" required>
+                        <label for="Password">Password</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" placeholder="Username" ng-model="register.username" required>
+                        <label for="Username">Username</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <a class="btn btn-lg btn-success col s6" ng-click="registerUser(register)">Register</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

@@ -1,46 +1,35 @@
 "use strict";
 
-app.controller("StudentNewCtrl", function($scope, $rootScope, $location, StudentFactory){
-	$scope.newFullName = {};
-	// $scope.newClassroomName = {};
-	// $scope.newImage = {};
-	// $scope.newGrade = {};
-	// $scope.newParentFirst = {};
-	// $scope.newParentLast = {};
-	// $scope.newParentEmail = {};
-	// $scope.newAddress = {};
-	// $scope.newPhone = {};
-	// $scope.newEmergancyContact = {};
-	// $scope.newTotalScore = {};
+app.controller("StudentNewCtrl", function($scope, $rootScope, $location, StudentFactory, AuthFactory){
 
-	$scope.addNewStudent = function(){
-		$scope.newFullName.fullName = $rootScope.studentId;
-		$scope.newFullName.classroomName = $rootScope.classroomName;
-		$scope.newFullName.image = $rootScope.image;
-		$scope.newFullName.grade = $rootScope.grade;
-		$scope.newFullName.parentFirst = $rootScope.parentFirst;
-		$scope.newFullName.parentLast = $rootScope.parentLast;
-		$scope.newFullName.parentEmail = $rootScope.parentEmail;
-		$scope.newFullName.newAddress = $rootScope.address;
-		$scope.newFullName.newPhone = $rootScope.phone;
-		$scope.newFullName.emergencyContact = $rootScope.emergencyContact;
-		$scope.newFullName.totalScore= $rootScope.totalScore;
+console.log("Controller: Student New Controller Loaded");
 
-		StudentFactory.postNewStudent($scope.newFullName).then(function(studentId){
-		 $location.url("/students/list/");
-		$scope.newFullName = {};
-		$scope.newClassroomName = {};
-		$scope.newImage = {};
-		$scope.newGrade = {};
-		$scope.newParentFirst = {};
-		$scope.newParentLast = {};
-		$scope.newParentEmail = {};
-		$scope.newAddress = {};
-		$scope.newPhone = {};
-		$scope.newEmergancyContact = {};
-		$scope.newTotalScore = {};
-		});
+let user = AuthFactory.getUser();
+console.log("authfact", AuthFactory.getUser());
+//binding to Student New Partial
+$scope.title = "Add A New Student";
+$scope.btnText = "Submit";
+
+$scope.newStudentObject = {
+		fullName: "",
+		classroomName: "",
+		image: "",
+		gradeLevel: "",
+		parentFirst: "",
+		parentLast: "",
+		parentEmail: "",
+		address: "",
+		emergencyNumber: "",
+		totalScore: "0",
+		uid: user.uid
 	};
-});
 
-console.log("StudentNewCtrl Loaded");
+$scope.addNewStudent = function() {
+
+		StudentFactory.postNewStudent($scope.newStudentObject)
+		.then(function(response) {
+		 $location.url("/students/list/");
+	 });
+	 $scope.newStudentObject = {};
+ };
+ });

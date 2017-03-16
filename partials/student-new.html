@@ -1,58 +1,58 @@
-<h3 id="new-student-header" class="center-align">New Students</h3>
+<h3 id="new-student-header" class="center-align">{{title}}</h3>
     <div class="row">
      <form class="col s12">
            <div class="row">
                  <div class="input-field col s6">
                       <i class="material-icons prefix">account_circle</i>
-                      <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="fullName">
+                      <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.fullName">
                        <label for="Name">Student Name:</label>
                   </div>
                 <div class="input-field col s6">
                      <i class="material-icons prefix">class_name</i>
-                     <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="classroomName">
+                     <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.classroomName">
                      <label for="Class Name">Class Name</label>
     </div>
      <div class="input-field col s6">
            <i class="material-icons prefix">insert_photo</i>
-        <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="image">
+        <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.image">
         <label for="Student Image">Student Image</label>
     </div>
   <div class="input-field col s6">
       <i class="material-icons prefix">filter_1</i>
-      <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="grade">
+      <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.gradeLevel">
       <label for="grade">Grade Level</label>
  </div>
 
 <div class="input-field col s6">
        <i class="material-icons prefix">person</i>
-       <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="parentFirst">
+       <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.parentFirst">
        <label for="Parent First Name">Parent First Name:</label>
 </div>
 
 <div class="input-field col s6">
      <i class="material-icons prefix">person_outline</i>
-     <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="parentLast">
+     <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.parentLast">
       <label for="Telephone">Parent Last Name:</label>
 </div>
 
 <div class="input-field col s6">
        <i class="material-icons prefix">email</i>
-       <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="parentEmail">
+       <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.parentEmail">
        <label for="icon_telephone">Parent Email:</label>
     </div>
     <div class="input-field col s6">
            <i class="material-icons prefix">location_city</i>
-           <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="address">
+           <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.address">
            <label for="icon_telephone">Student Address:</label>
         </div>
             <div class="input-field col s6">
                   <i class="material-icons prefix">flag</i>
-                  <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="emergencyContact">
+                  <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.emergencyNumber">
                   <label for="icon_telephone">Emergency Contact</label>
                </div>
                <div class="input-field col s6">
                       <i class="material-icons prefix">child_care</i>
-                      <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="totalScore">
+                      <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.totalScore">
                       <label for="icon_telephone">Emotion Score</label>
                    </div>
 </div>
@@ -60,5 +60,5 @@
 </form>
 </div>
 
-    <button type="button" class="btn btn-primary btn-lg col3" ng-click="addNewStudent()">Add New Student</button>
+    <button type="button" class="btn btn-primary btn-lg col3" ng-click="addNewStudent()">{{btnText}}</button>
     </div>

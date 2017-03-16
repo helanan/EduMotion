@@ -1,5 +1,4 @@
-<div class="col s12 m4 l3">
-<nav class="navbar navbar-default" ng-controller="NavCtrl">
+<nav class="navbar navbar-default  light-blue darken-4" ng-controller="NavCtrl">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -9,9 +8,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right" ng-repeat="thingy in navStudents" ng-show="user">
-        <li><a href="{{thingy.url}}">{{thingy.name}}</a></li>
+        <li id="header-links" class="orange lighten-4"><a id="header-links" href="{{thingy.url}}">{{thingy.name}}</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div>

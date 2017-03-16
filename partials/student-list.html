@@ -13,7 +13,7 @@
 <ul class="collection hoverable" ng-repeat="student in students | filter: {studentName:studentName} | filter: searchText">
 
           <li class="collection-item avatar">
-               <img class="circle responsive-img" src="{{studentId.image}}" alt=" ">
+               <img class="circle responsive-img" src="{{studentId.img}}" alt=" ">
              <span class="title grey-text text-darken-2"><a class="orange-text text-darken-2" href="#/students/{{student.id}}/view">{{studentId.fullName}}</a></span>
              <div class="col s12">Team: {{studentId.classroomName}}<a href="" class="secondary-content"></a></div>
              <div class="col s12">Grade Level: {{studentId.gradeLevel}}<a href="" class="secondary-content"></a></div>

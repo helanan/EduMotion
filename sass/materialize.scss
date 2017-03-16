@@ -1,6 +1,32 @@
 /*===========================
 index page
 ============================*/
+
+.container {
+
+}
+
+#index-banner {
+
+}
+
+#sub-container {
+
+}
+
+#home-page-title {
+
+}
+
+#home-page-sub-title {
+
+}
+
+footer {
+
+}
+
+//ng-hide
 div {
   transition: all linear 0.5s;
   background-color: lightblue;
@@ -8,13 +34,13 @@ div {
   width: 100%;
   position: relative;
   top: 0;
-  left: 0; }
+  left: 0;
+}
 
 .ng-hide {
   height: 0;
   width: 0;
   background-color: transparent;
-  top: -200px;
-  left: 200px; }
-
-/*# sourceMappingURL=materialize.css.map */
+  top:-200px;
+  left: 200px;
+}

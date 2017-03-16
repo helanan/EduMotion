@@ -1,11 +1,26 @@
 "use strict";
 
-app.controller("StudentListCtrl", function($scope, $rootScope, StudentFactory){
-          $scope.students= [];
+app.controller("StudentListCtrl", function($scope, $rootScope, StudentFactory, AuthFactory){
 
-          let getStudents = function(){
-          StudentFactory.getStudentList($rootScope.user.uid).then(function(fbStudents){
+
+//set students scope to an empty array
+  // $scope.students= [];
+  // $scope.searchText = SearchTermData;
+  let user = AuthFactory.getUser();
+
+
+
+
+
+  StudentFactory.getStudentList(user)
+  .then(function(studentCollection){
+    $scope.students = studentCollection;
+  });
+
+    let getStudents = function(){
+        StudentFactory.getStudentList(user).then(function(fbStudents){
             $scope.students = fbStudents;
+            console.log("fb Students", fbStudents);
           });
         };
 
@@ -18,7 +33,7 @@ app.controller("StudentListCtrl", function($scope, $rootScope, StudentFactory){
     };
 
     $scope.inputChange = function(studentId){
-      StudentFactory.editStudent(thingy).then(function(response){
+      StudentFactory.editStudent(studentId).then(function(response){
         getStudents();
       });
     };

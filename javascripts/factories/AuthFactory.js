@@ -1,6 +1,7 @@
 "use strict";
 
 app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
+
   let currentUserData = null;
 
 //Firebase: Determine if user is authenticated.
@@ -22,11 +23,14 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
   let authenticate = (credentials) => {
     return $q((resolve, reject) => {
       firebase.auth().signInWithEmailAndPassword(credentials.email, credentials.password)
-        .then((authData) =>{
+        .then((authData) => {
           resolve(authData);
         })
-        .catch((error)=>{
+        .catch( error => {
           reject(error);
+          console.error( 'rejected function called: ', error);
+        })
+        .then( () => {
         });
     });
   };
@@ -38,7 +42,7 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
         .then((authData) =>{
           resolve(authData);
         })
-        .catch((error)=>{
+        .catch((error) => {
           reject(error);
         });
     });
@@ -58,7 +62,5 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
     });
   };
 
-  return {isAuthenticated:isAuthenticated, getUser:getUser, logout:logout, registerWithEmail:registerWithEmail, authenticate:authenticate, authenticateGoogle: authenticateGoogle};
+  return {isAuthenticated, getUser, logout, registerWithEmail, authenticate, authenticateGoogle};
 });
-
-console.log("AuthFactory loaded");

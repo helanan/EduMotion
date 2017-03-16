@@ -1,4 +1,5 @@
 "use strict";
+
 app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG){
 
 	let addUser = (authData) => {
@@ -9,37 +10,43 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG){
 				username: authData.username
 				})
 			)
-			.success(function(storeUserSuccess){
+			.then(function(storeUserSuccess){
 				resolve(storeUserSuccess);
 			})
-			.error(function(storeUserError){
+			.then(function(storeUserError){
 				reject(storeUserError);
-
 			});
-
 		});
-
 	};
 
 
-	let getUser = (userId) =>{
+	let getUser = (userId) => {
 		return $q((resolve, reject) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/users.json?orderBy="uid"&equalTo="${userId}"`)
-				.success(function(userObject){
+				.then(function(userObject) {
 					let users = [];
 					Object.keys(userObject).forEach(function(key){
 						users.push(userObject[key]);
 					});
 					resolve(users[0]);
+					//resolved and added the users at their index
 				})
-				.error(function(error){
+
+				.catch(function(error){
 					reject(error);
 				});
 			});
-
 		};
-	return {addUser:addUser, getUser:getUser};
+
+//This function handles google sign in
+//TODO: make sure its linked to google button in partial
+		let provider = new firebase.auth.GoogleAuthProvider();
+		// console.log("provider: ", provider);
+		let authWithProvider = function(){
+				return firebase.auth().signInWithPopup(provider);
+
+			};
+
+	return {addUser, getUser, authWithProvider};
 
 });
-
-console.log("UserFactoryLoaded");

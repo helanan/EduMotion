@@ -24,8 +24,62 @@
         <label>Score:</label>
         <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.score">
     </div>
+    <h1 id="title">Log My Emotions</h1>
+
+      <button ng-click="showSubject()" >Start Logging!</button><br>
+
+    <div ng-show="viewSubj">
+      <h3>Subject I Completed: </h3>
+
+      <button id="math" ng-click=""> Math </button><br>
+
+      <button id="english" ng-click=""> English </button><br>
+
+      <button id="history" ng-click=""> History </button><br>
+
+      <button id="science" ng-click=""> Science </button><br>
+
+      <button id="gym" ng-click=""> Gym </button><br>
+      <button id="Art" ng-click=""> Art </button><br>
+      <button id="Study Hall" ng-click=""> Study Hall </button><br>
+      <button id="Lunch" ng-click=""> Lunch </button><br>
+      </div>
+
+
+     <button ng-click="showEmotions()">Log My Emotions</button><br>
+      <div ng-show="viewEmo">
+      <h3>{{activity}} Made Me Feel :</h3><br>
+    <button id="happy" ng-click="count = count + 0; emotionsLogged()"> Happy!</button><br>
+
+    <button id="ready-to-learn" ng-click"count = count + 1; emotionsLogged()"> Ready To Learn! </button><br>
+
+    <button id="excited" ng-click="count = count + 2; emotionsLogged()"> Excited! </button><br>
+
+    <button id="focused" ng-click="count = count + 3; emotionsLogged()"> Focused </button><br>
+
+    <button id="calm" ng-click="count = count + 4; emotionsLogged()"> Calm</button><br>
+
+    <button id="okay" ng-click="count = count + 5; emotionsLogged()"> Okay </button><br>
+
+    <button id="bored" ng-click="count = count + 6; emotionsLogged()"> Bored </button><br>
+
+    <button id="worried" ng-click="count = count + 7; emotionsLogged()"> Worried</button><br>
+
+    <button id="frustrated" ng-click="count = count + 8; emotionsLogged()"> FRUSTRATED</button><br>
+
+    <button id="angry" ng-click="count = count + 9; emotionsLogged()"> ANGRY </button><br>
+
+    <button id="out-of-control" ng-click="count = count + 10; emotionsLogged()"> OUT OF CONTROL</button><br>
+
+    <p>Emotions Total For Today: {{ count }}</p>
+    <p>Total Emotions Logged Today: {{ counter }}</p>
+
+    </div>
+
+
 
     <button type="button" class="btn btn-primary btn-lg col-xs-2" ng-click="addNewEmotion()">Add New Emotion</button>
+
 
 <!--
     <body ng-app="emotionListApp">
