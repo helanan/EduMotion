@@ -2,13 +2,10 @@
 
 app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
 
-console.log("AuthFactory loaded first");
-
   let currentUserData = null;
 
 //Firebase: Determine if user is authenticated.
   let isAuthenticated = () => {
-      console.log("AuthFactory: isAuthenticated");
       return firebase.auth().currentUser ? true : false;
   };
 
@@ -41,7 +38,7 @@ console.log("AuthFactory loaded first");
 //Firebase: Register a new user with email and password
   let registerWithEmail = (user) => {
     return $q((resolve, reject) => {
-      firebase.auth().createUserWithEmailAndPassword(user.email, user.password, user.displayName)
+      firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
         .then((authData) =>{
           resolve(authData);
         })

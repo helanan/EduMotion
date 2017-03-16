@@ -5,7 +5,7 @@ app.controller("StudentNewCtrl", function($scope, $rootScope, $location, Student
 console.log("Controller: Student New Controller Loaded");
 
 let user = AuthFactory.getUser();
-console.log("User: ", "Email: " + user.email, "uid: " + user.uid, "Display Name: " + user.displayName, "Email Verified: " + user.emailVerified);
+console.log("authfact", AuthFactory.getUser());
 //binding to Student New Partial
 $scope.title = "Add A New Student";
 $scope.btnText = "Submit";
@@ -21,21 +21,15 @@ $scope.newStudentObject = {
 		address: "",
 		emergencyNumber: "",
 		totalScore: "0",
-		uid: user
+		uid: user.uid
 	};
-	console.log("newStudentObj called: A New Student Object has now been created with empty properties", $scope.newStudentObject);
 
 $scope.addNewStudent = function() {
-	console.log("Lets call the function to add a new student");
 
 		StudentFactory.postNewStudent($scope.newStudentObject)
 		.then(function(response) {
 		 $location.url("/students/list/");
-		 console.log("Lets post a new student to /students/list");
 	 });
-	console.log("New Student Added with the newStudentObject: ", $scope.newStudentObject);
 	 $scope.newStudentObject = {};
-
-	 console.log("cleared the scoped data!", $scope.newStudentObject);
  };
  });

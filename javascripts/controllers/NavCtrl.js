@@ -1,7 +1,7 @@
 "use strict";
 
 app.controller("NavCtrl", function($scope){
-console.log("Navigation Bar Control Loaded");
+
 
   $scope.navStudents = [
   	{
@@ -19,4 +19,4 @@ console.log("Navigation Bar Control Loaded");
   ];
 });
 
-//TODO: make sure all url links match Routes 
+//TODO: make sure all url links match Routes

@@ -1,7 +1,6 @@
 "use strict";
 
 app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, UserFactory) {
-console.log("Controller: Authentication Controller Loaded");
 
   $scope.loginContainer = true;
   console.log("Login Container ON");
@@ -22,16 +21,10 @@ console.log("Login Email & Password: ", $scope.login);
     let logMeIn = function(loginStuff){
     		AuthFactory.authenticate(loginStuff)
         .then(function(didLogin){
-
-    			console.log("didLogin called:", didLogin, "Logged in with email", didLogin.email, "Logged in with provider data: ", didLogin.providerData[0], "Logged in by uid", didLogin.uid );
-
           //return getUser from the user factory by the users uid
     			return UserFactory.getUser(didLogin.uid);
     		}).then(function(userCreds){
-
-          console.log("userCreds", userCreds);
     			$rootScope.user = userCreds;
-          console.log("User Creds:", userCreds, "UID=", userCreds.uid, "Username=", userCreds.username);
     			$scope.login = {};
     			$scope.register = {};
     			$location.url("/students/new");
@@ -72,7 +65,6 @@ console.log("Login Email & Password: ", $scope.login);
     	    	var user = result.user.uid;
     	    	//Once logged in, go to another view
     	    	$location.path("/students/list");
-            console.log("Take me to /students/list");
     	    	$scope.$apply();
     	  	}).catch(function(error) {
     	    	// Handle the Errors.
