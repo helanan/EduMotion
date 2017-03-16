@@ -14,7 +14,7 @@ app.controller("NavCtrl", function($scope){
 		  url:"#!/students/new"
 	   },
      {
-  		name:"My Students Emotions",
+  		name:"Emotion Logger",
 		  url:"#!/students/:studentId/emotions/new"
 	   },
     {
