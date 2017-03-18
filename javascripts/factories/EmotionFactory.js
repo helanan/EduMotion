@@ -1,101 +1,97 @@
 "use strict";
 
-app.factory("EmotionFactory", function($q, $http, FIREBASE_CONFIG){
+app.factory("EmotionFactory", ($q, $http, FIREBASE_CONFIG) => {
+console.log("Factory: Emotion Factory Loaded");
 
-	var postNewEmotion = function(newEmotion){
-       return $q((resolve, reject) =>{
-    	$http.post(`${FIREBASE_CONFIG.databaseURL}/emotions.json`,
-    	   JSON.stringify({
-		  fullName: newEmotion.fullName,
-    		 assignedTo: newEmotion.assignedTo,
-    		 isCompleted: newEmotion.isCompleted,
-    		 emotionImage: newEmotion.image,
-    		 studentId: newEmotion.studentId,
-		 status: newEmotion.emotionStatus,
-		 color: newEmotion.emotionColor,
-		 activityLoved: newEmotion.activityLoved,
-		 activityHates: newEmotion.activityHates,
-		 score: newEmotion.score,
-		 totalScore: newEmotion.totalScore
-    	   })
-    	 )
-    	  .success(function(postResponse){
-    	    resolve(postResponse);
-    	  })
-    	  .error(function(postError){
-    	    reject(postError);
-    	  });
-       });
-     };
-
-
-  var getEmotionList = function(emotionId){
+	let getEmotionList = (user) => {
+		//or studentId?
+		console.log("getEmotionList", getEmotionList);
+		let emotions = [];
+		console.log("Emotion Array Created", emotions);
     return $q((resolve, reject) => {
-      $http.get(`${FIREBASE_CONFIG.databaseURL}/emotions.json?orderBy="studentId"&equalTo="${emotionId}"`)
-        .success(function(response){
-            let emotions = [];
-            Object.keys(response).forEach(function(key){
-              response[key].id = key;
-              emotions.push(response[key]);
+      $http.get(`${FIREBASE_CONFIG.databaseURL}/emotions.json?orderBy="uid"&equalTo="${user.uid}"`)
+        .then((emotionObject) => {
+					let emotionCollection = emotionObject.data;
+					console.log("Emotion Object Data ", emotionObject.data);
+            Object.keys(emotionCollection).forEach((key) => {
+              emotionCollection[key].id = key;
+              emotions.push(emotionCollection[key]);
             });
           resolve(emotions);
         })
-        .error(function(errorResponse){
-          reject(errorResponse);
+        .catch((error) => {
+          reject(error);
         });
     });
   };
 
+	let postNewEmotion = (newEmotion) => {
+       return $q((resolve, reject) => {
+    	$http.post(`${FIREBASE_CONFIG.databaseURL}/emotions.json`,
+    	   JSON.stringify(newEmotion))
+				 .then((ObjectFromFirebase) => {
+					 resolve(ObjectFromFirebase);
+				 })
+				 .catch((error) => {
+					 reject(error);
+				 });
+			 });
+		 };
 
-  var deleteEmotion = function(emotionId){
+  var deleteEmotion = (emotionId) => {
+		console.log("Delete in factory", emotionId);
     return $q((resolve, reject) => {
       $http.delete(`${FIREBASE_CONFIG.databaseURL}/emotions/${emotionId}.json`)
-      .success(function(deleteResponse){
-        resolve(deleteResponse);
+      .then((ObjectFromFirebase) => {
+        resolve(ObjectFromFirebase);
       })
-      .error(function(deleteError){
-        reject(deleteError);
+      .catch((error) => {
+        reject(error);
       });
     });
   };
 
-  var getSingleEmotion = function(emotionId){
-    return $q((resolve, reject) => {
+  let getSingleEmotion = (emotionId) => {
+		console.log("emotionId", emotionId);
+    return $q(function(resolve, reject) {
       $http.get(`${FIREBASE_CONFIG.databaseURL}/emotions/${emotionId}.json`)
-      .success(function(getSingleResponse){
-        resolve(getSingleResponse);
+      .then(function(emotionObject){
+        resolve(emotionObject.data);
       })
-      .error(function(getSingleError){
-        reject(getSingleError);
+      .error(function(error){
+        reject(error);
       });
     });
   };
 
-  var editEmotion = function(editEmotion){
-    return $q((resolve, reject) =>{
-      $http.put(`${FIREBASE_CONFIG.databaseURL}/emotions/${editEmotion.id}.json`,
-         JSON.stringify({
-				fullName: editEmotion.fullName,
-		  		assignedTo: editEmotion.assignedTo,
-		  		isCompleted: editEmotion.isCompleted,
-		  		emotionImage: editEmotion.image,
-		  		studentId: editEmotion.studentId,
-				status: editEmotion.emotionStatus,
-				color: editEmotion.emotionColor,
-				activityLoved: editEmotion.activityLoved,
-				activityHates: editEmotion.activityHates,
-				score: editEmotion.score,
-				totalScore: editEmotion.totalScore
-         })
-       )
-        .success(function(editResponse){
-          resolve(editResponse);
-        })
-        .error(function(editError){
-          reject(editError);
-        });
-    });
-  };
+  let updateEmotion = (emotionId, editedEmotion) => {
+    return $q(function(resolve, reject){
+      $http.patch(`${FIREBASE_CONFIG.databaseURL}/emotions/${emotionId}.json`,
+				angular.toJson(editedEmotion))
+					.then(function(ObjectFromFirebase){
+						resolve(ObjectFromFirebase);
+					})
+					.catch(function(error){
+						reject(error);
+					});
+				});
+			};
 
-  return {getEmotionList:getEmotionList, postNewEmotion:postNewEmotion, deleteEmotion:deleteEmotion, getSingleEmotion:getSingleEmotion, editEmotion:editEmotion};
+			//    JSON.stringify({
+			// 	fullName: editEmotion.fullName,
+		  // 		assignedTo: editEmotion.assignedTo,
+		  // 		isCompleted: editEmotion.isCompleted,
+		  // 		emotionImage: editEmotion.image,
+		  // 		studentId: editEmotion.studentId,
+			// 	status: editEmotion.emotionStatus,
+			// 	color: editEmotion.emotionColor,
+			// 	activityLoved: editEmotion.activityLoved,
+			// 	activityHates: editEmotion.activityHates,
+			// 	score: editEmotion.score,
+			// 	totalScore: editEmotion.totalScore
+      //    })
+      //  )
+
+
+  return {getEmotionList, postNewEmotion, deleteEmotion, getSingleEmotion, updateEmotion};
 });

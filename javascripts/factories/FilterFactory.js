@@ -1,6 +1,6 @@
 "use strict";
 
-app.factory('SearchTermData', function(){
+app.factory('FilterFactory', function(){
 return {
   search: ""
 };

@@ -16,8 +16,10 @@
   "dependencies": {
     "angular": "^1.6.2",
     "angular-route": "^1.6.2",
+    "angular-ui-calendar": "^1.0.2",
     "bootstrap": "^3.3.7",
     "firebase": "^3.7.0",
+    "fullcalendar": "^3.2.0",
     "install": "^0.8.7",
     "jQuery": "^1.7.4",
     "jquery": "^3.1.1",

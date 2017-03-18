@@ -64,9 +64,6 @@ console.log("Factory: Student Factory Loaded");
 	};
 
  var updateStudent = (studentId, editedStudent) => {
-	 console.log("studentId", studentId);
-	 console.log("editedStudent", editedStudent);
-	 console.log(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`);
 	return $q(function(resolve, reject){
 		$http.patch(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`,
 			angular.toJson(editedStudent))

@@ -17,6 +17,10 @@ app.controller("NavCtrl", function($scope){
   		name:"Emotion Logger",
 		  url:"#!/students/:studentId/emotions/new"
 	   },
+     {
+  		name:"My Students Emotions",
+		  url:"#!/students/:studentId/emotions/list"
+	   },
     {
       name:"Logout",
       url:"#!/logout"
