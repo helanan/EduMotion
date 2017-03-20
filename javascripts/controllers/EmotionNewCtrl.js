@@ -1,51 +1,66 @@
 "use strict";
 
-app.controller("EmotionNewCtrl", function($scope, $rootScope, $location, EmotionFactory){
+app.controller("EmotionNewCtrl", function($scope, $rootScope, $location, EmotionFactory, AuthFactory){
 console.log("New Emotion Control Loaded");
+
+let user = AuthFactory.getUser();
+console.log("user", user);
 
 //scoped newEmotion set to an empty object
 //TODO: make sure newEmotion is scoped correctly to partial
-  $scope.newEmotionObject = {};
-
+  // let student = ;
+  // console.log("studentId: ", student);
+  // $scope.newEmotion = {};
+  // console.log("Empty Emotion Object Created", $scope.newEmotion);
 //call the function from the emotion factory addNewEmotion
-	$scope.addNewEmotion = function(){
-//TODO: make sure New Emotion is scoped ro the right thing in partial
-	  $scope.newEmotionObject.studentId = $rootScope.emotionId;
 
-//post a New Emotion by pulling values its scoped to and call the function with a value of emotionId
-	  EmotionFactory.postNewEmotion($scope.newEmotionObject).then(function(emotionId){
-	    $location.url("/students/:studentId/emotions/list");
-      console.log("Lets go to the /emotions/list");
-	    $scope.newEmotionObject = {};
-	  });
-  	};
+  $scope.newEmotion = {
+    emotionName: "",
+    emotionImage: "",
+    assignedTo: "",
+    activityCompleted: "",
+    score: "",
+    dateCompleted: "",
+    uid: user
+  };
 
-  let counting =  function($scope) {
-      $scope.count = 0;
-      $scope.counter = 0;
-      $scope.emotionsLogged = function() {
-            $scope.counter++;
-        };
-};
-      $scope.viewSubj = false;
-      $scope.showSubject = function() {
-          $scope.viewSubj = !$scope.viewSubj;
-      };
+  $scope.addNewEmotion = function() {
+    console.log("add new emotion");
+    EmotionFactory.postNewEmotion($scope.newEmotion)
+    .then(function(response){
+      $location.url("students/:studentId/emotions/list");
+    });
+    $scope.newEmotion = {};
+  };
 
-       $scope.viewEmo = false;
-      $scope.showEmotions = function() {
-          $scope.viewEmo = !$scope.viewEmo;
-      };
+});
 
-    let emotions = {};
-    emotions.zone = function() {
-      this.name= "null";
-      this.threshold= 0;
-      this.toString = function() {
-        console.log(this);
-          return this.name;
-        };
-    };
+//   let counting =  function($scope) {
+//       $scope.count = 0;
+//       $scope.counter = 0;
+//       $scope.emotionsLogged = function() {
+//             $scope.counter++;
+//         };
+// };
+//       $scope.viewSubj = false;
+//       $scope.showSubject = function() {
+//           $scope.viewSubj = !$scope.viewSubj;
+//       };
+//
+//        $scope.viewEmo = false;
+//       $scope.showEmotions = function() {
+//           $scope.viewEmo = !$scope.viewEmo;
+//       };
+
+    // let emotions = {};
+    // emotions.zone = function() {
+    //   this.name= "null";
+    //   this.threshold= 0;
+    //   this.toString = function() {
+    //     console.log(this);
+    //       return this.name;
+    //     };
+    // };
 
     // emotions[0] = "Happy";
     // emotions[1] = "Ready To Learn";
@@ -60,16 +75,16 @@ console.log("New Emotion Control Loaded");
     // emotions[10] = "Out of Control";
 
 
-    let emotionOptions =
-    ["Happy", "Ready To Learn", "Excited", "Focused",
-    "Calm", "Okay", "Bored", "Worried",
-    "Frustrated", "Angry", "Out of Control"];
+    // let emotionOptions =
+    // ["Happy", "Ready To Learn", "Excited", "Focused",
+    // "Calm", "Okay", "Bored", "Worried",
+    // "Frustrated", "Angry", "Out of Control"];
 
-    console.log(emotions);
-    console.log(emotions[10]);
+    // console.log(emotions);
+    // console.log(emotions[10]);
 
     // });
 
-});
+// });
 
 //TODO: make sure all closing brackets match
