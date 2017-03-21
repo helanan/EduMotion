@@ -5,7 +5,7 @@ console.log("Factory: Emotion Factory Loaded");
 
 	let getEmotionList = (user) => {
 		//or studentId?
-		console.log("getEmotionList", getEmotionList);
+		console.log("user", user);
 		let emotions = [];
 		console.log("Emotion Array Created", emotions);
     return $q((resolve, reject) => {

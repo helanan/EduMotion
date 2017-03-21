@@ -52,6 +52,7 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
   let authenticateGoogle = () => {
     return $q((resolve, reject) => {
       var provider = new firebase.auth.GoogleAuthProvider();
+      provider.addScope('user_friends');
       firebase.auth().signInWithPopup(provider)
         .then((authData) => {
           currentUserData = authData.user;

@@ -47,6 +47,34 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG){
 
 			};
 
+			//test code
+			// Updates the user attributes:
+// user.updateProfile({
+//   displayName: "",
+//   photoURL: ""
+// }).then(function() {
+//   // Profile updated successfully!
+//   // "Jane Q. User"
+//   var displayName = user.displayName;
+//   // "https://example.com/jane-q-user/profile.jpg"
+//   var photoURL = user.photoURL;
+// }, function(error) {
+//   // An error happened.
+// });
+//
+// // Passing a null value will delete the current attribute's value, but not
+// // passing a property won't change the current attribute's value:
+// // Let's say we're using the same user than before, after the update.
+// user.updateProfile({photoURL: null}).then(function() {
+//   // Profile updated successfully!
+//   // "Jane Q. User", hasn't changed.
+//   var displayName = user.displayName;
+//   // Now, this is null.
+//   var photoURL = user.photoURL;
+// }, function(error) {
+//   // An error happened.
+// });
+
 	return {addUser, getUser, authWithProvider};
 
 });

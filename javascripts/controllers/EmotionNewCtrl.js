@@ -8,11 +8,7 @@ console.log("user", user);
 
 //scoped newEmotion set to an empty object
 //TODO: make sure newEmotion is scoped correctly to partial
-  // let student = ;
-  // console.log("studentId: ", student);
-  // $scope.newEmotion = {};
-  // console.log("Empty Emotion Object Created", $scope.newEmotion);
-//call the function from the emotion factory addNewEmotion
+
 
   $scope.newEmotion = {
     emotionName: "",
@@ -21,7 +17,7 @@ console.log("user", user);
     activityCompleted: "",
     score: "",
     dateCompleted: "",
-    uid: user
+    uid: user.uid
   };
 
   $scope.addNewEmotion = function() {
@@ -33,34 +29,34 @@ console.log("user", user);
     $scope.newEmotion = {};
   };
 
-});
 
-//   let counting =  function($scope) {
-//       $scope.count = 0;
-//       $scope.counter = 0;
-//       $scope.emotionsLogged = function() {
-//             $scope.counter++;
-//         };
-// };
-//       $scope.viewSubj = false;
-//       $scope.showSubject = function() {
-//           $scope.viewSubj = !$scope.viewSubj;
-//       };
-//
-//        $scope.viewEmo = false;
-//       $scope.showEmotions = function() {
-//           $scope.viewEmo = !$scope.viewEmo;
-//       };
 
-    // let emotions = {};
-    // emotions.zone = function() {
-    //   this.name= "null";
-    //   this.threshold= 0;
-    //   this.toString = function() {
-    //     console.log(this);
-    //       return this.name;
-    //     };
-    // };
+$scope.count = 0;
+$scope.counter = 0;
+$scope.emotionsLogged = function() {
+      $scope.counter++;
+  };
+
+  $scope.viewSubj = false;
+  $scope.showSubject = function() {
+    $scope.viewSubj = !$scope.viewSubj;
+};
+
+ $scope.viewEmo = false;
+$scope.showEmotions = function() {
+    $scope.viewEmo = !$scope.viewEmo;
+};
+
+
+    let emotionZone = {};
+    emotionZone.zone = function() {
+      this.name= "null";
+      this.threshold= 0;
+      this.toString = function() {
+        console.log(this);
+          return this.name;
+        };
+    };
 
     // emotions[0] = "Happy";
     // emotions[1] = "Ready To Learn";
@@ -75,16 +71,16 @@ console.log("user", user);
     // emotions[10] = "Out of Control";
 
 
-    // let emotionOptions =
-    // ["Happy", "Ready To Learn", "Excited", "Focused",
-    // "Calm", "Okay", "Bored", "Worried",
-    // "Frustrated", "Angry", "Out of Control"];
+    let emotionOptions =
+    ["Happy", "Ready To Learn", "Excited", "Focused",
+    "Calm", "Okay", "Bored", "Worried",
+    "Frustrated", "Angry", "Out of Control"];
 
-    // console.log(emotions);
+    console.log(emotionOptions);
     // console.log(emotions[10]);
 
     // });
 
-// });
+});
 
 //TODO: make sure all closing brackets match
