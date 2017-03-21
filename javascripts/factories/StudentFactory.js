@@ -75,21 +75,18 @@ console.log("Factory: Student Factory Loaded");
 			});
 		});
 	};
-			// JSON.stringify({
-			// 	fullName: editStudent.fullName,
-			// 	uid: editStudent.uid,
-			// 	classroomName: editStudent.classroomName,
-			// 	image: editStudent.image,
-			// 	gradeLevel: editStudent.gradeLevel,
-			// 	parentFirst: editStudent.parentFirst,
-			// 	parentLast: editStudent.parentLast,
-			// 	parentEmail: editStudent.parentEmail,
-			// 	address: editStudent.address,
-			// 	phone: editStudent.phone,
-			// 	emergencyContact: editStudent.emergancyContact,
-			// 	totalScore: editStudent.totalScore
-			// })
 
+// 	var query = firebase.database().ref("students").orderByKey();
+// query.once("value")
+//   .then(function(snapshot) {
+//     snapshot.forEach(function(childSnapshot) {
+//       // key will be "ada" the first time and "alan" the second time
+//       var key = childSnapshot.key;
+//       // childData will be the actual contents of the child
+//       var childData = childSnapshot.val();
+// 			console.log("query", query);
+//   });
+// });
 
  return {postNewStudent, getStudentList, deleteStudent, getSingleStudent, updateStudent};
 });

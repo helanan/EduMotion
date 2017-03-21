@@ -77,6 +77,11 @@ app.config(function($routeProvider) {
             controller: 'EmotionListCtrl',
             resolve: {isAuth}
         })
+        .when('/emotions/:emotionId/view', {
+      			templateUrl: 'partials/emotion-view.html',
+      			controller:'EmotionViewCtrl',
+      			resolve: {isAuth}
+  		  })
         .when('/students/:studentId/emotions/edit/:emotionId', {
             templateUrl: 'partials/emotion-view.html',
             controller: 'EmotionEditCtrl',

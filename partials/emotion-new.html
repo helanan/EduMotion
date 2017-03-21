@@ -1,96 +1,221 @@
     <h1 id="title">Log My Emotions</h1>
 
-      <button ng-click="showSubject()" >Start Logging!</button><br>
+      <button ng-click="showSubject($scope)" >Start Logging!</button><br>
 
     <div ng-show="viewSubj">
       <h3>Subject I Completed: </h3>
 
-      <button id="math" ng-click=""> Math </button><br>
+      <button id="math" ng-click="subjectLogged()"> Math </button><br>
 
-      <button id="english" ng-click=""> English </button><br>
+      <button id="english" ng-click="subjectLogged()"> English </button><br>
 
-      <button id="history" ng-click=""> History </button><br>
+      <button id="history" ng-click="subjectLogged()"> History </button><br>
 
-      <button id="science" ng-click=""> Science </button><br>
+      <button id="science" ng-click="subjectLogged()"> Science </button><br>
 
-      <button id="gym" ng-click=""> Gym </button><br>
-      <button id="Art" ng-click=""> Art </button><br>
-      <button id="Study Hall" ng-click=""> Study Hall </button><br>
-      <button id="Lunch" ng-click=""> Lunch </button><br>
+      <button id="gym" ng-click="subjectLogged()"> Gym </button><br>
+      <button id="Art" ng-click="subjectLogged()"> Art </button><br>
+      <button id="Study Hall" ng-click="subjectLogged()"> Study Hall </button><br>
+      <button id="Lunch" ng-click="subjectLogged()"> Lunch </button><br>
       </div>
 
 
      <button ng-click="showEmotions()">Log My Emotions</button><br>
       <div ng-show="viewEmo">
       <h3>{{activity}} Made Me Feel :</h3><br>
-    <button id="happy" ng-click="count = count + 0; emotionsLogged()"> Happy!</button><br>
 
-    <button id="ready-to-learn" ng-click"count = count + 1; emotionsLogged()"> Ready To Learn! </button><br>
+          <div class="card medium sticky-action">
+              <div class="card-image waves-effect waves-block waves-light" id="happy" ng-click="count = count + 0; emotionsLogged()">
+                <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1490118358/happy-cat_qmfhvi.png" alt="happy" width="25">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">HAPPY!<i class="material-icons right">more_vert</i></span>
+                <p><a href="#">This is a link</a></p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">EMOTION LOGGED! GOOD JOB!<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+          </div>
 
-    <button id="excited" ng-click="count = count + 2; emotionsLogged()"> Excited! </button><br>
+    <div class="card medium sticky-action">
+        <div class="card-image waves-effect waves-block waves-light" id="ready-to-learn" ng-click="count = count + 1; emotionsLogged()">
+          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1483389881/giraffe-04_dbkqp6.svg" alt="ready-to-learn" width="25">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">READY TO LEARN!<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">EMOTION LOGGED! GOOD JOB!<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+    </div>
 
-    <button id="focused" ng-click="count = count + 3; emotionsLogged()"> Focused </button><br>
+    <div class="card medium sticky-action">
+        <div class="card-image waves-effect waves-block waves-light" id="excited" ng-click="count = count + 2; emotionsLogged()">
+          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1490118358/excited-cat_txua0p.png" alt="excited" width="25">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">EXCITED!<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">EMOTION LOGGED! GOOD JOB!<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+    </div>
 
-    <button id="calm" ng-click="count = count + 4; emotionsLogged()"> Calm</button><br>
+    <div class="card medium sticky-action">
+        <div class="card-image waves-effect waves-block waves-light" id="focused" ng-click="count = count + 3; emotionsLogged()">
+          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1483389881/giraffe-04_dbkqp6.svg" alt="focused" width="50">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Focused<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">EMOTION LOGGED! GOOD JOB!<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+    </div>
 
-    <button id="okay" ng-click="count = count + 5; emotionsLogged()"> Okay </button><br>
+    <div class="card medium sticky-action">
+        <div class="card-image waves-effect waves-block waves-light" id="calm" ng-click="count = count + 2; emotionsLogged()">
+          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1490118358/calm-cat_lbm8b0.png" alt="calm" width="50">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Calm<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">EMOTION LOGGED! GOOD JOB!<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+    </div>
 
-    <button id="bored" ng-click="count = count + 6; emotionsLogged()"> Bored </button><br>
+    <div class="card medium sticky-action">
+        <div class="card-image waves-effect waves-block waves-light" id="okay" ng-click="count = count + 5; emotionsLogged()">
+          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1490118358/okay-cat_gythrb.png" alt="okay" width="50">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Okay<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">EMOTION LOGGED! <br> GOOD JOB!<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+    </div>
 
-    <button id="worried" ng-click="count = count + 7; emotionsLogged()"> Worried</button><br>
+    <div class="card medium sticky-action">
+        <div class="card-image waves-effect waves-block waves-light" id="bored" ng-click="count = count + 6; emotionsLogged()">
+          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1490118358/bored-cat_yr8o4b.png" alt="bored" width="50">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">bored<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">EMOTION LOGGED! GOOD JOB!<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+    </div>
 
-    <button id="frustrated" ng-click="count = count + 8; emotionsLogged()"> FRUSTRATED</button><br>
+    <div class="card medium sticky-action">
+        <div class="card-image waves-effect waves-block waves-light" id="worried" ng-click="count = count + 7; emotionsLogged()">
+          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1483389881/giraffe-04_dbkqp6.svg" alt="worried" width="50">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Worried<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">EMOTION LOGGED! GOOD JOB!<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+    </div>
 
-    <button id="angry" ng-click="count = count + 9; emotionsLogged()"> ANGRY </button><br>
+    <div class="card medium sticky-action">
+        <div class="card-image waves-effect waves-block waves-light" id="frustrated" ng-click="count = count + 8; emotionsLogged()">
+          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1483389881/giraffe-04_dbkqp6.svg" alt="frustrated" width="50">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Frustrated<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">EMOTION LOGGED! GOOD JOB!<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+    </div>
 
-    <button id="out-of-control" ng-click="count = count + 10; emotionsLogged()"> OUT OF CONTROL</button><br>
+    <div class="card medium sticky-action">
+        <div class="card-image waves-effect waves-block waves-light" id="angry" ng-click="count = count + 9; emotionsLogged()">
+          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/bo_1px_solid_rgb:000/v1490118358/angry-cat_wydelz.png" alt="angry" width="50">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">ANGRY!<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">EMOTION LOGGED! GOOD JOB!<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+    </div>
+
+    <div class="card medium sticky-action">
+        <div class="card-image waves-effect waves-block waves-light" id="out-of-control" ng-click="count = count + 10; emotionsLogged()">
+          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1490118358/out-of-control_qeeikn.png" alt="out-of-control" width="50">
+        </div>
+        <div class="card-content red accent-4">
+          <span class="card-title activator grey-text text-darken-4">OUT OF CONTROL<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">EMOTION LOGGED! GOOD JOB!<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+    </div>
 
     <p>Emotions Total For Today: {{ count }}</p>
     <p>Total Emotions Logged Today: {{ counter }}</p>
 
     </div>
     <div class="form-group">
-        <label>Emotion Name:</label>
+        <label>Student Name:</label>
+        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.assignedTo">
+    </div>
+
+    <div class="input-field col s6">
+      <i class="material-icons prefix">insert_photo</i>
+      <label for="Emotion Image">Emotion Image</label>
+      <input id="icon_prefix" type="text" class="form-control" placeholder="..." ng-model="newEmotionObject.image">
+
+    </div>
+
+    <div class="form-group">
+        <label>Emotion Type:</label>
         <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.emotionId">
     </div>
 
     <div class="form-group">
-        <label>Upload Custom Image:</label>
-        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.image">
-    </div>
-
-    <div class="form-group">
-        <label>Assign To:</label>
-        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.assignedTo">
+        <label>Date Completed:</label>
+        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.dateCompleted">
     </div>
 
 
     <div class="form-group">
         <label>Activity Completed:</label>
-        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.fullName">
+        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.activityCompleted">
     </div>
 
     <div class="form-group">
-        <label>Score:</label>
-        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.score">
+        <label>Emotions Total For Today: {{ count }}</label>
+        <input value="{{ count }}" type="text" class="form-control" placeholder="{{ count }}" ng-model="newEmotion.score">
     </div>
+
+    <p>Total Emotions Logged Today: {{ counter }}</p>
 
 
     <button type="button" class="btn btn-primary btn-lg col-xs-2" ng-click="addNewEmotion()">Add New Emotion</button>
-
-
-<!--
-    <body ng-app="emotionListApp">
-      <h1 ng-click="helloWorld()">My Emotions</h1>
-        <emotions></emotions>
-     -->
-
-<!--
-    isCompleted: newEmotion.isCompleted,
-
-    studentId: newEmotion.studentId,
-    status: newEmotion.emotionStatus,
-    color: newEmotion.emotionColor,
-    activityLoved: newEmotion.activityLoved,
-    activityHates: newEmotion.activityHates,
-    totalScore: newEmotion.totalScore -->
