@@ -14,8 +14,8 @@
 
           <li class="collection-item avatar">
              <img class="circle responsive-img" src="{{emotion.image}}" alt=" ">
-             <span class="title grey-text text-darken-2"><a class="orange-text text-darken-2" href="#!/emotions/emotionId/view">{{emotion.assignedTo}}</a></span>
-             <div class="col s12">Emotion Type: {{emotion.emotionId}}<a href="#" class="secondary-content"></a></div>
+             <span class="title grey-text text-darken-2"><a class="orange-text text-darken-2" ng-href="#!/emotions/{{emotion.id}}/view">{{emotion.assignedTo}}</a></span>
+             <div class="col s12">Emotion Type: {{emotion.emotionName}}<a href="#" class="secondary-content"></a></div>
              <div class="col s12">Activity Completed: {{emotion.activityCompleted}}<a href="#" class="secondary-content"></a></div>
              <div class="col s12">Date Completed: {{emotion.dateCompleted}}<a href="#" class="secondary-content"></a></div>
              <div class="col s12">Emotion Score: {{emotion.score}}<a href="#!" class="secondary-content"><i class="material-icons">mood</i></a></div>

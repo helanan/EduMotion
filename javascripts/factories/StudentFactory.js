@@ -17,7 +17,6 @@ console.log("Factory: Student Factory Loaded");
 						students.push(studentCollection[key]);
 			});
 			resolve(students);
-			console.log("students", students);
 		})
 		.catch((error) => {
 			reject(error);
@@ -75,18 +74,6 @@ console.log("Factory: Student Factory Loaded");
 			});
 		});
 	};
-
-// 	var query = firebase.database().ref("students").orderByKey();
-// query.once("value")
-//   .then(function(snapshot) {
-//     snapshot.forEach(function(childSnapshot) {
-//       // key will be "ada" the first time and "alan" the second time
-//       var key = childSnapshot.key;
-//       // childData will be the actual contents of the child
-//       var childData = childSnapshot.val();
-// 			console.log("query", query);
-//   });
-// });
 
  return {postNewStudent, getStudentList, deleteStudent, getSingleStudent, updateStudent};
 });

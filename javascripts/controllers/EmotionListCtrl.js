@@ -14,43 +14,30 @@ EmotionFactory.getEmotionList(user)
       console.log("emotion collection: ", emotionCollection);
   });
 
-$scope.emotionDelete = function(emotionId){
-  console.log("delete this item", emotionId);
-  EmotionFactory.deleteEmotion(emotionId)
-  .then(function(response){
-    EmotionFactory.getEmotionList(user)
-    .then(function(emotionCollection){
-        $scope.emotions = emotionCollection;
-          console.log("emotion collection", emotionCollection);
-      });
-    });
-  };
-$scope.inputChange = function(emotion){
-  EmotionFactory.updateCompletedStatus(emotion)
-  .then(function(response){
-    console.log(response);
+  let getEmotions = function(){
+      EmotionFactory.getEmotionList(user).then(function(fbEmotions){
+          $scope.emotions = fbEmotions;
+          console.log("fb Emotions", fbEmotions);
+        });
+      };
+
+  getEmotions();
+
+
+$scope.deleteEmotion = function(emotionId){
+  EmotionFactory.deleteEmotion(emotionId).then(function(response){
+    getEmotions();
   });
 };
 
-//create a function called getEmotions
-// //TODO: are we puling getEmotionList by the right credentials??
-//
+$scope.inputChange = function(emotionId){
+  EmotionFactory.editEmotion(emotionId).then(function(response){
+    getEmotions();
+  });
+};
 
-//TODO: create function to delete emotions
 
-  $scope.deleteEmotion = function(emotionId){
-    EmotionFactory.deleteEmotion(emotionId).then(function(response){
-      getEmotions();
-    });
-  };
+});
 
 //input change Handles the navbar links
 //TODO: change function of thingy to a different name to avoid confusion
-//TODO: Make sure all navbar links are linked up correctly with inputChange
-  // $scope.inputChange = function(thingy){
-  //   EmotionFactory.updateEmotion(thingy).then(function(response){
-  //     getEmotions();
-  //   });
-  // };
-
-});
