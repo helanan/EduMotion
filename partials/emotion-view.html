@@ -2,8 +2,9 @@
 <h1 class="center-align">{{selectedEmotion.assignedTo}}</h1>
 <h4 class="center-align">Emotion Details</h2>
      <p>Student Image: {{selectedEmotion.image}}</p>
-     <p>Class: {{selectedEmotion.emotionId}}</p>
-     <p>Grade: {{selectedEmotion.activityCompleted}}</p>
-     <p>Age: {{selectedEmotion.score}}</p></br><br>
-<button class="btn btn-info"><a ng-href="#!/students/:studentId/emotions/edit/:emotionId"><i class="small material-icons">mode_edit</i>Edit Student</a></button>
+     <p>Class: {{selectedEmotion.classroomName}}</p>
+     <p>Activity Completed: {{selectedEmotion.activityCompleted}}</p>
+     <p>Score: {{selectedEmotion.score}}</p></br><br>
+
+<button class="btn btn-info"><a ng-href="#!/emotions/{{selectedEmotion.id}}/edit"><i class="small material-icons">mode_edit</i>Edit Emotion</a></button>
 </div>

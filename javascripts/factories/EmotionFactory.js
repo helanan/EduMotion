@@ -38,18 +38,18 @@ console.log("Factory: Emotion Factory Loaded");
 			 });
 		 };
 
-  var deleteEmotion = (emotionId) => {
-		console.log("Delete in factory", emotionId);
-    return $q((resolve, reject) => {
-      $http.delete(`${FIREBASE_CONFIG.databaseURL}/emotions/${emotionId}.json`)
-      .then((ObjectFromFirebase) => {
-        resolve(ObjectFromFirebase);
-      })
-      .catch((error) => {
-        reject(error);
-      });
-    });
-  };
+		 var deleteEmotion = (emotionId) => {
+		 	console.log("Delete in factory", emotionId);
+		 	return $q((resolve, reject) => {
+		 		$http.delete(`${FIREBASE_CONFIG.databaseURL}/emotions/${emotionId}.json`)
+		 		.then((ObjectFromFirebase) => {
+		 			resolve(ObjectFromFirebase);
+		 		})
+		 		.catch((error) => {
+		 			reject(error);
+		 		});
+		 	});
+		 };
 
   let getSingleEmotion = (emotionId) => {
 		console.log("emotionId", emotionId);
@@ -58,7 +58,7 @@ console.log("Factory: Emotion Factory Loaded");
       .then(function(emotionObject){
         resolve(emotionObject.data);
       })
-      .error(function(error){
+      .catch(function(error){
         reject(error);
       });
     });

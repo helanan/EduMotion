@@ -3,8 +3,14 @@
 app.controller("EmotionNewCtrl", function($scope, $rootScope, $location, EmotionFactory, AuthFactory){
 console.log("New Emotion Control Loaded");
 
+$scope.title = "Log My Emotions";
+$scope.btnText = "Submit";
+
 let user = AuthFactory.getUser();
 console.log("user", user);
+
+// let studentEntry = StudentFactory.getSingleStudent();
+// console.log("studentEntry", studentEntry);
 
 //scoped newEmotion set to an empty object
 //TODO: make sure newEmotion is scoped correctly to partial
