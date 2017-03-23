@@ -77,6 +77,18 @@ console.log("Factory: Emotion Factory Loaded");
 				});
 			};
 
+			var getStudentEmotions = (studentId) => {
+				return $q(function(resolve, reject){
+					$http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
+					.then(function(emotionObject){
+						resolve(emotionObject.data);
+					})
+					.catch(function(error){
+						reject(error);
+					});
+				});
+			};
+
 			//    JSON.stringify({
 			// 	fullName: editEmotion.fullName,
 		  // 		assignedTo: editEmotion.assignedTo,
@@ -93,5 +105,5 @@ console.log("Factory: Emotion Factory Loaded");
       //  )
 
 
-  return {getEmotionList, postNewEmotion, deleteEmotion, getSingleEmotion, updateEmotion};
+  return {getEmotionList, postNewEmotion, deleteEmotion, getSingleEmotion, updateEmotion, getStudentEmotions};
 });

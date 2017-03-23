@@ -87,6 +87,11 @@ app.config(function($routeProvider) {
             controller: 'EmotionEditCtrl',
             resolve: {isAuth}
         })
+        .when('/emotions/:emotionId/form', {
+            templateUrl: 'partials/emotionform.html',
+            controller: 'StudentListCtrl',
+            resolve: {isAuth}
+        })
         .when('/logout', {
             templateUrl: 'partials/auth.html',
             controller: 'AuthCtrl',

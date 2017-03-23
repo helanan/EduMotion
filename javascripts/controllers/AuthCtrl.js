@@ -2,6 +2,8 @@
 
 app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, UserFactory) {
 
+  $('.carousel.carousel-slider').carousel({fullWidth: true});
+
   $scope.loginContainer = true;
   console.log("Login Container ON");
   $scope.registerContainer = false;

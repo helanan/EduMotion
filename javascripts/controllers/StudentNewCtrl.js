@@ -24,6 +24,7 @@ $scope.newStudentObject = {
 		uid: user.uid
 	};
 
+
 $scope.addNewStudent = function() {
 
 		StudentFactory.postNewStudent($scope.newStudentObject)
