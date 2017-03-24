@@ -1,12 +1,10 @@
 "use strict";
 
 app.factory("StudentFactory", ($q, $http, FIREBASE_CONFIG) => {
-console.log("Factory: Student Factory Loaded");
 
 	let getStudentList = (user) => {
 		console.log("user", user);
 		let students = [];
-		console.log("Students Array Created", students);
 	 	return $q((resolve, reject) => {
 		$http.get(`${FIREBASE_CONFIG.databaseURL}/students.json?orderBy="uid"&equalTo="${user.uid}"`)
 		.then((studentObject) => {
@@ -74,6 +72,8 @@ console.log("Factory: Student Factory Loaded");
 			});
 		});
 	};
+
+
 
  return {postNewStudent, getStudentList, deleteStudent, getSingleStudent, updateStudent};
 });

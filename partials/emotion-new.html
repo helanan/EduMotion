@@ -1,11 +1,11 @@
     <h1 id="title">{{title}}</h1>
 
-      <button ng-click="showSubject($scope)" >Start Logging!</button><br>
+      <button ng-click="showSubject($scope)">Start Logging!</button><br>
 
     <div ng-show="viewSubj">
       <h3>Subject I Completed: </h3>
 
-      <button id="math" ng-click="subjectLogged()"> Math </button><br>
+    <button id="math" ng-click="subjectLogged()"> Math </button><br>
 
       <button id="english" ng-click="subjectLogged()"> English </button><br>
 
@@ -16,16 +16,30 @@
       <button id="gym" ng-click="subjectLogged()"> Gym </button><br>
       <button id="Art" ng-click="subjectLogged()"> Art </button><br>
       <button id="Study Hall" ng-click="subjectLogged()"> Study Hall </button><br>
-      <button id="Lunch" ng-click="subjectLogged()"> Lunch </button><br>
+      <button id="Lunch" ng-click="subjectLogged()"> Lunch </button><br> -->
       </div>
+  <!-- <option value="" disabled selected ng-repeat="subjectName in subjects" ng-show="user">Choose your option</option>
+            <li id="header-links" class="orange lighten-4"><a id="header-links" href="{{thingy.url}}">{{subjectName.name}}</a></li> -->
 
+          <!-- <option id="header-links" value="student.name" data-icon="images/sample-1.jpg" class="circle" ng-model="newEmotion.emotionName">Math</option>
+          <option value="{{newEmotion.emotionName}}}" data-icon="images/office.jpg" class="circle" ng-model="newEmotion.emotionName">English</option>
+          <option value="science" data-icon="images/yuna.jpg" class="circle" ng-model="newEmotion.emotionName">Science</option>
+          <option value="gym" data-icon="images/yuna.jpg" class="circle" ng-model="newEmotion.emotionName">Gym</option>
+          <option value="art" data-icon="images/yuna.jpg" class="circle" ng-model="newEmotion.emotionName">Art</option>
+          <option value="music" data-icon="images/yuna.jpg" class="circle" ng-model="newEmotion.emotionName">Music</option>
+          <option value="speech" data-icon="images/yuna.jpg" class="circle" ng-model="newEmotion.emotionName">Speech</option>
+          <option value="history" data-icon="images/yuna.jpg" class="circle" ng-model="newEmotion.emotionName">History</option>
+        </select>
+      </select>
+        <label>Images in select</label>
+      </div> -->
 
      <button ng-click="showEmotions()">Log My Emotions</button><br>
       <div ng-show="viewEmo">
       <h3>{{activity}} Made Me Feel :</h3><br>
 
-          <div class="card medium sticky-action">
-              <div class="card-image waves-effect waves-block waves-light" id="happy" ng-click="count = count + 0; emotionsLogged()">
+          <div class="card">
+              <div class="card-image waves-effect waves-block waves-light" id="happy" ng-click="count = count + 0; emotionsLogged()" ng-init="count=0">
                 <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1490118358/happy-cat_qmfhvi.png" alt="happy" width="25">
               </div>
               <div class="card-content">
@@ -38,8 +52,8 @@
               </div>
           </div>
 
-    <div class="card medium sticky-action">
-        <div class="card-image waves-effect waves-block waves-light" id="ready-to-learn" ng-click="count = count + 1; emotionsLogged()">
+    <div class="card">
+        <div class="card-image waves-effect waves-block waves-light" id="ready-to-learn" ng-click="count = count + 1; emotionsLogged()" ng-init="count=0">
           <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1483389881/giraffe-04_dbkqp6.svg" alt="ready-to-learn" width="25">
         </div>
         <div class="card-content">
@@ -52,8 +66,8 @@
         </div>
     </div>
 
-    <div class="card medium sticky-action">
-        <div class="card-image waves-effect waves-block waves-light" id="excited" ng-click="count = count + 2; emotionsLogged()">
+    <div class="card">
+        <div class="card-image waves-effect waves-block waves-light" id="excited" ng-click="count = count + 2; emotionsLogged()" ng-init="count=0">
           <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1490118358/excited-cat_txua0p.png" alt="excited" width="25">
         </div>
         <div class="card-content">
@@ -66,8 +80,8 @@
         </div>
     </div>
 
-    <div class="card medium sticky-action">
-        <div class="card-image waves-effect waves-block waves-light" id="focused" ng-click="count = count + 3; emotionsLogged()">
+    <div class="card">
+        <div class="card-image waves-effect waves-block waves-light" id="focused" ng-click="count = count + 3; emotionsLogged()" ng-init="count=0">
           <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1483389881/giraffe-04_dbkqp6.svg" alt="focused" width="50">
         </div>
         <div class="card-content">
@@ -80,8 +94,8 @@
         </div>
     </div>
 
-    <div class="card medium sticky-action">
-        <div class="card-image waves-effect waves-block waves-light" id="calm" ng-click="count = count + 2; emotionsLogged()">
+    <div class="card">
+        <div class="card-image waves-effect waves-block waves-light" id="calm" ng-click="count = count + 2; emotionsLogged()" ng-init="count=0">
           <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1490118358/calm-cat_lbm8b0.png" alt="calm" width="50">
         </div>
         <div class="card-content">
@@ -94,7 +108,7 @@
         </div>
     </div>
 
-    <div class="card medium sticky-action">
+    <div class="card">
         <div class="card-image waves-effect waves-block waves-light" id="okay" ng-click="count = count + 5; emotionsLogged()">
           <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1490118358/okay-cat_gythrb.png" alt="okay" width="50">
         </div>
@@ -108,9 +122,9 @@
         </div>
     </div>
 
-    <div class="card medium sticky-action">
+    <div class="card">
         <div class="card-image waves-effect waves-block waves-light" id="bored" ng-click="count = count + 6; emotionsLogged()">
-          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1490118358/bored-cat_yr8o4b.png" alt="bored" width="50">
+          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1483389883/giraffe-05_zr2lxk.svg" alt="bored" width="50">
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">bored<i class="material-icons right">more_vert</i></span>
@@ -122,9 +136,9 @@
         </div>
     </div>
 
-    <div class="card medium sticky-action">
+    <div class="card">
         <div class="card-image waves-effect waves-block waves-light" id="worried" ng-click="count = count + 7; emotionsLogged()">
-          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1483389881/giraffe-04_dbkqp6.svg" alt="worried" width="50">
+          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1483389886/giraffe-06_efx9cn.svg" alt="worried" width="50">
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">Worried<i class="material-icons right">more_vert</i></span>
@@ -136,7 +150,7 @@
         </div>
     </div>
 
-    <div class="card medium sticky-action">
+    <div class="card">
         <div class="card-image waves-effect waves-block waves-light" id="frustrated" ng-click="count = count + 8; emotionsLogged()">
           <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1483389881/giraffe-04_dbkqp6.svg" alt="frustrated" width="50">
         </div>
@@ -150,9 +164,9 @@
         </div>
     </div>
 
-    <div class="card medium sticky-action">
+    <div class="card">
         <div class="card-image waves-effect waves-block waves-light" id="angry" ng-click="count = count + 9; emotionsLogged()">
-          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/bo_1px_solid_rgb:000/v1490118358/angry-cat_wydelz.png" alt="angry" width="50">
+          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1483389881/giraffe-09_vhk2sw.svg" alt="angry" width="50">
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">ANGRY!<i class="material-icons right">more_vert</i></span>
@@ -164,9 +178,9 @@
         </div>
     </div>
 
-    <div class="card medium sticky-action">
+    <div class="card">
         <div class="card-image waves-effect waves-block waves-light" id="out-of-control" ng-click="count = count + 10; emotionsLogged()">
-          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1490118358/out-of-control_qeeikn.png" alt="out-of-control" width="50">
+          <img class="activator" src="http://res.cloudinary.com/emma/image/upload/v1483389882/giraffe-08_iqvhjf.svg" alt="out-of-control" width="50">
         </div>
         <div class="card-content red accent-4">
           <span class="card-title activator grey-text text-darken-4">OUT OF CONTROL<i class="material-icons right">more_vert</i></span>
@@ -182,16 +196,22 @@
     <p>Total Emotions Logged Today: {{ counter }}</p>
 
     </div>
+
+    <!-- manual entry starts -->
+<!-- dropdown starts -->
+
+<!-- dropdown ends -->
+
+
     <div class="form-group">
         <label>Student Name:</label>
-        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.assignedTo">
+        <input type="text" id="autocomplete-input" class="form-control autocomplete" placeholder="..." ng-model="newEmotion.assignedTo">
     </div>
 
-    <div class="input-field col s6">
+    <div class="form-group">
       <i class="material-icons prefix">insert_photo</i>
       <label for="Emotion Image">Emotion Image</label>
-      <input id="icon_prefix" type="text" class="form-control" placeholder="..." ng-model="newEmotion.image">
-
+      <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.image">
     </div>
 
     <div class="form-group">
@@ -199,9 +219,10 @@
         <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.emotionName">
     </div>
 
+
     <div class="form-group">
         <label>Date Completed:</label>
-        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.dateCompleted">
+        <input type="date" id="date-picker" name="input" ng-model="newEmotion.dateCompleted " placeholder="yyyy-MM-dd" min="2017-01-01" max="2020-12-31" required />
     </div>
 
 
@@ -211,7 +232,7 @@
     </div>
 
     <div class="form-group">
-        <label>Emotions Total For Today: {{ count }}</label>
+        <label>Emotions Total For Today: </label>
         <input value="{{ count }}" type="text" class="form-control" placeholder="{{ count }}" ng-model="newEmotion.score">
     </div>
 
