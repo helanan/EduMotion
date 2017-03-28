@@ -5,13 +5,18 @@
       <!-- <h1 class="header center orange-text" id="home-page-title">EduMotion</h1> -->
       <div class="row center">
 
+          <!-- <header>
+        <div class="wrapper">
+        	<h1 class="header" contenteditable data-heading="EduMotion">EduMotion</h1>
+        </div>
+      </header> -->
 
 
 
 <!-- carousel -->
 <div class="carousel carousel-slider">
-  <a class="carousel-item" href="#one!"><img src="http://res.cloudinary.com/emma/image/upload/v1490247344/EDUBANNER-01_gfs3rh.svg"></a>
-  <a class="carousel-item" href="#two!"><img src="http://res.cloudinary.com/emma/image/upload/v1490247344/EDUBANNER-02_mmy9bu.svg"></a>
+  <a class="carousel-item" href="#one!"><img src="http://res.cloudinary.com/emma/image/upload/v1490328544/EDUBANNER-01_tfyzwb.svg"></a>
+  <a class="carousel-item" href="#two!"><img src="http://res.cloudinary.com/emma/image/upload/v1490328544/EDUBANNER-03_vgqllp.svg"></a>
   <a class="carousel-item" href="#three!"><img src="http://res.cloudinary.com/emma/image/upload/v1490247344/EDUBANNER-03_fck8mi.svg"></a>
   <a class="carousel-item" href="#four!"><img src="http://res.cloudinary.com/emma/image/upload/v1490247344/EDUBANNER-04_t8kerz.svg"></a>
 </div>
@@ -20,43 +25,48 @@
 </div>
 </div>
         <div class="row center" id="register-btn">
-            <button class="btn btn-info col s2 blue-text text-darken-2 grey lighten-2" ng-click="setLoginContainer()">Login</button><br><br>
-            <button class="btn btn-success col s2  orange-text text-darken-3 grey lighten-2" ng-click="setRegisterContainer()">Register</button>
+            <button aria-pressed="true" id="log" class="btn btn-info col s6 m4 l2 blue-text text-darken-2 grey lighten-2" ng-click="setLoginContainer()">Login</button><br><br>
+            <button aria-pressed="true" id="reg" class="btn btn-success col s6 m4 l2 orange-text text-darken-3 grey lighten-2" ng-click="setRegisterContainer()">Register</button>
         </div>
 
-        <div class="row center">
-            <form class="valign-wrapper col s12" ng-show="loginContainer">
+        <div id="auth-form-1" class="row center">
+            <form class="valign-wrapper col s12" ng-show="loginContainer" ng-style="{'background-color': 'rgba(242, 247, 249, 0.49)', 'border-radius': '15px', 'padding': '5%'}">
                 <div class="row center">
-                    <div class="input-field col s6">
-                        <input id="email" type="email" class="validate" ng-model="login.email">
+                    <div class="input-field col s9 offset-s2">
+                        <input id="email" type="email" class="validate" ng-model="login.email" required>
                         <label for="email" data-error="wrong" data-success="right">Email: </label>
                     </div>
-                    <div class="input-field col s6">
-                        <input id="password" type="password" class="validate" ng-model="login.password">
+                    <div class="input-field col s9 offset-s2">
+                        <input id="password" type="password" class="validate" ng-model="login.password" required>
                         <label for="password" data-error="wrong" data-success="right">Password: </label>
                     </div>
-                    <a class="btn btn-lg btn-success col s6 light-blue darken-4" ng-click="loginUser(login)">Login</a>
+                    <div id="login" class="input-field col s9 offset-s2">
+                    <a class="btn btn-lg btn-success s12 m4 l8 #1565C0 blue darken-3" ng-click="loginUser(login)">Login</a>
                 </div>
+              </div>
             </form>
         </div>
 
-        <div class="row center">
-            <form class="valign-wrapper col s12" ng-show="registerContainer">
+        <div id="auth-form-2" class="row center">
+            <form class="valign-wrapper col s12" ng-show="registerContainer" ng-style="{'background-color': 'rgba(242, 247, 249, 0.49)', 'border-radius': '15px', 'padding': '5%'}">
                 <div class="row center">
-                    <div class="input-field col s6">
+                    <div id="email" class="input-field col s9 offset-s2">
                         <input type="email" placeholder="Email address" ng-model="register.email" required autofocus>
-                        <label for="emailAddress">Email Address</label>
+                        <label for="emailAddress" data-error="wrong" data-success="right">Email Address</label>
                     </div>
-                    <div class="input-field col s6">
+
+                    <div id="password" class="input-field col s9 offset-s2">
                         <input type="password" placeholder="Password" ng-model="register.password" required>
-                        <label for="Password">Password</label>
+                        <label for="Password" data-error="wrong" data-success="right">Password</label>
                     </div>
-                    <div class="input-field col s6">
+                    <div id="username" class="input-field col s9 offset-s2">
                         <input type="text" placeholder="Username" ng-model="register.username" required>
                         <label for="Username">Username</label>
                     </div>
-                    <div class="input-field col s6">
-                        <a class="btn btn-lg btn-success col s6" ng-click="registerUser(register)">Register</a>
+                    <input type="checkbox" id="notify" name="notify" value="on">
+                    <label for="notify">Notify me by email for updates</label>
+                    <div id="register" class="input-field col s9 offset-s2">
+                        <a class="btn btn-lg btn-success s12 m4 l8 #ffb74d orange lighten-2" ng-click="registerUser(register)">Register</a>
                     </div>
                 </div>
             </form>

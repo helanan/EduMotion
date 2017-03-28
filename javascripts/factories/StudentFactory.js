@@ -4,6 +4,7 @@ app.factory("StudentFactory", ($q, $http, FIREBASE_CONFIG) => {
 
 	let getStudentList = (user) => {
 		console.log("user", user);
+
 		let students = [];
 	 	return $q((resolve, reject) => {
 		$http.get(`${FIREBASE_CONFIG.databaseURL}/students.json?orderBy="uid"&equalTo="${user.uid}"`)
@@ -72,6 +73,19 @@ app.factory("StudentFactory", ($q, $http, FIREBASE_CONFIG) => {
 			});
 		});
 	};
+
+// 	var getStudentFullName = (studentId) => {
+// 			console.log("students full name", getStudentFullName);
+// 		return $q(function(resolve, reject){
+// 			$http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}/fullName.json`)
+// 			.then(function(studentNames){
+// 				resolve(studentNames.data);
+// 			})
+// 			.catch(function(error){
+// 				reject(error);
+// 			});
+// 	});
+// };
 
 
 

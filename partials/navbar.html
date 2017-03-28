@@ -1,15 +1,8 @@
-<nav class="navbar navbar-default  light-blue darken-4" ng-controller="NavCtrl">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <a id="nav" class="grey-text text-darken-1" href="#"><img src="img/logo.png" width=125 height=120 id="logo"/></a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right" ng-repeat="thingy in navStudents" ng-show="user">
-        <li id="header-links" class="orange lighten-4"><a id="header-links" href="{{thingy.url}}">{{thingy.name}}</a></li>
+<nav class="#1565c0 blue darken-3" ng-controller="NavCtrl">
+  <div class="nav-wrapper">
+      <a id="nav" class="brand-logo left" href="#"><img src="img/logo.png" width=125 height=120 id="logo"/></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down" ng-repeat="thingy in navStudents" ng-show="user">
+        <li id="header-links" class="grey-text text-darken-1"><a id="header-links" href="{{thingy.url}}">{{thingy.name}}</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
 </nav>

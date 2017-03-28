@@ -98,4 +98,5 @@ app.config(function($routeProvider) {
             resolve: {isAuth}
         })
         .otherwise('/auth');
+
 });

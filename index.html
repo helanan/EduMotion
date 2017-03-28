@@ -16,7 +16,7 @@
 
 <!--start of body-->
 <!-- TODO: Initialize our app -->
-<body class="container" ng-app="EduMotionApp">
+<body ng-app="EduMotionApp">
   <div ng-include=" './partials/navbar.html' "></div>
     <div class="section no-pad-bot" id="index-banner">
       <div class="container" id="sub-container">
@@ -26,7 +26,7 @@
     </div>
     <!--ng-view-->
     <div class="row ">
-        <div class="col-xs-offset-2 col-xs-8 " ng-view></div>
+        <div class="container" ng-view></div>
     </div>
 
 
@@ -70,6 +70,9 @@
     <script type="text/javascript " src="/javascripts/controllers/EmotionListCtrl.js "></script>
     <script type="text/javascript " src="/javascripts/controllers/EmotionViewCtrl.js "></script>
     <script type="text/javascript " src="/javascripts/controllers/EmotionEditCtrl.js "></script>
+
+<!--directive-->
+    <!-- <script type="text/javascript " src="/javascripts/directives/inputDropdown.js "></script> -->
 
 </body>
 </html>

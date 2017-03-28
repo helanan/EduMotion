@@ -2,16 +2,18 @@
 
 app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, UserFactory) {
 
+//ui elements
   $('.carousel.carousel-slider').carousel({fullWidth: true});
 
+
   $scope.loginContainer = true;
-  console.log("Login Container ON");
   $scope.registerContainer = false;
   $scope.login = {
     email: "helanan@gmail.com",
     password: "121586",
   };
 console.log("Login Email & Password: ", $scope.login);
+
 //if the location path is logout call logout, clear the user creds and take the user back to the auth screen
     if ($location.path() === "#!/logout") {
         AuthFactory.logout();
