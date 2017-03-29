@@ -1,7 +1,7 @@
 "use strict";
 
 app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
-
+console.log('%cAuth Factory Loaded', 'color:red');
   let currentUserData = null;
 
 //Firebase: Determine if user is authenticated.

@@ -1,5 +1,5 @@
 <h3 id="new-student-header" class="center-align">{{title}}</h3>
-    <div class="row">
+    <div class="row" id="new-student-bg">
      <form class="col s12">
            <div class="row">
                  <div class="input-field col s6">
@@ -52,13 +52,14 @@
                </div>
                <div class="input-field col s6">
                       <i class="material-icons prefix">child_care</i>
-                      <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.totalScore">
-                      <label for="icon_telephone">Emotion Score</label>
+                      <input id="icon_prefix" type="number" placeholder="" ng-model="newStudentObject.totalScore">
+                      <label for="icon_telephone">Manual Emotion Score (optional)</label>
                    </div>
 </div>
 </div>
 </form>
 </div>
-
-    <button type="button" class="btn btn-primary btn-lg col3" ng-click="addNewStudent()">{{btnText}}</button>
+<div class="row">
+    <button type="button" class="btn btn-primary btn-lg s12 m4 l8 #ffb74d orange lighten-2" id="submit-btn" ng-click="addNewStudent()">{{btnText}}</button>
+    </div>
     </div>

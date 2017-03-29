@@ -12,7 +12,8 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
     email: "helanan@gmail.com",
     password: "121586",
   };
-console.log("Login Email & Password: ", $scope.login);
+console.log('%cLogin:', 'color:green', $scope.login);
+
 
 //if the location path is logout call logout, clear the user creds and take the user back to the auth screen
     if ($location.path() === "#!/logout") {

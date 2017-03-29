@@ -5,10 +5,35 @@
 colors
 ============================*/
 /*===========================
+fonts
+============================*/
+/*===========================
+page headers
+============================*/
+#header {
+  font-family: 'Nixie One', cursive;
+  color: #ffb74d;
+  font-size: 80px; }
+
+#new-student-header,
+#student-list-header {
+  font-family: 'Cabin Sketch', cursive;
+  color: #ffb74d;
+  font-size: 60px; }
+
+#header-links {
+  font-family: 'Cabin Sketch', cursive; }
+
+/*===========================
 auth page
 ============================*/
-header {
-  display: block; }
+#home-page-sub-title {
+  font-family: 'Comfortaa', cursive;
+  color: #9DD1F1;
+  font-size: 20px; }
+
+button {
+  font-family: 'Nixie One', cursive; }
 
 input.ng-invalid {
   background-color: lightblue; }
@@ -18,13 +43,16 @@ div#register-btn {
   margin-right: -30rem; }
 
 #reg:hover,
-#log:hover {
+#log:hover,
+#submit-btn:hover {
   border-radius: 50px;
   box-shadow: 0 0 10px 0px #F7EF81; }
 
-.navbar-header {
-  max-width: 100%;
-  height: auto; }
+div#new-student-bg {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 2px 6px 5px 0px #5a5a5a;
+  padding: 10px; }
 
 body {
   background: linear-gradient(45deg, #e6e2df 100%, #c2c1bd 100%);
