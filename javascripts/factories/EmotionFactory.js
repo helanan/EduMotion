@@ -77,18 +77,39 @@ console.log("Factory: Emotion Factory Loaded");
 				});
 			};
 
-			var getStudentEmotions = (studentId) => {
-				return $q(function(resolve, reject){
-					$http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
-					.then(function(emotionObject){
-						resolve(emotionObject.data);
-					})
-					.catch(function(error){
-						reject(error);
-					});
-				});
-			};
 
+
+			// var getStudentEmotions = (studentId) => {
+			// 	return $q(function(resolve, reject){
+			// 		$http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
+			// 		.then(function(emotionObject){
+			// 			resolve(emotionObject.data);
+			// 		})
+			// 		.catch(function(error){
+			// 			reject(error);
+			// 		});
+			// 	});
+			// };
+
+
+
+//how to creat new child elements of a parent
+			// new Firebase(MY_URL).child(PATH).update({
+			//    // replace the widgets
+			//    widgets: {
+			//       one: { color: 'red', shape: 'square' },
+			//       two: { color: 'green', shape: 'triangle' }
+			//    },
+			//
+			//    // reset the count
+			//    widgetCount: 0,
+			//
+			//    // delete my status
+			//    status: null
+			// });
+
+
+			//stringify example
 			//    JSON.stringify({
 			// 	fullName: editEmotion.fullName,
 		  // 		assignedTo: editEmotion.assignedTo,
@@ -105,5 +126,5 @@ console.log("Factory: Emotion Factory Loaded");
       //  )
 
 
-  return {getEmotionList, postNewEmotion, deleteEmotion, getSingleEmotion, updateEmotion, getStudentEmotions};
+  return {getEmotionList, postNewEmotion, deleteEmotion, getSingleEmotion, updateEmotion};
 });

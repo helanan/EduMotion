@@ -10,6 +10,7 @@ console.log("Selected Emotion :", $scope.currentUser);
 let emotionId = $routeParams.emotionId;
 console.log("emotionId", emotionId);
 
+
 EmotionFactory.getSingleEmotion(emotionId).then(function(oneEmotion){
 	oneEmotion.id = emotionId;
 	$scope.selectedEmotion = oneEmotion;

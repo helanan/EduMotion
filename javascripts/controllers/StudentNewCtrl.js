@@ -21,6 +21,7 @@ $scope.newStudentObject = {
 		address: "",
 		emergencyNumber: "",
 		totalScore: "0",
+		dateEnrolled: "",
 		uid: user.uid
 	};
 
