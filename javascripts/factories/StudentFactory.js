@@ -11,7 +11,8 @@ app.factory("StudentFactory", ($q, $http, FIREBASE_CONFIG) => {
 		.then((studentObject) => {
 			let studentCollection = studentObject.data;
 			console.log("Student Object Data ", studentObject.data);
-			Object.keys(studentCollection).forEach((key) => {
+
+			Object.keys(studentCollection).forEach((key, studentFullName) => {
 						studentCollection[key].id = key;
 						students.push(studentCollection[key]);
 			});
@@ -29,6 +30,8 @@ app.factory("StudentFactory", ($q, $http, FIREBASE_CONFIG) => {
     			JSON.stringify(newStudent))
     		.then((ObjectFromFirebase) => {
     		 	resolve(ObjectFromFirebase);
+					console.log("obj from fb", ObjectFromFirebase.data);
+					console.log("obj from fb", ObjectFromFirebase.data.name);
     		})
     		.catch((error) => {
     			reject(error);
@@ -54,6 +57,7 @@ app.factory("StudentFactory", ($q, $http, FIREBASE_CONFIG) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
 			.then(function(studentObject){
 				resolve(studentObject.data);
+				console.log("getSingleStudent", studentObject.data.fullName);
 			})
 			.catch(function(error){
 				reject(error);
@@ -74,19 +78,20 @@ app.factory("StudentFactory", ($q, $http, FIREBASE_CONFIG) => {
 		});
 	};
 
+//
 // 	var getStudentFullName = (studentId) => {
-// 			console.log("students full name", getStudentFullName);
 // 		return $q(function(resolve, reject){
 // 			$http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}/fullName.json`)
-// 			.then(function(studentNames){
-// 				resolve(studentNames.data);
+// 			.then(function(ObjectFromFirebase2){
+// 				resolve(ObjectFromFirebase2);
+// 				console.log("ObjFromFB2", ObjectFromFirebase2);
 // 			})
 // 			.catch(function(error){
 // 				reject(error);
 // 			});
 // 	});
 // };
-
+//
 
 
  return {postNewStudent, getStudentList, deleteStudent, getSingleStudent, updateStudent};

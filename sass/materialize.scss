@@ -65,25 +65,9 @@ auth page
   font-size: 20px;
 }
 
-
-button {
-  font-family: 'Nixie One', cursive;
-}
-
 input.ng-invalid {
     background-color: lightblue;
 }
-
-
-// #register {
-//   margin-left: 25rem;
-//   margin-right: -30rem;
-// }
-//
-// #login {
-//   margin-left: 25rem;
-//   margin-right: -30rem;
-// }
 
 
 div#register-btn {
@@ -91,11 +75,18 @@ div#register-btn {
     margin-right: -30rem;
 }
 
+#submit-btn {
+  display: block;
+  margin: auto;
+}
+
 #reg:hover,
 #log:hover,
 #submit-btn:hover {
     border-radius: 50px;
     box-shadow: 0 0 10px 0px #F7EF81;
+    display: block;
+    margin: auto;
 }
 
 
@@ -105,6 +96,29 @@ border-radius: 10px;
 box-shadow: 2px 6px 5px 0px #5a5a5a;
 padding: 10px;
 }
+
+#student-reading-1 {
+  display: block;
+  margin: auto;
+  width: 20%;
+}
+
+.collection .collection-item.avatar .circle {
+  width: 50px;
+}
+
+.collection,
+.collection-item {
+  border-bottom: 1px solid #fff;
+}
+
+.collection .collection-item.avatar i.circle {
+  margin-left: auto;
+}
+
+// #cards {
+//   background-color: #e6e2df;
+// }
 
 
 $bg: #e6e2df;

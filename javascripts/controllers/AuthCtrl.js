@@ -6,6 +6,8 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
   $('.carousel.carousel-slider').carousel({fullWidth: true});
 
 
+
+
   $scope.loginContainer = true;
   $scope.registerContainer = false;
   $scope.login = {
@@ -41,6 +43,7 @@ console.log('%cLogin:', 'color:green', $scope.login);
     $scope.setLoginContainer = function() {
         $scope.loginContainer = true;
         $scope.registerContainer = false;
+
     };
 
     $scope.setRegisterContainer = function() {

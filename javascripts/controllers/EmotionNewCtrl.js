@@ -3,6 +3,31 @@
 app.controller("EmotionNewCtrl", function($scope, $rootScope, $location, $routeParams, EmotionFactory, AuthFactory, StudentFactory){
 console.log("New Emotion Control Loaded");
 
+let user = AuthFactory.getUser();
+console.log("user", user);
+
+// let studentId = $routeParams.studentId;
+// console.log("studentId",studentId);
+
+  //
+	// StudentFactory.getSingleStudent(studentId).then(function(oneStudent){
+	// 	oneStudent.id = studentId;
+	// 	$scope.selectedStudent = oneStudent;
+  //   $scope.assignedTo = oneStudent.fullName;
+  //   console.log("one student", $scope.assignedTo);
+	// });
+
+// let studentEmotion = StudentFactory.getSingleStudent().studentCollection[object];
+// console.log("student", studentEmotion);
+//
+// StudentFactory.getStudentList(user)
+// .then(function(studentCollection){
+//   console.log("studentCollection", studentCollection);
+//   $scope.students = studentCollection;
+// });
+
+// $scope.students = getUser()
+
 // $scope.subjects = [
 // {
 //   name: 'math',
@@ -83,18 +108,12 @@ $scope.btnText = "Submit";
 // var students = $("#studentNames");
 // console.log($("#studentNames"));
 
-let user = AuthFactory.getUser();
-console.log("user", user);
-
-let emotionUser = user.uid;
-console.log ("emotionUser", emotionUser);
 
 
-// let names = StudentFactory.getSingleStudent(user.uid)
-// 	.then(function successCallback(response){
-// 		$scope.names = response;
-//     		console.log("getEmotionresponse", response);
-//  	});
+// let students = StudentFactory.getStudentList(students.id);
+// console.log("get student list", students);
+
+
 
 // studentCollection
 //   $scope.students = studentCollection;
@@ -118,8 +137,11 @@ console.log ("emotionUser", emotionUser);
     activityCompleted: "",
     score: "",
     dateCompleted: "",
+    // id: EmotionFactory.getEmotionList(user).id,
+    studentName: "",
     uid: user.uid
   };
+
 
   $scope.addNewEmotion = function() {
     console.log("add new emotion");

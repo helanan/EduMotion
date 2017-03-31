@@ -77,17 +77,19 @@ console.log("Factory: Emotion Factory Loaded");
 				});
 			};
 
-			var getStudentEmotions = (studentId) => {
-				return $q(function(resolve, reject){
-					$http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
-					.then(function(emotionObject){
-						resolve(emotionObject.data);
-					})
-					.catch(function(error){
-						reject(error);
-					});
-				});
-			};
+
+
+			// var getStudentEmotions = (studentId) => {
+			// 	return $q(function(resolve, reject){
+			// 		$http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
+			// 		.then(function(emotionObject){
+			// 			resolve(emotionObject.data);
+			// 		})
+			// 		.catch(function(error){
+			// 			reject(error);
+			// 		});
+			// 	});
+			// };
 
 
 
