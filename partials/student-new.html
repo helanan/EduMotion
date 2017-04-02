@@ -53,9 +53,24 @@
             </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">child_care</i>
-                <input id="icon_prefix" type="value" placeholder="" ng-model="newStudentObject.totalScore">
-                <label for="icon_telephone"><i>Manual Emotion Score (optional)</i></label>
+                <input id="icon_prefix" type="number" placeholder="" ng-model="newStudentObject.totalScore">
+                <label for="icon_telephone">Manual Emotion Score (optional)</label>
             </div>
+            <div class="divider"></div>
+            <h6><i>Optional Information:</i></h6>
+            <div class="input-field col s6">
+                <input type="number" placeholder="" ng-model="newStudentObject.age">
+                <label><i>Age (optional)</i></label>
+            </div>
+            <div class="input-field col s6">
+                <input type="date" id="date-picker" name="input" ng-model="newStudentObject.dateEnrolled">
+                <label><i>Date Enrolled (optional)</i></label>
+            </div>
+            <div class="input-field col s6">
+                <input type="number" placeholder="yyyy-MM-dd" min="2017-01-01" max="2020-12-31" ng-model="newStudentObject.allergies">
+                <label><i>Allergies (optional)</i></label>
+            </div>
+        </div>
         </div>
 </div>
 </form>

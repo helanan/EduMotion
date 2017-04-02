@@ -3,6 +3,7 @@
               inset 0.25em 0.25em 0 #fff;
 }
 
+
 /*===========================
 colors
 ============================*/
@@ -30,7 +31,7 @@ page headers
 ============================*/
 
 #header {
-  font-family: 'Nixie One', cursive;
+  font-family: 'Cabin Sketch', cursive;
   color: #ffb74d;
   font-size: 80px;
 }
@@ -89,6 +90,10 @@ div#register-btn {
     margin: auto;
 }
 
+#log {
+  display: block;
+  margin: auto;
+}
 
 div#new-student-bg {
 background-color: #f5f5f5;
@@ -116,9 +121,9 @@ padding: 10px;
   margin-left: auto;
 }
 
-// #cards {
-//   background-color: #e6e2df;
-// }
+img.responsive-img, video.responsive-video {
+  max-height: 250px;
+}
 
 
 $bg: #e6e2df;

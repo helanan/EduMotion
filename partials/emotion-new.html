@@ -1,10 +1,11 @@
 
-    <h1 id="title">{{title}}</h1>
-
-      <button class="btn btn-primary btn-lg col-xs-2" onclick="Materialize.showStaggeredList('#staggered-test')" ng-click="showSubject($scope)">Start Logging!</button><br>
+    <h1 id="new-student-header" class="center-align">{{title}}</h1>
+    <div class="img"><img src="img/student-reading-2.png" width="100" class="responsive-img" id="student-reading-1" /></div>
+    <div class="row" id="new-student-bg">
+      <button class="btn btn-primary btn-lg col-xs-2" id="log" onclick="Materialize.showStaggeredList('#staggered-test')" ng-click="showSubject($scope)">Activity Completed</button><br>
 
     <div ng-show="viewSubj">
-      <h3>Subject I Completed: </h3>
+      <h3>Activity Student Completed: </h3>
       <ul id="staggered-test">
         <!-- aria-pressed="true" -->
     <li><button class="btn btn-primary btn-lg col-xs-2" type="button" id="math" ng-click="subjectLogged()"> Math </button></li>
@@ -22,10 +23,10 @@
     </ul>
       </div>
 
-     <button class="btn btn-primary btn-lg col-xs-2" onclick="Materialize.fadeInImage('#image-emotion')" ng-click="showEmotions()">Log My Emotions</button><br>
+     <button class="btn btn-primary btn-lg col-xs-2" id="log" onclick="Materialize.fadeInImage('#image-emotion')" ng-click="showEmotions()">Log My Emotions</button><br>
       <div ng-show="viewEmo">
         <ul id="image-emotion">
-      <h3>{{activity}} Made Me Feel :</h3><br>
+      <h3>I Feel :</h3><br>
 
           <li><div class="card">
               <div class="card-image waves-effect waves-block waves-light" id="happy" ng-click="count = count + 0; emotionsLogged()" ng-init="count=0">
@@ -188,12 +189,10 @@
     </div>
 
     <!-- manual entry starts -->
-<!-- dropdown starts -->
-
-<!-- dropdown ends -->
 
 
     <div class="form-group">
+      <i class="material-icons prefix">account_circle</i>
         <label>Student Name:
         <input type="text" ng-model="newEmotion.assignedTo">
         </label><br>
@@ -205,37 +204,42 @@
       <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.image">
     </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label>Emotion Type:</label>
         <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.emotionName">
-    </div>
+    </div> -->
 
 
     <div class="form-group">
+        <i class="material-icons prefix">today</i>
         <label>Date Completed:</label>
         <input type="date" id="date-picker" name="input" ng-model="newEmotion.dateCompleted " placeholder="yyyy-MM-dd" min="2017-01-01" max="2020-12-31" required />
     </div>
 
 
     <div class="form-group">
+        <i class="material-icons prefix">receipt</i>
         <label>Activity Completed:</label>
         <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.activityCompleted">
     </div>
 
     <div class="form-group">
+        <i class="material-icons prefix">child_care</i>
         <label>Emotions Total For Today: </label>
-        <input value="{{ count }}" type="text" class="form-control" placeholder="{{ count }}" ng-model="newEmotion.score">
+        <input ng-value="count" id="{{count}}" type="text" name="newEmotion.score" ng-change="count" class="form-control" placeholder="{{ count }}" ng-model="newEmotion.score">
     </div>
+<div>
+    <h3>Total Emotions Logged Today: {{ counter }}</h3>
 
-    <p>Total Emotions Logged Today: {{ counter }}</p>
+    <h3>Student Progress Counter: </h3>
 
-    <p>Student Progress Counter: </p>
     <progress class="progress" value="{{count}}" max="50">
       Emotion Tracker: {{count}}
   </progress>
+
   <progress class="progress" value="{{counter}}" max="20">
       Activies Completed: {{counter}}
   </progress>
 
 
-    <button type="submit" class="btn btn-primary btn-lg col-xs-2" ng-click="addNewEmotion()">{{btnText}}</button>
+    <button type="submit" id="log" class="btn btn-primary btn-lg col-xs-2" ng-click="addNewEmotion()">{{btnText}}</button>

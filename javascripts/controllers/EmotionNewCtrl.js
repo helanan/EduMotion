@@ -6,25 +6,8 @@ console.log("New Emotion Control Loaded");
 let user = AuthFactory.getUser();
 console.log("user", user);
 
-// let studentId = $routeParams.studentId;
-// console.log("studentId",studentId);
-
-  //
-	// StudentFactory.getSingleStudent(studentId).then(function(oneStudent){
-	// 	oneStudent.id = studentId;
-	// 	$scope.selectedStudent = oneStudent;
-  //   $scope.assignedTo = oneStudent.fullName;
-  //   console.log("one student", $scope.assignedTo);
-	// });
-
-// let studentEmotion = StudentFactory.getSingleStudent().studentCollection[object];
-// console.log("student", studentEmotion);
-//
-// StudentFactory.getStudentList(user)
-// .then(function(studentCollection){
-//   console.log("studentCollection", studentCollection);
-//   $scope.students = studentCollection;
-// });
+	let studentName = firebase.database().ref('emotions');
+  console.log("studentName", studentName);
 
 // $scope.students = getUser()
 
@@ -86,11 +69,9 @@ $(document).ready(function() {
 $scope.title = "Log My Emotions";
 $scope.btnText = "Submit";
 
-// let studentNames = [];
-// console.log("studentNames", studentNames);
+let studentNames = [];
+console.log("studentNames", studentNames);
 
-// let studentId = $routeParams.Id;
-// console.log("studentId", studentId);
 
 // dropdown
 // $('.dropdown-button').dropdown({
@@ -107,12 +88,6 @@ $scope.btnText = "Submit";
 
 // var students = $("#studentNames");
 // console.log($("#studentNames"));
-
-
-
-// let students = StudentFactory.getStudentList(students.id);
-// console.log("get student list", students);
-
 
 
 // studentCollection

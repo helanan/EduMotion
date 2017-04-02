@@ -11,7 +11,7 @@ fonts
 page headers
 ============================*/
 #header {
-  font-family: 'Nixie One', cursive;
+  font-family: 'Cabin Sketch', cursive;
   color: #ffb74d;
   font-size: 80px; }
 
@@ -51,6 +51,10 @@ div#register-btn {
   display: block;
   margin: auto; }
 
+#log {
+  display: block;
+  margin: auto; }
+
 div#new-student-bg {
   background-color: #f5f5f5;
   border-radius: 10px;
@@ -71,6 +75,9 @@ div#new-student-bg {
 
 .collection .collection-item.avatar i.circle {
   margin-left: auto; }
+
+img.responsive-img, video.responsive-video {
+  max-height: 250px; }
 
 body {
   background: linear-gradient(45deg, #e6e2df 100%, #c2c1bd 100%);

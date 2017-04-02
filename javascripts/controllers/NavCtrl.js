@@ -6,26 +6,29 @@ app.controller("NavCtrl", function($scope){
   $scope.navStudents = [
 
     {
-  		name:"My Students",
-  		url:"#!/students/list"
-  	},
-     {
-  		name:"New Student",
-		  url:"#!/students/new"
-	   },
-     {
-  		name:"Emotion Logger",
-		  url:"#!/students/:studentId/emotions/new"
-	   },
-     {
-  		name:"My Students Emotions",
-		  url:"#!/students/:studentId/emotions/list"
-	   },
-    {
       name:"Logout",
       url:"#!/logout"
     },
-
+    {
+      name:"My Class Emotion Chart",
+      url:"#!/emotions/:emotionId/form"
+    },
+    {
+     name:"My Students Emotions",
+     url:"#!/students/:studentId/emotions/list"
+    },
+    {
+     name:"Emotion Logger",
+     url:"#!/students/:studentId/emotions/new"
+    },
+    {
+     name:"New Student",
+     url:"#!/students/new"
+    },
+    {
+  		name:"My Students",
+  		url:"#!/students/list"
+  	},
   ];
 });
 

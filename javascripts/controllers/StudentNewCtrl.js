@@ -20,8 +20,10 @@ $scope.newStudentObject = {
 		parentEmail: "",
 		address: "",
 		emergencyNumber: "",
-		totalScore: "0",
+		totalScore: "",
+		age: "",
 		dateEnrolled: "",
+		allergies: "",
 		uid: user.uid
 	};
 
