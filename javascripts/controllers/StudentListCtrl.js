@@ -48,7 +48,10 @@ app.controller("StudentListCtrl", function($scope, $rootScope, $http, StudentFac
         getStudents();
       });
     };
-// 
+
+
+
+//
 //     let getAvatar = function(){
 //       $http.get("http://api.adorable.io/avatar/{{user}}").then(function(response) {
 //       $scope.image = response.data;

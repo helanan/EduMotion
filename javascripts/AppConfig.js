@@ -92,6 +92,16 @@ app.config(function($routeProvider) {
             controller: 'ChartCtrl',
             resolve: {isAuth}
         })
+        .when('/emotions/emotion/exercises/anxiety', {
+            templateUrl: 'partials/exercise-1.html',
+            controller: 'ExercisesCtrl',
+            resolve: {isAuth}
+        })
+        .when('/emotions/emotion/exercises/sad', {
+            templateUrl: 'partials/exercise-2.html',
+            controller: 'ExercisesCtrl',
+            resolve: {isAuth}
+        })
         .when('/logout', {
             templateUrl: 'partials/auth.html',
             controller: 'AuthCtrl',

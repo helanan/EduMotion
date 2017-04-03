@@ -6,8 +6,8 @@ console.log("New Emotion Control Loaded");
 let user = AuthFactory.getUser();
 console.log("user", user);
 
-	let studentName = firebase.database().ref('emotions');
-  console.log("studentName", studentName);
+	// let studentName = firebase.database().ref('emotions');
+  // console.log("studentName", studentName);
 
 // $scope.students = getUser()
 
@@ -104,6 +104,13 @@ console.log("studentNames", studentNames);
 //scoped newEmotion set to an empty object
 //TODO: make sure newEmotion is scoped correctly to partial
 
+let studentsInfo = firebase.database().ref('students');
+//Sync Student Changes
+studentsInfo.on('value', snap => {
+console.log("student info", snap.val());
+});
+
+
 
   $scope.newEmotion = {
     emotionName: "",
@@ -112,7 +119,6 @@ console.log("studentNames", studentNames);
     activityCompleted: "",
     score: "",
     dateCompleted: "",
-    // id: EmotionFactory.getEmotionList(user).id,
     studentName: "",
     uid: user.uid
   };

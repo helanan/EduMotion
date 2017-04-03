@@ -10,6 +10,10 @@ app.controller("NavCtrl", function($scope){
       url:"#!/logout"
     },
     {
+      name:"My Games",
+      url:"#!/emotions/emotion/exercises/anxiety"
+    },
+    {
       name:"My Class Emotion Chart",
       url:"#!/emotions/:emotionId/form"
     },

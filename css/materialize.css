@@ -73,9 +73,6 @@ div#new-student-bg {
   margin: auto;
   width: 20%; }
 
-li > .collection-item avatar {
-  min-height: 150px; }
-
 .collection .collection-item.avatar .circle {
   width: 50px; }
 

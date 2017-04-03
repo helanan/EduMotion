@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("ChartCtrl", function($scope, $location, $routeParams, EmotionFactory, dataRef) {
+app.controller("ChartCtrl", function($scope, $location, $routeParams, EmotionFactory) {
 console.log("Chart Control Loaded");
 
     var ctx = $("#myChart");
