@@ -10,20 +10,19 @@
 
 <div class="row">
   <div class="col s4 m8 l4" ng-repeat="student in students | filter: {studentName:studentName} | filter: searchText" ng-style="{'border-radius': '5px'}">
-    <div class="card">
+    <div class="card" id="card-styles">
       <div class="card-image responsive-img">
             <img class="responsive-img" src="{{student.image}}" alt=" "/>
-            <span class="card-title grey-text text-darken-2"><a class="orange-text text-darken-2" id="studentNames" ng-href="#!/students/{{student.id}}/view">{{student.fullName}}</a></span>
+            <span class="card-title black-text text-darken-2"><a class="yellow-text text-darken-2" id="studentNames" ng-href="#!/students/{{student.id}}/view"><b>{{student.fullName}}</b></a></span>
             <a class="btn-floating halfway-fab waves-effect waves-light red" ng-href="#!/students/{{student.id}}/emotions/new"><i class="large material-icons tooltipped">mood</i></a>
           </div>
           <div class="card-content">
             <p class="col s12">Team: {{student.classroomName}}<br>
               Grade Level: {{student.gradeLevel}}<br>
               Emotion Score: {{student.totalScore}}<br>
-            </p>
-
-        <a class="btn-floating waves-effect waves-light blue hoverable" ng-href=""><i class="medium material-icons yellow circle">mode_edit</i></a>
-        <a class="btn-floating waves-effect waves-light blue hoverable" ng-href=""><i class="medium material-icons pink circle">assessment</i></a>
+            </p><br>
+        <a class="btn-floating waves-effect waves-light blue hoverable" ng-href="#!/students/{{student.id}}/edit"><i class="medium material-icons cyan circle">edit</i></a>
+        <a class="btn-floating waves-effect waves-light blue hoverable" ng-href="#!/emotions/:emotionId/form"><i class="medium material-icons pink circle">assessment</i></a>
         <a class="btn-floating waves-effect waves-light blue hoverable" ng-click="deleteStudent(student.id)"><i class="medium material-icons blue circle">delete</i></a>
       <!-- TODO: add ng-click event for chart icon -->
       <!-- TODO: add ng-click event for edit icon -->
@@ -35,10 +34,4 @@
 
 <div class="fixed-action-btn horizontal">
     <a class="btn-floating pulse btn-large waves-effect waves-light red hoverable" ng-click="addNewStudent()" ng-href="#!/students/new"><i class="medium material-icons orange circle">add</i></a>
-    <ul>
-        <li><a class="btn-floating waves-effect waves-light red" ng-href=""><i class="material-icons">delete</i></a></li>
-        <li><a class="btn-floating waves-effect waves-light yellow darken-1" ng-href=""><i class="material-icons">edit_mode</i></a></li>
-        <li><a class="btn-floating waves-effect waves-light green" ng-href=""><i class="material-icons">mood</i></a></li>
-        <li><a class="btn-floating waves-effect waves-light blue" ng-href=""><i class="material-icons">insert_chart</i></a></li>
-    </ul>
 </div>

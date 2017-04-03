@@ -39,22 +39,22 @@
             <div class="input-field col s6">
                 <i class="material-icons prefix">email</i>
                 <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.parentEmail">
-                <label for="icon_telephone">Parent Email:</label>
+                <label for="icon_email">Parent Email:</label>
             </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">location_city</i>
                 <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.address">
-                <label for="icon_telephone">Student Address:</label>
+                <label for="icon_location_city">Student Address:</label>
             </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">flag</i>
                 <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.emergencyNumber">
-                <label for="icon_telephone">Emergency Contact</label>
+                <label for="icon_flag">Emergency Contact</label>
             </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">child_care</i>
                 <input id="icon_prefix" type="number" placeholder="" ng-model="newStudentObject.totalScore">
-                <label for="icon_telephone">Manual Emotion Score (optional)</label>
+                <label for="icon_child_care">Manual Emotion Score (optional)</label>
             </div>
             <div class="divider"></div>
             <h6><i>Optional Information:</i></h6>
@@ -67,7 +67,7 @@
                 <label><i>Date Enrolled (optional)</i></label>
             </div>
             <div class="input-field col s6">
-                <input type="number" placeholder="yyyy-MM-dd" min="2017-01-01" max="2020-12-31" ng-model="newStudentObject.allergies">
+                <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.allergies">
                 <label><i>Allergies (optional)</i></label>
             </div>
         </div>
