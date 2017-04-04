@@ -4,8 +4,8 @@ app.controller("ChartCtrl", function($scope, $location, $routeParams, EmotionFac
 console.log("Chart Control Loaded");
 
     var ctx = $("#myChart");
-    var Chart;
-    var emotionData = new Chart(ctx, {
+    var myChart;
+    var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ["Out Of Control", "Angry", "Worried", "Ready To Learn", "Okay", "Happy", "Frustrated", "Focused", "Excited", "Calm", "Bored"],

@@ -146,10 +146,21 @@ $scope.emotionsLogged = function() {
     $scope.viewSubj = !$scope.viewSubj;
 };
 
- $scope.viewEmo = false;
+$scope.viewEmo = false;
 $scope.showEmotions = function() {
     $scope.viewEmo = !$scope.viewEmo;
 };
+
+
+
+$scope.mathBtn = "math";
+$scope.historyBtn = true;
+$scope.scienceBtn = true;
+$scope.gymBtn = true;
+$scope.artBtn = true;
+$scope.studyhallBtn = true;
+$scope.lunchBtn = true;
+
 
 
     let emotionZone = {};

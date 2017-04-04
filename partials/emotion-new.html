@@ -5,23 +5,40 @@
       <button class="btn btn-primary btn-lg col s12 m6 l4 #ffb74d orange lighten-2 valign" id="log" onclick="Materialize.showStaggeredList('#staggered-test')" ng-click="showSubject($scope)">Activity Completed</button><br>
 
     <div ng-show="viewSubj">
-      <h3 id="card-styles">Activity Student Completed: </h3>
-      <ul id="staggered-test">
-        <!-- aria-pressed="true" -->
-    <li><button class="btn btn-primary btn-lg col s12 m6 l4 #ffb74d orange lighten-2 valign" type="button" id="math" ng-click="subjectLogged()"> Math </button></li>
+      <ul id="staggered-test"><br>
+        <li id="card-styles"><p><input name="math" type="radio" id="math"
+          ng-model="subject" value="math" />
+          <label for="math">Math</label></p></li>
 
-      <li><button class="btn btn-primary btn-lg col s12 m6 l4 #ffb74d orange lighten-2 valign" type="button" id="english" ng-click="subjectLogged()"> English </button></li>
+        <li id="card-styles"><p><input name="english" type="radio" id="english"
+          ng-model="subject" value="english" />
+          <label for="english">English</label></p></li>
 
-      <li><button class="btn btn-primary btn-lg col s12 m6 l4 #ffb74d orange lighten-2 valign" type="button" id="history" ng-click="subjectLogged()"> History </button></li>
+        <li id="card-styles"><p><input name="history" type="radio" id="history"
+          ng-model="subject" value="history" />
+          <label for="history">History</label></p></li>
 
-      <li><button class="btn btn-primary btn-lg col s12 m6 l4 #ffb74d orange lighten-2 valign" type="button" id="science" ng-click="subjectLogged()"> Science </button></li>
+        <li id="card-styles"><p><input name="science" type="radio" id="science"
+          ng-model="subject" value="science" />
+          <label for="science">Science</label></p></li>
 
-      <li><button class="btn btn-primary btn-lg col s12 m6 l4 #ffb74d orange lighten-2 valign" type="button" id="gym" ng-click="subjectLogged()"> Gym </button></li>
-      <li><button class="btn btn-primary btn-lg col s12 m6 l4 #ffb74d orange lighten-2 valign" type="button" id="Art" ng-click="subjectLogged()"> Art </button></li>
-      <li><button class="btn btn-primary btn-lg col s12 m6 l4 #ffb74d orange lighten-2 valign" type="button" id="Study Hall" ng-click="subjectLogged()"> Study Hall </button></li>
-      <li><button class="btn btn-primary btn-lg col s12 m6 l4 #ffb74d orange lighten-2 valign" type="button" id="Lunch" ng-click="subjectLogged()"> Lunch </button></li>
-    </ul>
+        <li id="card-styles"><p><input name="gym" type="radio" id="gym"
+          ng-model="subject" value="gym" />
+          <label for="gym">Gym</label></p></li>
+
+        <li id="card-styles"><p><input name="art" type="radio" id="art"
+          ng-model="subject" value="art" />
+          <label for="art">Art</label></p></li>
+
+        <li id="card-styles"><p><input name="studyhall" type="radio" id="studyhall"
+          ng-model="subject" value="studyhall" />
+          <label for="studyhall">Study Hall</label></p></li>
+
+        <li id="card-styles"><p><input name="lunch" type="radio" id="lunch"
+          ng-model="subject" value="lunch" />
+          <label for="lunch">Lunch</label></p></li>
       </div>
+    </ul>
 <br><br>
      <button class="btn btn-primary btn-lg col s12 m6 l4 #ffb74d orange lighten-2 valign" id="log" onclick="Materialize.fadeInImage('#image-emotion')" ng-click="showEmotions()">Log My Emotions</button><br><br>
       <div ng-show="viewEmo">
@@ -34,11 +51,11 @@
               </div>
               <div class="card-content yellow accent-4">
                 <span class="card-title activator orange-text text-darken-4"><b>HAPPY</b><i class="material-icons right">more_vert</i></span>
-                <p><a ng-href="#!/emotions/emotion/exercises/anxiety">Breathing Exercises</a></p>
+                <p><a ng-href="#!/emotions/emotion/exercises/happy">Breathing Exercises</a></p>
               </div>
               <div class="card-reveal">
                 <span class="card-title black-text text-darken-4">A HAPPY STUDENT IS A HAPPY TEACHER!<i class="material-icons right">close</i></span>
-                <p><b>Other Words for Happy:</b>
+                <p><b>Similar Words to Happy:</b>
                 <br>-Adored
                 <br>-Alive
                 <br>-Appreciated
@@ -61,16 +78,16 @@
         </div>
         <div class="card-content yellow accent-4">
           <span class="card-title activator orange-text text-darken-4"><b>READY TO LEARN!</b><i class="material-icons right">more_vert</i></span>
-          <p><a ng-href="#!/emotions/emotion/exercises/anxiety">Breathing Exercises</a></p>
+          <p><a ng-href="#!/emotions/emotion/exercises/happy">Breathing Exercises</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title black-text text-darken-4">THE TEACHER IS READY TO HELP YOU LEARN!<i class="material-icons right">close</i></span>
-          <p><b>Other Words for Happy:</b>
-          <br>-Adored
-          <br>-Alive
-          <br>-Appreciated
-          <br>-Cheerful
-          <br>-Ecstatic<hr>
+          <p><b>Similar Words To Ready To Learn:</b>
+          <br>-Motivated
+          <br>-Uplifted
+          <br>-Driven
+          <br>-Centered
+          <br>-Assertive<hr>
 
           <br><b>Next Steps to Take:</b>
           <br>1) Enjoy the feeling!
@@ -87,16 +104,22 @@
         </div>
         <div class="card-content orange accent-4">
           <span class="card-title activator white-text text-darken-4"><b>EXCITED!</b><i class="material-icons right">more_vert</i></span>
-          <p><a ng-href="#!/emotions/emotion/exercises/anxiety">Breathing Exercises</a></p>
+          <p><a ng-href="#!/emotions/emotion/exercises/happy">Breathing Exercises</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title black-text text-darken-4">LETS KEEP THE EXCITEMENT GOING!<i class="material-icons right">close</i></span>
-          <p><b>Other Words for Happy:</b>
-          <br>-Adored
-          <br>-Alive
+          <p><b>Similar Words to Excited:</b>
+          <br>-Ecstatic
+          <br>-Passionate
           <br>-Appreciated
           <br>-Cheerful
-          <br>-Ecstatic<hr></p>
+          <br>-Ecstatic<hr>
+
+          <br><b>Next Steps to Take:</b>
+          <br>1) Enjoy the feeling!
+          <br>2) Have Fun!
+          <br>3) Spread the feeling to those around you!<hr>
+        </p>
         </div>
     </div></li>
 
@@ -105,17 +128,21 @@
           <img class="activator" src="img/excited.png" alt="focused" width="50">
         </div>
         <div class="card-content orange accent-4">
-          <span class="card-title activator white-text text-darken-4"><b>Focused</b><i class="material-icons right">more_vert</i></span>
+          <span class="card-title activator white-text text-darken-4"><b>FOCUSED</b><i class="material-icons right">more_vert</i></span>
           <p><a ng-href="#!/emotions/emotion/exercises/anxiety">Breathing Exercises</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title black-text text-darken-4">KEEP UP THE GREAT JOB!<i class="material-icons right">close</i></span>
-          <p><b>Other Words for Happy:</b>
-          <br>-Adored
-          <br>-Alive
-          <br>-Appreciated
-          <br>-Cheerful
-          <br>-Ecstatic<hr></p>
+          <p><b>Similar Words to Focused:</b>
+          <br>-Targeted
+          <br>-Centered
+          <br>-Organized
+          <br>-Listening
+          <br>-Concentration<hr>
+          <br><b>Next Steps to Take:</b>
+          <br>1) Enjoy the feeling!
+          <br>2) Have Fun!
+          <br>3) Spread the feeling to those around you!<hr></p>
         </div>
     </div></li>
 
@@ -124,17 +151,21 @@
           <img class="activator" src="img/happy.png" alt="calm" width="50">
         </div>
         <div class="card-content blue accent-4">
-          <span class="card-title activator white-text text-darken-4"><b>Calm</b><i class="material-icons right">more_vert</i></span>
-          <p><a ng-href="#!/emotions/emotion/exercises/anxiety">Breathing Exercises</a></p>
+          <span class="card-title activator white-text text-darken-4"><b>CALM</b><i class="material-icons right">more_vert</i></span>
+          <p><a ng-href="#!/emotions/emotion/exercises/calm">Breathing Exercises</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title black-text text-darken-4">KEEP IT UP!<i class="material-icons right">close</i></span>
-          <p><b>Other Words for Happy:</b>
-          <br>-Adored
-          <br>-Alive
-          <br>-Appreciated
-          <br>-Cheerful
-          <br>-Ecstatic<hr></p>
+          <p><b>Similar Words to Calm:</b>
+          <br>-Tranquil
+          <br>-Quiet
+          <br>-Still
+          <br>-Peaceful
+          <br>-Collected<hr>
+          <br><b>Next Steps to Take:</b>
+          <br>1) Enjoy the feeling!
+          <br>2) Have Fun!
+          <br>3) Spread the feeling to those around you!<hr></p>
         </div>
     </div></li>
 
@@ -143,17 +174,21 @@
           <img class="activator" src="img/ok.png" alt="okay" width="50">
         </div>
         <div class="card-content blue accent-4">
-          <span class="card-title activator white-text text-darken-4"><b>Okay</b><i class="material-icons right">more_vert</i></span>
-          <p><a ng-href="#!/emotions/emotion/exercises/anxiety">Breathing Exercises</a></p>
+          <span class="card-title activator white-text text-darken-4"><b>OKAY</b><i class="material-icons right">more_vert</i></span>
+          <p><a ng-href="#!/emotions/emotion/exercises/calm">Breathing Exercises</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title black-text text-darken-4">If you're okay, Im okay!<i class="material-icons right">close</i></span>
-          <p><b>Other Words for Happy:</b>
-          <br>-Adored
-          <br>-Alive
-          <br>-Appreciated
-          <br>-Cheerful
-          <br>-Ecstatic<hr></p>
+          <p><b>Similar Words to Okay:</b>
+          <br>-Melancholy
+          <br>-So-So
+          <br>-Alright
+          <br>-Fine
+          <br>-Neutral<hr>
+          <br><b>Next Steps to Take:</b>
+          <br>Engage with your teacher
+          <br>Click on the breathing exercises to calm any nerves you might start to feel
+          <br>Step away for 10 minutes and do something you enjoy if needed</p>
         </div>
     </div></li>
 
@@ -162,17 +197,21 @@
           <img class="activator" src="img/bored.png" alt="bored" width="50">
         </div>
         <div class="card-content blue accent-4">
-          <span class="card-title activator white-text text-darken-4"><b>bored</b><i class="material-icons right">more_vert</i></span>
+          <span class="card-title activator white-text text-darken-4"><b>BORED</b><i class="material-icons right">more_vert</i></span>
           <p><a ng-href="#!/emotions/emotion/exercises/anxiety">Breathing Exercises</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title black-text text-darken-4">Lets find something FUN to do!<i class="material-icons right">close</i></span>
-          <p><b>Other Words for Happy:</b>
-          <br>-Adored
-          <br>-Alive
-          <br>-Appreciated
-          <br>-Cheerful
-          <br>-Ecstatic<hr></p>
+          <p><b>Similar Words to Bored:</b>
+          <br>-Yawn
+          <br>-Uninterested
+          <br>-Inpatient
+          <br>-Dull
+          <br>-Underwhelmed<hr>
+          <br><b>Next Steps to Take:</b>
+          <br>Talk with your teacher about your feelings
+          <br>Click on the breathing exercises to calm nerves
+          <br>Step away for 10 minutes and do something you enjoy</p>
         </div>
     </div></li>
 
@@ -181,17 +220,21 @@
           <img class="activator" src="img/worried.png" alt="worried" width="50">
         </div>
         <div class="card-content blue accent-4">
-          <span class="card-title activator white-text text-darken-4"><b>Worried</b><i class="material-icons right">more_vert</i></span>
-          <p><a ng-href="#!/emotions/emotion/exercises/sad">Breathing Exercises</a></p>
+          <span class="card-title activator white-text text-darken-4"><b>WORRIED</b><i class="material-icons right">more_vert</i></span>
+          <p><a ng-href="#!/emotions/emotion/exercises/anxiety">Breathing Exercises</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title black-text text-darken-4">Dont Worry Be HAPPY!<i class="material-icons right">close</i></span>
-          <p><b>Other Words for Happy:</b>
-          <br>-Adored
-          <br>-Alive
-          <br>-Appreciated
-          <br>-Cheerful
-          <br>-Ecstatic<hr></p>
+          <p><b>Similar Words to Worried:</b>
+          <br>-Cautious
+          <br>-Anxious
+          <br>-Afraid
+          <br>-Uncomfortable
+          <br>-Sick<hr>
+          <br><b>Next Steps to Take:</b>
+          <br>Talk with your teacher about your feelings
+          <br>Click on the breathing exercises to calm nerves
+          <br>Step away for 10 minutes and do something you enjoy</p>
         </div>
     </div></li>
 
@@ -200,17 +243,22 @@
           <img class="activator" src="img/angry.png" alt="frustrated" width="50">
         </div>
         <div class="card-content red accent-4">
-          <span class="card-title activator white-text text-darken-4"><b>Frustrated</b><i class="material-icons right">more_vert</i></span>
+          <span class="card-title activator white-text text-darken-4"><b>FRUSTRATED!</b><i class="material-icons right">more_vert</i></span>
           <p><a ng-href="#!/emotions/emotion/exercises/anxiety">Breathing Exercises</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title black-text text-darken-4">Everything will be Okay :)<i class="material-icons right">close</i></span>
-          <p><b>Other Words for Happy:</b>
-          <br>-Adored
-          <br>-Alive
-          <br>-Appreciated
-          <br>-Cheerful
-          <br>-Ecstatic<hr></p>
+          <p><b>Similar Words to Frustrated:</b>
+          <br>-Pestered
+          <br>-Rebellious
+          <br>-Unaccepted
+          <br>-Confused
+          <br>-Puzzled<hr>
+          <br><b>Next Steps to Take:</b>
+          <br>Talk with your teacher about your feelings
+          <br>Click on the breathing exercises to calm nerves
+          <br>Step away for 10 minutes and do something you enjoy
+        </p>
         </div>
     </div></li>
 
@@ -220,20 +268,21 @@
         </div>
         <div class="card-content red accent-4">
           <span class="card-title activator white-text text-darken-4"><b>ANGRY!</b><i class="material-icons right">more_vert</i></span>
-          <p><a ng-href="#!/emotions/emotion/exercises/anxiety">Breathing Exercises</a></p>
+          <p><a ng-href="#!/emotions/emotion/exercises/angry">Breathing Exercises</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title black-text text-darken-4">Everything will be Okay :)<i class="material-icons right">close</i></span>
-          <p><b>Other Words for Happy:</b>
-          <br>-Adored
-          <br>-Alive
-          <br>-Appreciated
-          <br>-Cheerful
-          <br>-Ecstatic<hr>
+          <p><b>Similar Words to Angry:</b>
+          <br>-Bitter
+          <br>-Furious
+          <br>-Outraged
+          <br>-Spiteful
+          <br>-Tearful<hr>
+
           <br><b>Next Steps to Take:</b>
-          <br>Enjoy the feeling!
-          <br>Have Fun!
-          <br>Spread the feeling to those around you!
+          <br>Talk with your teacher about your feelings
+          <br>Click on the breathing exercises to calm nerves
+          <br>Step away for 10 minutes and do something you enjoy
         </p>
         </div>
     </div></li>
@@ -244,16 +293,21 @@
         </div>
         <div class="card-content red accent-4">
           <span class="card-title activator white-text text-darken-4"><b>OUT OF CONTROL!!</b><i class="material-icons right">more_vert</i></span>
-          <p><a ng-href="#!/emotions/emotion/exercises/anxiety">Breathing Exercises</a></p>
+          <p><a ng-href="#!/emotions/emotion/exercises/angry">Breathing Exercises</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title black-text text-darken-4">Everything will be Okay :)<i class="material-icons right">close</i></span>
-          <p><b>Similar Feelings to Out Of Control:</b>
+          <p><b>Similar Words to Out Of Control:</b>
           <br>-Hurt
           <br>-Attacked
           <br>-Helpless
           <br>-Exhausted
-          <br>-Overwhelmed<hr></p>
+          <br>-Overwhelmed<hr>
+          <br><b>Next Steps to Take:</b>
+          <br>Talk with your teacher about your feelings
+          <br>Click on the breathing exercises to calm nerves
+          <br>Step away for 10 minutes and do something you enjoy
+        </p>
         </div>
     </div></li>
 </ul>
@@ -278,10 +332,10 @@
       <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.image">
     </div>
 
-    <!-- <div class="form-group">
+    <div class="form-group">
         <label>Emotion Type:</label>
         <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.emotionName">
-    </div> -->
+    </div>
 
 
     <div class="form-group">
@@ -294,7 +348,7 @@
     <div class="form-group">
         <i class="material-icons prefix">receipt</i>
         <label>Activity Completed:</label>
-        <input type="text" class="form-control" placeholder="..." ng-model="newEmotion.activityCompleted">
+        <input type="text" class="form-control" placeholder="{{subject}}" value="{{subject}}" ng-model="newEmotion.activityCompleted">
     </div>
 
     <div class="form-group">

@@ -10,7 +10,7 @@ app.controller("NavCtrl", function($scope){
       url:"#!/logout"
     },
     {
-      name:"My Games",
+      name:"Breathing Exercises",
       url:"#!/emotions/emotion/exercises/anxiety"
     },
     {

@@ -48,6 +48,8 @@ console.log('%cAuth Factory Loaded', 'color:red');
     });
   };
 
+// auth.onAuthStateChanged(firebaseUser => {});
+
 //Firebase: GOOGLE - Use input credentials to authenticate user.
   let authenticateGoogle = () => {
     return $q((resolve, reject) => {

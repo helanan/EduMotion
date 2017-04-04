@@ -5,9 +5,7 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
 //ui elements
   $('.carousel.carousel-slider').carousel({fullWidth: true});
 
-
-
-
+//login & register container set
   $scope.loginContainer = true;
   $scope.registerContainer = false;
   $scope.login = {
@@ -20,7 +18,7 @@ console.log('%cLogin:', 'color:green', $scope.login);
 //if the location path is logout call logout, clear the user creds and take the user back to the auth screen
     if ($location.path() === "#!/logout") {
         AuthFactory.logout();
-        console.log("User Logged Out");
+console.log("%cUser Logged Out", 'color: red');
         $rootScope.user = {};
         $location.url("#!/auth");
     }
@@ -38,7 +36,6 @@ console.log('%cLogin:', 'color:green', $scope.login);
     			$location.url("/students/new");
     		});
     	};
-
 
     $scope.setLoginContainer = function() {
         $scope.loginContainer = true;
@@ -72,7 +69,7 @@ console.log('%cLogin:', 'color:green', $scope.login);
     		.then(function(result) {
     	    	var user = result.user.uid;
     	    	//Once logged in, go to another view
-    	    	$location.path("/students/list");
+    	    	$location.path("/students/new");
     	    	$scope.$apply();
     	  	}).catch(function(error) {
     	    	// Handle the Errors.

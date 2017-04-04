@@ -92,13 +92,23 @@ app.config(function($routeProvider) {
             controller: 'ChartCtrl',
             resolve: {isAuth}
         })
-        .when('/emotions/emotion/exercises/anxiety', {
-            templateUrl: 'partials/exercise-1.html',
+        .when('/emotions/emotion/exercises/angry', {
+            templateUrl: 'partials/exercise-1-angry.html',
             controller: 'ExercisesCtrl',
             resolve: {isAuth}
         })
-        .when('/emotions/emotion/exercises/sad', {
-            templateUrl: 'partials/exercise-2.html',
+        .when('/emotions/emotion/exercises/anxiety', {
+            templateUrl: 'partials/exercise-2-anxiety.html',
+            controller: 'ExercisesCtrl',
+            resolve: {isAuth}
+        })
+        .when('/emotions/emotion/exercises/happy', {
+            templateUrl: 'partials/exercise-3-happy.html',
+            controller: 'ExercisesCtrl',
+            resolve: {isAuth}
+        })
+        .when('/emotions/emotion/exercises/calm', {
+            templateUrl: 'partials/exercise-4-calm.html',
             controller: 'ExercisesCtrl',
             resolve: {isAuth}
         })
