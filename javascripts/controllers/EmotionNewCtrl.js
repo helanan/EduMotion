@@ -6,25 +6,8 @@ console.log("New Emotion Control Loaded");
 let user = AuthFactory.getUser();
 console.log("user", user);
 
-// let studentId = $routeParams.studentId;
-// console.log("studentId",studentId);
-
-  //
-	// StudentFactory.getSingleStudent(studentId).then(function(oneStudent){
-	// 	oneStudent.id = studentId;
-	// 	$scope.selectedStudent = oneStudent;
-  //   $scope.assignedTo = oneStudent.fullName;
-  //   console.log("one student", $scope.assignedTo);
-	// });
-
-// let studentEmotion = StudentFactory.getSingleStudent().studentCollection[object];
-// console.log("student", studentEmotion);
-//
-// StudentFactory.getStudentList(user)
-// .then(function(studentCollection){
-//   console.log("studentCollection", studentCollection);
-//   $scope.students = studentCollection;
-// });
+	// let studentName = firebase.database().ref('emotions');
+  // console.log("studentName", studentName);
 
 // $scope.students = getUser()
 
@@ -86,11 +69,9 @@ $(document).ready(function() {
 $scope.title = "Log My Emotions";
 $scope.btnText = "Submit";
 
-// let studentNames = [];
-// console.log("studentNames", studentNames);
+let studentNames = [];
+console.log("studentNames", studentNames);
 
-// let studentId = $routeParams.Id;
-// console.log("studentId", studentId);
 
 // dropdown
 // $('.dropdown-button').dropdown({
@@ -109,12 +90,6 @@ $scope.btnText = "Submit";
 // console.log($("#studentNames"));
 
 
-
-// let students = StudentFactory.getStudentList(students.id);
-// console.log("get student list", students);
-
-
-
 // studentCollection
 //   $scope.students = studentCollection;
 //   console.log("studentCollection", studentCollection);
@@ -129,6 +104,13 @@ $scope.btnText = "Submit";
 //scoped newEmotion set to an empty object
 //TODO: make sure newEmotion is scoped correctly to partial
 
+let studentsInfo = firebase.database().ref('students');
+//Sync Student Changes
+studentsInfo.on('value', snap => {
+console.log("student info", snap.val());
+});
+
+
 
   $scope.newEmotion = {
     emotionName: "",
@@ -137,7 +119,6 @@ $scope.btnText = "Submit";
     activityCompleted: "",
     score: "",
     dateCompleted: "",
-    // id: EmotionFactory.getEmotionList(user).id,
     studentName: "",
     uid: user.uid
   };
@@ -165,10 +146,21 @@ $scope.emotionsLogged = function() {
     $scope.viewSubj = !$scope.viewSubj;
 };
 
- $scope.viewEmo = false;
+$scope.viewEmo = false;
 $scope.showEmotions = function() {
     $scope.viewEmo = !$scope.viewEmo;
 };
+
+
+
+$scope.mathBtn = "math";
+$scope.historyBtn = true;
+$scope.scienceBtn = true;
+$scope.gymBtn = true;
+$scope.artBtn = true;
+$scope.studyhallBtn = true;
+$scope.lunchBtn = true;
+
 
 
     let emotionZone = {};

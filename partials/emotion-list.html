@@ -1,4 +1,4 @@
-<h1 class=" col s12 center-align">Emotion List View</h1>
+<h1 id="new-student-header" class="col s12 center-align">Emotion List View</h1>
          	<div class="panel panel-default">
                <div class="panel-body">
         <div class="input-group">
@@ -10,28 +10,22 @@
     </div>
 </div>
 
-<ul class="collection hoverable" ng-repeat="emotion in emotions | filter: {emotionId:emotionId} | filter: searchText">
-
-          <li class="collection-item avatar">
-             <img class="circle responsive-img" src="{{emotion.image}}" alt=" ">
-             <span class="title grey-text text-darken-2"><a class="orange-text text-darken-2" ng-href="#!/emotions/{{emotion.id}}/view">{{emotion.assignedTo}}</a></span>
-             <div class="col s12">Emotion Type: {{emotion.emotionName}}<a href="#" class="secondary-content"></a></div>
-             <div class="col s12">Activity Completed: {{emotion.activityCompleted}}<a href="#" class="secondary-content"></a></div>
-             <div class="col s12">Date Completed: {{emotion.dateCompleted | date: "MM/dd/yyyy"}}<a href="#" class="secondary-content"></a></div>
-             <div class="col s12">Emotion Score: {{emotion.score}}<a href="#!" class="secondary-content"><i class="material-icons">mood</i></a></div>
-</li>
-	        <div class=""><button class="btn btn-danger fa fa-trash-o secondary -content" ng-click="deleteEmotion(emotion.id)">   <i class="material-icons">delete</i></button></div>
+<ul id="card-styles" class="collection hoverable" ng-repeat="emotion in emotions | filter: {emotionId:emotionId} | filter: searchText" ng-style="{'background-color': '#F7EF81', 'padding':'10px'};">
+          <li class="collection-item avatar" ng-style="{'height':'150px', 'border-radius': '5px', 'padding-bottom': '10px', 'padding-top': '10px'};">
+             <img class="circle responsive-img" src="{{emotion.image}}" alt="emotion-image" ng-style="{'width':'100px', 'height':'100px'};">
+             <span class="title black-text text-darken-2" ng-style="{'margin-left':'50px'};"><a class="blue-text text-darken-2" ng-href="#!/emotions/{{emotion.id}}/view"><b>{{emotion.assignedTo}}</b></a></span>
+             <p class="col s12" ng-style="{'margin-left':'50px'};"><b>Emotion Type:</b> {{emotion.emotionName}}</p>
+             <!-- TODO: Scope Emotion Type TO Value in Form -->
+             <p class="col s12" ng-style="{'margin-left':'50px'};"><b>Activity Completed:</b> {{emotion.activityCompleted}}</p>
+             <p class="col s12" ng-style="{'margin-left':'50px'};"><b>Date Completed:</b> {{emotion.dateCompleted | date: "MM/dd/yyyy"}}</p>
+             <p class="col s12" ng-style="{'margin-left':'50px'};"><b>Emotion Score:</b> {{emotion.score}}</p>
+           </li>
+	        <div class="btn-floating waves-effect waves-light blue hoverable"><button class="btn-floating waves-effect waves-light blue hoverable" ng-click="deleteEmotion(emotion.id)"><i class="medium material-icons blue circle">delete</i></button></div>
 </ul>
-
+<br><br>
 
 <div class="fixed-action-btn horizontal">
           <a class="btn-floating btn-large waves-effect waves-light red hoverable" ng-click="addNewEmotion()" href="#/emotions/new"><i class="small material-icons">add</i></a>
-          <ul>
-                <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-                <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-                <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-                <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-              </ul>
      </div>
 
 

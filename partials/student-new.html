@@ -6,56 +6,71 @@
             <div class="input-field col s6">
                 <i class="material-icons prefix">account_circle</i>
                 <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.fullName">
-                <label for="Name">Student Name:</label>
+                <label class="active" for="Name">Student Name:</label>
             </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">class_name</i>
                 <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.classroomName">
-                <label for="Class Name">Class Name</label>
+                <label class="active" for="Class Name">Class Name</label>
             </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">insert_photo</i>
                 <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.image">
-                <label for="Student Image">Student Image</label>
+                <label class="active" for="Student Image">Student Image</label>
             </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">filter_1</i>
                 <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.gradeLevel">
-                <label for="grade">Grade Level</label>
+                <label class="active" for="grade">Grade Level</label>
             </div>
 
             <div class="input-field col s6">
                 <i class="material-icons prefix">person</i>
                 <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.parentFirst">
-                <label for="Parent First Name">Parent First Name:</label>
+                <label class="active" for="Parent First Name">Parent First Name:</label>
             </div>
 
             <div class="input-field col s6">
                 <i class="material-icons prefix">person_outline</i>
                 <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.parentLast">
-                <label for="Telephone">Parent Last Name:</label>
+                <label class="active" for="Telephone">Parent Last Name:</label>
             </div>
 
             <div class="input-field col s6">
                 <i class="material-icons prefix">email</i>
                 <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.parentEmail">
-                <label for="icon_telephone">Parent Email:</label>
+                <label class="active" for="icon_email">Parent Email:</label>
             </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">location_city</i>
                 <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.address">
-                <label for="icon_telephone">Student Address:</label>
+                <label class="active" for="icon_location_city">Student Address:</label>
             </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">flag</i>
                 <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.emergencyNumber">
-                <label for="icon_telephone">Emergency Contact</label>
+                <label class="active" for="icon_flag">Emergency Contact</label>
             </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">child_care</i>
-                <input id="icon_prefix" type="value" placeholder="" ng-model="newStudentObject.totalScore">
-                <label for="icon_telephone"><i>Manual Emotion Score (optional)</i></label>
+                <input id="icon_prefix" type="number" placeholder="" ng-model="newStudentObject.totalScore">
+                <label class="active" for="icon_child_care">Manual Emotion Score (optional)</label>
             </div>
+            <hr>
+            <h6><i>Optional Information:</i></h6>
+            <div class="input-field col s6">
+                <input type="number" placeholder="" ng-model="newStudentObject.age">
+                <label class="active"><i>Age (optional)</i></label>
+            </div>
+            <div class="input-field col s6">
+                <input type="date" id="date-picker" name="input" ng-model="newStudentObject.dateEnrolled">
+                <label class="active"><i>Date Enrolled (optional)</i></label>
+            </div>
+            <div class="input-field col s6">
+                <input id="icon_prefix" type="text" class="validate" placeholder="" ng-model="newStudentObject.allergies">
+                <label class="active"><i>Allergies (optional)</i></label>
+            </div>
+        </div>
         </div>
 </div>
 </form>

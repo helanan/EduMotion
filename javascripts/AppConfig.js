@@ -89,7 +89,27 @@ app.config(function($routeProvider) {
         })
         .when('/emotions/:emotionId/form', {
             templateUrl: 'partials/emotionform.html',
-            controller: 'StudentListCtrl',
+            controller: 'ChartCtrl',
+            resolve: {isAuth}
+        })
+        .when('/emotions/emotion/exercises/angry', {
+            templateUrl: 'partials/exercise-1-angry.html',
+            controller: 'ExercisesCtrl',
+            resolve: {isAuth}
+        })
+        .when('/emotions/emotion/exercises/anxiety', {
+            templateUrl: 'partials/exercise-2-anxiety.html',
+            controller: 'ExercisesCtrl',
+            resolve: {isAuth}
+        })
+        .when('/emotions/emotion/exercises/happy', {
+            templateUrl: 'partials/exercise-3-happy.html',
+            controller: 'ExercisesCtrl',
+            resolve: {isAuth}
+        })
+        .when('/emotions/emotion/exercises/calm', {
+            templateUrl: 'partials/exercise-4-calm.html',
+            controller: 'ExercisesCtrl',
             resolve: {isAuth}
         })
         .when('/logout', {

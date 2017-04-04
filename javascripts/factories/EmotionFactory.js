@@ -4,10 +4,9 @@ app.factory("EmotionFactory", ($q, $http, FIREBASE_CONFIG) => {
 console.log("Factory: Emotion Factory Loaded");
 
 	let getEmotionList = (user) => {
-		//or studentId?
+
 		console.log("user", user);
 		let emotions = [];
-		console.log("Emotion Array Created", emotions);
     return $q((resolve, reject) => {
       $http.get(`${FIREBASE_CONFIG.databaseURL}/emotions.json?orderBy="uid"&equalTo="${user.uid}"`)
         .then((emotionObject) => {
@@ -76,20 +75,6 @@ console.log("Factory: Emotion Factory Loaded");
 					});
 				});
 			};
-
-
-
-			// var getStudentEmotions = (studentId) => {
-			// 	return $q(function(resolve, reject){
-			// 		$http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}.json`)
-			// 		.then(function(emotionObject){
-			// 			resolve(emotionObject.data);
-			// 		})
-			// 		.catch(function(error){
-			// 			reject(error);
-			// 		});
-			// 	});
-			// };
 
 
 

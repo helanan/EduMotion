@@ -2,39 +2,36 @@
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="input-group">
-            <span class="input-group-btn">
-                <button type="button" class="btn btn-default"> <i class="small material-icons">search</i></button>
-            </span>
-            <input type="text" class="form-control" placeholder="Search for ..." ng-model="searchText">
+            <i class="small material-icons grey circle">search</i><input type="text" class="form-control" placeholder="Search for ..." ng-model="searchText">
         </div>
     </div>
 </div>
 
-<div class="row" ng-repeat="student in students | filter: {studentName:studentName} | filter: searchText" ng-style="{'border-radius': '5px'}">
-  <div class="col s12 m8 l4">
-    <div class="card">
+
+<div class="row">
+  <div class="col s4 m8 l4" ng-repeat="student in students | filter: {studentName:studentName} | filter: searchText" ng-style="{'border-radius': '5px'}">
+    <div class="card" id="card-styles">
       <div class="card-image responsive-img">
             <img class="responsive-img" src="{{student.image}}" alt=" "/>
-            <span class="card-title grey-text text-darken-2"><a class="orange-text text-darken-2" id="studentNames" ng-href="#!/students/{{student.id}}/view">{{student.fullName}}</a></span>
+            <span class="card-title black-text text-darken-2"><a class="yellow-text text-darken-2" id="studentNames" ng-href="#!/students/{{student.id}}/view"><b>{{student.fullName}}</b></a></span>
             <a class="btn-floating halfway-fab waves-effect waves-light red" ng-href="#!/students/{{student.id}}/emotions/new"><i class="large material-icons tooltipped">mood</i></a>
           </div>
           <div class="card-content">
             <p class="col s12">Team: {{student.classroomName}}<br>
               Grade Level: {{student.gradeLevel}}<br>
               Emotion Score: {{student.totalScore}}<br>
-            </p>
-        <a class="btn-floating waves-effect waves-light blue" ng-click="deleteStudent(student.id)"><i class="medium material-icons blue circle">delete</i></a>
+            </p><br>
+        <a class="btn-floating waves-effect waves-light blue hoverable" ng-href="#!/students/{{student.id}}/edit"><i class="medium material-icons cyan circle">edit</i></a>
+        <a class="btn-floating waves-effect waves-light blue hoverable" ng-href="#!/emotions/:emotionId/form"><i class="medium material-icons pink circle">assessment</i></a>
+        <a class="btn-floating waves-effect waves-light blue hoverable" ng-click="deleteStudent(student.id)"><i class="medium material-icons blue circle">delete</i></a>
+      <!-- TODO: add ng-click event for chart icon -->
+      <!-- TODO: add ng-click event for edit icon -->
+
   </div>
-  </div>
+</div>
 </div>
 </div>
 
 <div class="fixed-action-btn horizontal">
     <a class="btn-floating pulse btn-large waves-effect waves-light red hoverable" ng-click="addNewStudent()" ng-href="#!/students/new"><i class="medium material-icons orange circle">add</i></a>
-    <ul>
-        <li><a class="btn-floating waves-effect waves-light red"><i class="material-icons">delete</i></a></li>
-        <li><a class="btn-floating waves-effect waves-light yellow darken-1"><i class="material-icons">edit_mode</i></a></li>
-        <li><a class="btn-floating waves-effect waves-light green"><i class="material-icons">mood</i></a></li>
-        <li><a class="btn-floating waves-effect waves-light blue"><i class="material-icons">insert_chart</i></a></li>
-    </ul>
 </div>

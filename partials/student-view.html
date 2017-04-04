@@ -1,16 +1,22 @@
-<div class="col s12 m8 l9">
-<h1 class="center-align">{{selectedStudent.fullName}}</h1>
-<h4 class="center-align">Student Details</h2>
-     <p>Student Image: {{selectedStudent.studentImage}}</p>
-     <p>Class: {{selectedStudent.classroomName}}</p>
-     <p>Grade: {{selectedStudent.gradeLevel}}</p>
-     <p>Age: {{selectedStudent.age}}</p>
-     <p>Parent First Name: {{selectedStudent.parentFirst}}</p>
-     <p>Parent Last Name: {{selectedStudent.parentLast}}</p>
-     <p>Parent Email: {{selectedStudent.parentEmail}}</p>
-     <p>Emergency Contact: {{selectedStudent.emergencyContact}}</p>
-     <p>Student Address: {{selectedStudent.address}}</p>
-     <p>Student Phone: {{selectedStudent.phone}}</p>
-     <p>Student Emotion Total Score: {{selectedStudent.totalScore}}</br><br>
-<button type="button" class="btn btn-info"><a ng-href="#!/students/{{selectedStudent.id}}/edit"><i class="small material-icons">mode_edit</i>Edit Student</a></button>
+<div class="row">
+<h1 id="new-student-header" class="center-align">{{selectedStudent.fullName}} Profile</h1>
+<!-- <div class="col s12 m8 l9"> -->
+  <div class="img"><img src="img/student-smiling-1.png" width="100" class="responsive-img" id="student-reading-1" /></div>
+  <div class="row" id="new-student-bg">
+     <p><img src="{{selectedStudent.image}}" width="100" class="responsive-img" id="student-reading-1" ng-style="{'border-radius':'100px'};"/></p>
+     <p id="card-styles"><b>Class:</b> {{selectedStudent.classroomName}}</p>
+     <p id="card-styles"><b>Grade:</b> {{selectedStudent.gradeLevel}}</p>
+     <p id="card-styles"><b>Age:</b> {{selectedStudent.age}}</p>
+     <p id="card-styles"><b>Parent First Name:</b> {{selectedStudent.parentFirst}}</p>
+     <p id="card-styles"><b>Parent Last Name:</b> {{selectedStudent.parentLast}}</p>
+     <p id="card-styles"><b>Parent Email:</b> {{selectedStudent.parentEmail}}</p>
+     <p id="card-styles"><b>Emergency Contact:</b> {{selectedStudent.emergencyNumber}}</p>
+     <p id="card-styles"><b>Student Address:</b> {{selectedStudent.address}}</p>
+     <p id="card-styles"><b>Student Allergies:</b> {{selectedStudent.allergies}}</p>
+     <p id="card-styles"><b>Student Emotion Total Score:</b> {{selectedStudent.totalScore}}
+       <div class="valign-wrapper">
+<button type="button" class="btn btn-primary btn-lg col s12 m6 l4 #ffb74d orange lighten-2 valign" id="log"><a ng-href="#!/students/{{selectedStudent.id}}/edit"><i class="medium material-icons">mode_edit</i>Edit Student</a></button>
+</div>
+</div>
+<!-- </div> -->
 </div>
