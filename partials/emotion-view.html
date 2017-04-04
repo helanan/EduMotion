@@ -1,9 +1,10 @@
 <div class="col s12 m8 l9">
 <h1 id="new-student-header" class="center-align">{{selectedEmotion.assignedTo}}'s Emotion</h1>
-     <p>Student Image: {{selectedEmotion.image}}</p>
-     <p>Class: {{selectedEmotion.classroomName}}</p>
+     <p>Emotion Image: {{selectedEmotion.emotionImage}}</p>
+     <p>Emotion Name: {{selectedEmotion.emotionName}}</p>
      <p>Activity Completed: {{selectedEmotion.activityCompleted}}</p>
-     <p>Score: {{selectedEmotion.score}}</p></br><br>
+     <p>Score: {{selectedEmotion.score}}</p>
+     <p>Date Completed: {{selectedEmotion.dateCompleted}}</p></br><br>
 
 <button type="submit" class="btn btn-info"><a ng-href="#!/emotions/{{selectedEmotion.id}}/edit"><i class="small material-icons">mode_edit</i>Edit Emotion</a></button>
 </div>

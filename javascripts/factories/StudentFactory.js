@@ -2,6 +2,7 @@
 
 app.factory("StudentFactory", ($q, $http, FIREBASE_CONFIG) => {
 
+
 	let getStudentList = (user) => {
 		console.log("user", user);
 
@@ -78,20 +79,8 @@ app.factory("StudentFactory", ($q, $http, FIREBASE_CONFIG) => {
 		});
 	};
 
-//
-// 	var getStudentFullName = (studentId) => {
-// 		return $q(function(resolve, reject){
-// 			$http.get(`${FIREBASE_CONFIG.databaseURL}/students/${studentId}/fullName.json`)
-// 			.then(function(ObjectFromFirebase2){
-// 				resolve(ObjectFromFirebase2);
-// 				console.log("ObjFromFB2", ObjectFromFirebase2);
-// 			})
-// 			.catch(function(error){
-// 				reject(error);
-// 			});
-// 	});
-// };
-//
+
+
 
 
  return {postNewStudent, getStudentList, deleteStudent, getSingleStudent, updateStudent};
