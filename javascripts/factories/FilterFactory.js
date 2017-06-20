@@ -1,7 +1,7 @@
 "use strict";
 
-app.factory('FilterFactory', function(){
-return {
-  search: ""
-};
+app.factory('FilterFactory', function() {
+    return {
+        search: ""
+    };
 });

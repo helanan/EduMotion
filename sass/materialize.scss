@@ -1,30 +1,3 @@
-// [aria-pressed="true"] {
-//   box-shadow: inset 0 0 0 0.15rem #000,
-//               inset 0.25em 0.25em 0 #fff;
-// }
-
-
-/*===========================
-colors
-============================*/
-// Timberwolf: #D7D9CE / #efebe9 brown lighten-5
-// Metallic Seaweed: #0C7489 / #0097a7 cyan darken-2
-// Neon Carrot: #FC9E4F / #ffb74d orange ligthen-2
-// Baby Blue Eyes: #9DD1F1 / #b3E5fc light-bue lighten-4
-// Yellow(Crayola): #F7EF81 / #fff176 yellow lighten-2
-// Lapis Lazuli: #2660A4 / #1565C0 blue darken-3
-// Davys Grey: #565554 / #616161 grey darken-2
-
-/*===========================
-fonts
-============================*/
-
-// font-family: 'Comfortaa', cursive;
-// font-family: 'Nixie One', cursive;
-// font-family: 'Cabin Sketch', cursive;
-//
-//
-
 
 /*===========================
 page headers
@@ -111,8 +84,6 @@ padding: 10px;
   width: 20%;
 }
 
-
-
 .collection .collection-item.avatar .circle {
   width: 50px;
 }
@@ -134,7 +105,6 @@ img.responsive-img, video.responsive-video {
   max-height: 300px;
 }
 
-
 $bg: #e6e2df;
 
 
@@ -144,67 +114,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.carousel {
-  // // margin-top: 20%;
-  // position: fixed;
-}
-
 #card-styles {
   font-family: 'Nixie One', cursive;
   font-size: 16px;
 }
-
-
-footer {
-
-}
-
-////games
-///ballooons
-
-
-	// h1 {
-	// 	text-transform: uppercase;
-	// 	transform: translate(-62%, -38%) skew(10deg) rotate(-10deg);
-	// 	font-size: 16vw;
-	// 	top: 50%;
-	// 	left: 50%;
-	// 	margin: 0;
-	// 	position: absolute;
-	// 	text-rendering: optimizeLegibility;
-	// 	font-weight: 900;
-	// 	color: rgba(#9eebff, 0.5);
-	// 	text-shadow: 1px 4px 6px $bg, 0 0 0 #66303a, 1px 4px 6px $bg;
-	// 	white-space: nowrap;
-  //   margin-left: 10%;
-  //   margin-right: 10%;
-  //
-	// 	&:before {
-	// 		content: attr(data-heading);
-	// 		position: absolute;
-	// 		left: -0;
-	// 		top: -4.8%;
-	// 		overflow: hidden;
-	// 		width: 100%;
-	// 		height: 50%;
-	// 		color: #fbf7f4;
-	// 		transform: translate(1.6vw, 0) skew(-14deg) scale(1, 1.2);
-	// 		z-index: 2;
-	// 		text-shadow: 2px -1px 6px rgba(0,0,0,0.2);
-	// 	}
-  //
-	// 	&:after {
-	// 		content: attr(data-heading);
-	// 		position: absolute;
-	// 		left: 0;
-	// 		top: 0;
-	// 		overflow: hidden;
-	// 		width: 100%;
-	// 		height: 100%;
-	// 		z-index: 1;
-	// 		color: #d3cfcc;
-	// 		transform: translate(.22vw, 0) skew(10deg) scale(1, 0.8);
-	// 		clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
-	// 		text-shadow: 2px -1px 6px rgba(0,0,0,0.3);
-	// 	}
-	// }
