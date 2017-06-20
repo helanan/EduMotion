@@ -1,13 +1,9 @@
 "use strict";
 
-console.log("Application Config Script Now Running");
-
 let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
     if (AuthFactory.isAuthenticated()) {
-      console.log("User Exists");
         resolve();
     } else {
-      console.log("No User Found");
         reject();
     }
 });
@@ -23,10 +19,9 @@ app.run(function($rootScope, $location, FIREBASE_CONFIG, AuthFactory) {
         let logged = AuthFactory.isAuthenticated();
         let appTo;
 
-        if(currRoute.originalPath){
+        if (currRoute.originalPath) {
             appTo = currRoute.originalPath.indexOf('/auth') !== -1;
         }
-//if not logged in or not at the original path or /auth prevent default logging in and take back to auth
         if (!appTo && !logged) {
             event.preventDefault();
             $location.path('/auth');
@@ -34,88 +29,114 @@ app.run(function($rootScope, $location, FIREBASE_CONFIG, AuthFactory) {
     });
 });
 
-//where we handle routing with $routeProvider
-//TODO: add emotion routing, add to tooltip location for routing
 app.config(function($routeProvider) {
     $routeProvider
-    .when('/auth', {
+        .when('/auth', {
             templateUrl: 'partials/auth.html',
             controller: 'AuthCtrl'
         })
 
-     .when('/students/new', {
+        .when('/students/new', {
             templateUrl: 'partials/student-new.html',
             controller: 'StudentNewCtrl',
-            resolve: {isAuth}
+            resolve: {
+                isAuth
+            }
         })
 
         .when('/students/list', {
             templateUrl: 'partials/student-list.html',
             controller: 'StudentListCtrl',
-            resolve: {isAuth}
+            resolve: {
+                isAuth
+            }
         })
 
         .when('/students/:studentId/view', {
-      			templateUrl: 'partials/student-view.html',
-      			controller:'StudentViewCtrl',
-      			resolve: {isAuth}
-  		  })
+            templateUrl: 'partials/student-view.html',
+            controller: 'StudentViewCtrl',
+            resolve: {
+                isAuth
+            }
+        })
 
         .when('/students/:studentId/edit', {
             templateUrl: 'partials/student-new.html',
             controller: 'StudentEditCtrl',
-            resolve: {isAuth}
+            resolve: {
+                isAuth
+            }
         })
 
         .when('/students/:studentId/emotions/new', {
             templateUrl: 'partials/emotion-new.html',
             controller: 'EmotionNewCtrl',
-            resolve: {isAuth}
+            resolve: {
+                isAuth
+            }
         })
         .when('/students/:studentId/emotions/list', {
             templateUrl: 'partials/emotion-list.html',
             controller: 'EmotionListCtrl',
-            resolve: {isAuth}
+            resolve: {
+                isAuth
+            }
         })
         .when('/emotions/:emotionId/view', {
-      			templateUrl: 'partials/emotion-view.html',
-      			controller:'EmotionViewCtrl',
-      			resolve: {isAuth}
-  		  })
+            templateUrl: 'partials/emotion-view.html',
+            controller: 'EmotionViewCtrl',
+            resolve: {
+                isAuth
+            }
+        })
         .when('/emotions/:emotionId/edit', {
             templateUrl: 'partials/emotion-new.html',
             controller: 'EmotionEditCtrl',
-            resolve: {isAuth}
+            resolve: {
+                isAuth
+            }
         })
         .when('/emotions/:emotionId/form', {
             templateUrl: 'partials/emotionform.html',
             controller: 'ChartCtrl',
-            resolve: {isAuth}
+            resolve: {
+                isAuth
+            }
         })
         .when('/emotions/emotion/exercises/angry', {
             templateUrl: 'partials/exercise-1-angry.html',
             controller: 'ExercisesCtrl',
-            resolve: {isAuth}
+            resolve: {
+                isAuth
+            }
         })
         .when('/emotions/emotion/exercises/anxiety', {
             templateUrl: 'partials/exercise-2-anxiety.html',
             controller: 'ExercisesCtrl',
-            resolve: {isAuth}
+            resolve: {
+                isAuth
+            }
         })
         .when('/emotions/emotion/exercises/happy', {
             templateUrl: 'partials/exercise-3-happy.html',
             controller: 'ExercisesCtrl',
-            resolve: {isAuth}
+            resolve: {
+                isAuth
+            }
         })
         .when('/emotions/emotion/exercises/calm', {
             templateUrl: 'partials/exercise-4-calm.html',
             controller: 'ExercisesCtrl',
-            resolve: {isAuth}
+            resolve: {
+                isAuth
+            }
         })
         .when('/logout', {
             templateUrl: 'partials/auth.html',
             controller: 'AuthCtrl',
-            resolve: {isAuth}
+            resolve: {
+                isAuth
+            }
         })
         .otherwise('/auth');
 

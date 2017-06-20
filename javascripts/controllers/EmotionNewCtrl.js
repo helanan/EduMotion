@@ -1,201 +1,72 @@
 "use strict";
 
-app.controller("EmotionNewCtrl", function($scope, $rootScope, $location, $routeParams, EmotionFactory, AuthFactory, StudentFactory){
-console.log("New Emotion Control Loaded");
+app.controller("EmotionNewCtrl", function($scope, $rootScope, $location, $routeParams, EmotionFactory, AuthFactory, StudentFactory) {
 
-let user = AuthFactory.getUser();
-console.log("user", user);
+    let user = AuthFactory.getUser();
 
-	// let studentName = firebase.database().ref('emotions');
-  // console.log("studentName", studentName);
-
-// $scope.students = getUser()
-
-// $scope.subjects = [
-// {
-//   name: 'math',
-//   label: 'math'
-// },
-// {
-//   name: 'english',
-//   label: 'english'
-// },
-// {
-//   name:'science',
-//   label: 'science'
-// },
-// {
-//   name: 'gym',
-//   label: 'gym'
-// },
-// {
-//   name: 'art',
-//   label: 'art'
-// },
-// {
-//   name: 'music',
-//   label: 'music'
-// },
-// {
-//   name: 'speech',
-//   label: 'speech'
-// },
-// {
-//   name: 'history',
-//   label: 'history'
-// }
-// ];
-//
-// $scope.selected = $scope.subjects[0];
-// console.log($scope.subjects[0]);
-
-// console.log("subjects", $scope.subjects);
-
-// var subjectName = [];
-// angular.forEach(subjects, function(subject, key) {
-//   this.push(key + ': ' + subject);
-// }, subjectName);
-//
-// console.log("subjectName", subjectName);
-
-
-
-
-$(document).ready(function() {
-  $('select').material_select();
-});
-
-
-$scope.title = "Log My Emotions";
-$scope.btnText = "Submit";
-
-let studentNames = [];
-console.log("studentNames", studentNames);
-
-
-// dropdown
-// $('.dropdown-button').dropdown({
-//     inDuration: 300,
-//     outDuration: 225,
-//     constrainWidth: false, // Does not change width of dropdown to that of the activator
-//     hover: true, // Activate on hover
-//     gutter: 0, // Spacing from edge
-//     belowOrigin: false, // Displays dropdown below the button
-//     alignment: 'left', // Displays dropdown with edge aligned to the left of button
-//     stopPropagation: false // Stops event propagation
-//   }
-// );
-
-// var students = $("#studentNames");
-// console.log($("#studentNames"));
-
-
-// studentCollection
-//   $scope.students = studentCollection;
-//   console.log("studentCollection", studentCollection);
-  // $scope.dropdown1 = studentCollection[1].fullName;
-  // $scope.dropdown2 = studentCollection[2].fullName;
-  // $scope.dropdown3 = studentCollection[3].fullName;
-  // $scope.dropdown4 = studentCollection[4].fullName;
-  //
-
-
-
-//scoped newEmotion set to an empty object
-//TODO: make sure newEmotion is scoped correctly to partial
-
-let studentsInfo = firebase.database().ref('students');
-//Sync Student Changes
-studentsInfo.on('value', snap => {
-console.log("student info", snap.val());
-});
-
-
-
-  $scope.newEmotion = {
-    emotionName: "",
-    emotionImage: "",
-    assignedTo: "",
-    activityCompleted: "",
-    score: "",
-    dateCompleted: "",
-    studentName: "",
-    uid: user.uid
-  };
-
-
-  $scope.addNewEmotion = function() {
-    console.log("add new emotion");
-    EmotionFactory.postNewEmotion($scope.newEmotion)
-    .then(function(response){
-      $location.url("students/:studentId/emotions/list");
+    $(document).ready(function() {
+        $('select').material_select();
     });
-    $scope.newEmotion = {};
-  };
 
+    $scope.title = "Log My Emotions";
+    $scope.btnText = "Submit";
 
+    let studentNames = [];
+    let studentsInfo = firebase.database().ref('students');
 
-$scope.count = 0;
-$scope.counter = 0;
-$scope.emotionsLogged = function() {
-      $scope.counter++;
-  };
-
-  $scope.viewSubj = false;
-  $scope.showSubject = function() {
-    $scope.viewSubj = !$scope.viewSubj;
-};
-
-$scope.viewEmo = false;
-$scope.showEmotions = function() {
-    $scope.viewEmo = !$scope.viewEmo;
-};
-
-
-
-$scope.mathBtn = "math";
-$scope.historyBtn = true;
-$scope.scienceBtn = true;
-$scope.gymBtn = true;
-$scope.artBtn = true;
-$scope.studyhallBtn = true;
-$scope.lunchBtn = true;
-
-
-
-    let emotionZone = {};
-      emotionZone.zone = function() {
-      this.name= "null";
-      this.threshold= 0;
-      this.toString = function() {
-        console.log(this);
-          return this.name;
-        };
+    $scope.newEmotion = {
+        emotionName: "",
+        emotionImage: "",
+        assignedTo: "",
+        activityCompleted: "",
+        score: "",
+        dateCompleted: "",
+        studentName: "",
+        uid: user.uid
     };
 
-    // emotions[0] = "Happy";
-    // emotions[1] = "Ready To Learn";
-    // emotions[2] = "Excited";
-    // emotions[3] = "Focused";
-    // emotions[4] = "Calm";
-    // emotions[5] = "Okay";
-    // emotions[6] = "Bored";
-    // emotions[7] = "Worried";
-    // emotions[8] = "Frustrated";
-    // emotions[9] = "Angry";
-    // emotions[10] = "Out of Control";
+    $scope.addNewEmotion = function() {
+        EmotionFactory.postNewEmotion($scope.newEmotion)
+            .then(function(response) {
+                $location.url("students/:studentId/emotions/list");
+            });
+        $scope.newEmotion = {};
+    };
 
+    $scope.count = 0;
+    $scope.counter = 0;
+    $scope.emotionsLogged = function() {
+        $scope.counter++;
+    };
 
-    let emotionOptions =
-    ["Happy", "Ready To Learn", "Excited", "Focused",
-    "Calm", "Okay", "Bored", "Worried",
-    "Frustrated", "Angry", "Out of Control"];
+    $scope.viewSubj = false;
+    $scope.showSubject = function() {
+        $scope.viewSubj = !$scope.viewSubj;
+    };
 
-    console.log(emotionOptions);
+    $scope.viewEmo = false;
+    $scope.showEmotions = function() {
+        $scope.viewEmo = !$scope.viewEmo;
+    };
 
+    $scope.mathBtn = "math";
+    $scope.historyBtn = true;
+    $scope.scienceBtn = true;
+    $scope.gymBtn = true;
+    $scope.artBtn = true;
+    $scope.studyhallBtn = true;
+    $scope.lunchBtn = true;
 
-    // });
-
+    let emotionZone = {};
+    emotionZone.zone = function() {
+        this.name = "null";
+        this.threshold = 0;
+        this.toString = function() {
+            return this.name;
+        };
+    };
+    let emotionOptions = ["Happy", "Ready To Learn", "Excited", "Focused",
+        "Calm", "Okay", "Bored", "Worried",
+        "Frustrated", "Angry", "Out of Control"
+    ];
 });
-
-//TODO: make sure all closing brackets match

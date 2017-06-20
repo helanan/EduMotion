@@ -1,39 +1,35 @@
 "use strict";
 
-app.controller("StudentNewCtrl", function($scope, $rootScope, $location, StudentFactory, AuthFactory){
+app.controller("StudentNewCtrl", function($scope, $rootScope, $location, StudentFactory, AuthFactory) {
 
-console.log("Controller: Student New Controller Loaded");
+    let user = AuthFactory.getUser();
+    $scope.title = "Add A New Student";
+    $scope.btnText = "Submit";
 
-let user = AuthFactory.getUser();
-console.log("authfact", AuthFactory.getUser());
-//binding to Student New Partial
-$scope.title = "Add A New Student";
-$scope.btnText = "Submit";
-
-$scope.newStudentObject = {
-		fullName: "",
-		classroomName: "",
-		image: "",
-		gradeLevel: "",
-		parentFirst: "",
-		parentLast: "",
-		parentEmail: "",
-		address: "",
-		emergencyNumber: "",
-		totalScore: "",
-		age: "",
-		dateEnrolled: "",
-		allergies: "",
-		uid: user.uid
-	};
+    $scope.newStudentObject = {
+        fullName: "",
+        classroomName: "",
+        image: "https://api.adorable.io/avatars/285/" + Math.random() + "@adorable.io.png",
+        gradeLevel: "",
+        parentFirst: "",
+        parentLast: "",
+        parentEmail: "",
+        address: "",
+        emergencyNumber: "",
+        totalScore: "",
+        age: "",
+        dateEnrolled: "",
+        allergies: "",
+        uid: user.uid
+    };
 
 
-$scope.addNewStudent = function() {
+    $scope.addNewStudent = function() {
 
-		StudentFactory.postNewStudent($scope.newStudentObject)
-		.then(function(response) {
-		 $location.url("/students/list/");
-	 });
-	 $scope.newStudentObject = {};
- };
- });
+        StudentFactory.postNewStudent($scope.newStudentObject)
+            .then(function(response) {
+                $location.url("/students/list/");
+            });
+        $scope.newStudentObject = {};
+    };
+});

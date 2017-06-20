@@ -1,6 +1,6 @@
 <h1 id="new-student-header" class="col s12 center-align">Emotion List View</h1>
-         	<div class="panel panel-default">
-               <div class="panel-body">
+<div class="panel panel-default">
+    <div class="panel-body">
         <div class="input-group">
             <span class="input-group-btn">
                 <button aria-pressed="true" type="button" class="btn btn-default"><i class="small material-icons">search</i></button>
@@ -11,29 +11,19 @@
 </div>
 
 <ul id="card-styles" class="collection hoverable" ng-repeat="emotion in emotions | filter: {emotionId:emotionId} | filter: searchText" ng-style="{'background-color': '#F7EF81', 'padding':'10px'};">
-          <li class="collection-item avatar" ng-style="{'height':'150px', 'border-radius': '5px', 'padding-bottom': '10px', 'padding-top': '10px'};">
-             <img class="circle responsive-img" src="{{emotion.image}}" alt="emotion-image" ng-style="{'width':'100px', 'height':'100px'};">
-             <span class="title black-text text-darken-2" ng-style="{'margin-left':'50px'};"><a class="blue-text text-darken-2" ng-href="#!/emotions/{{emotion.id}}/view"><b>{{emotion.assignedTo}}</b></a></span>
-             <p class="col s12" ng-style="{'margin-left':'50px'};"><b>Emotion Type:</b> {{emotion.emotionName}}</p>
-             <!-- TODO: Scope Emotion Type TO Value in Form -->
-             <p class="col s12" ng-style="{'margin-left':'50px'};"><b>Activity Completed:</b> {{emotion.activityCompleted}}</p>
-             <p class="col s12" ng-style="{'margin-left':'50px'};"><b>Date Completed:</b> {{emotion.dateCompleted | date: "MM/dd/yyyy"}}</p>
-             <p class="col s12" ng-style="{'margin-left':'50px'};"><b>Emotion Score:</b> {{emotion.score}}</p>
-           </li>
-	        <div class="btn-floating waves-effect waves-light blue hoverable"><button class="btn-floating waves-effect waves-light blue hoverable" ng-click="deleteEmotion(emotion.id)"><i class="medium material-icons blue circle">delete</i></button></div>
+    <li class="collection-item avatar" ng-style="{'height':'150px', 'border-radius': '5px', 'padding-bottom': '10px', 'padding-top': '10px'};">
+        <img class="circle responsive-img" src="{{emotion.image}}" alt="emotion-image" ng-style="{'width':'100px', 'height':'100px'};">
+        <span class="title black-text text-darken-2" ng-style="{'margin-left':'50px'};"><a class="blue-text text-darken-2" ng-href="#!/emotions/{{emotion.id}}/view"><b>{{emotion.assignedTo}}</b></a></span>
+        <p class="col s12" ng-style="{'margin-left':'50px'};"><b>Emotion Type:</b> {{emotion.emotionName}}</p>
+        <!-- TODO: Scope Emotion Type TO Value in Form -->
+        <p class="col s12" ng-style="{'margin-left':'50px'};"><b>Activity Completed:</b> {{emotion.activityCompleted}}</p>
+        <p class="col s12" ng-style="{'margin-left':'50px'};"><b>Date Completed:</b> {{emotion.dateCompleted | date: "MM/dd/yyyy"}}</p>
+        <p class="col s12" ng-style="{'margin-left':'50px'};"><b>Emotion Score:</b> {{emotion.score}}</p>
+    </li>
+    <div class="btn-floating waves-effect waves-light blue hoverable"><button class="btn-floating waves-effect waves-light blue hoverable" ng-click="deleteEmotion(emotion.id)"><i class="medium material-icons blue circle">delete</i></button></div>
 </ul>
 <br><br>
 
 <div class="fixed-action-btn horizontal">
-          <a class="btn-floating btn-large waves-effect waves-light red hoverable" ng-click="addNewEmotion()" href="#/emotions/new"><i class="small material-icons">add</i></a>
-     </div>
-
-
-
-
-<!--
-      <a ng-href="#/edit/{{emotion.$id}}"><i class="fa fa-pencil"></i></a>
-    </td>
-  </tr>
-  </tbody>
-</table> -->
+    <a class="btn-floating btn-large waves-effect waves-light red hoverable" ng-click="addNewEmotion()" href="#/emotions/new"><i class="small material-icons">add</i></a>
+</div>
