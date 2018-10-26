@@ -22,7 +22,7 @@ app.controller("StudentNewCtrl", function($scope, $rootScope, $location, Student
         allergies: "",
         uid: user.uid
     };
-
+console.log($scope.newStudentObject);
 
     $scope.addNewStudent = function() {
 

@@ -1,0 +1,41 @@
+<div id="print" ng-controller="UserCtrl">
+<button ng-click="print()"><i class="fas fa-print"></i></button>
+    <ul class="collection">
+        <li class="collection-item"><i class="far fa-envelope"></i> <b>Email:</b> {{myemail}}</li>
+        <li class="collection-item"><i class="far fa-user"></i> <b>Display Name:</b> {{mydisplayName}}</li>
+        <li class="collection-item"><i class="far fa-check-circle"></i> <b>Email Verified:</b> {{myverified}}</li>
+        <li class="collection-item"><i class="far fa-image"></i> <b>Photo URL:</b> {{myphotoURL}}</li>
+    </ul>
+<table class="display highlight responsive-table" >
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Team</th>
+            <th>Address</th>
+            <th>Age</th>
+            <th>Date Enrolled</th>
+            <th>Allergies</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="student in students">
+        <tr>
+            <td >{{student.fullName}}</td>
+            <td >{{student.classroomName}}</td>
+            <td >{{student.address}}</td>
+            <td >{{student.age}}</td>
+            <td >{{student.dateEnrolled}}</td>
+            <td >{{student.allergies}}</td>
+            <!-- <td></td> -->
+        </tr>
+        <!-- <tr>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data 2</td>
+        </tr> -->
+    </tbody>
+</table>
+</div>
+
+
+<!-- <div ng-controller="UserCtrl">
+
+</div> -->

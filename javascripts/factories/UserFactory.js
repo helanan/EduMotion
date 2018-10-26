@@ -28,6 +28,7 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG) {
                     Object.keys(userObject).forEach(function(key) {
                         users.push(userObject[key]);
                     });
+                    console.log(users);
                     resolve(users[0]);
                 })
 
@@ -36,10 +37,12 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG) {
                 });
         });
     };
+
     let provider = new firebase.auth.GoogleAuthProvider();
     let authWithProvider = function() {
         return firebase.auth().signInWithPopup(provider);
     };
+
     return {
         addUser,
         getUser,

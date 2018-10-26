@@ -33,5 +33,9 @@ app.controller("NavCtrl", function($scope) {
             name: "My Students",
             url: "#!/students/list"
         },
+        {
+            name: "My Classroom Information",
+            url: "#!/user/classroom"
+        },
     ];
 });

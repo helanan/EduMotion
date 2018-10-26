@@ -1,7 +1,15 @@
 "use strict";
 
-app.directive("form-directive", function() {
-    return {
-        template : "<h1>Made by a directive!</h1>"
+app.directive("ngEnter", function() {
+    return function(scope, element, attrs) {
+        element.bind("keydown keypress", function(event) {
+            if(event.which === 13) {
+                scope.$apply(function(){
+                    scope.$eval(attrs.ngEnter, {'event': event});
+                });
+
+                event.preventDefault();
+            }
+        });
     };
 });

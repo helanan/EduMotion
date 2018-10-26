@@ -5,6 +5,7 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
     let isAuthenticated = () => {
         return firebase.auth().currentUser ? true : false;
     };
+
     let getUser = () => {
         return firebase.auth().currentUser;
     };
@@ -19,11 +20,11 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
                 })
                 .catch(error => {
                     reject(error);
-                    console.error('rejected function called: ', error);
                 })
                 .then(() => {});
         });
     };
+
     let registerWithEmail = (user) => {
         return $q((resolve, reject) => {
             firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
@@ -35,14 +36,23 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
                 });
         });
     };
+
+
     let authenticateGoogle = () => {
         return $q((resolve, reject) => {
             var provider = new firebase.auth.GoogleAuthProvider();
+            provider.setCustomParameters({
+                'login_hint': 'user@example.com'
+              });
+
+            //sign-in with pop up
             firebase.auth().signInWithPopup(provider)
                 .then((authData) => {
+                    var token = authData.credential.accessToken;
                     currentUserData = authData.user;
                     resolve(currentUserData);
-                }).catch((error) => {
+                })
+                .catch((error) => {
                     reject(error);
                 });
         });
@@ -57,3 +67,6 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
         authenticateGoogle
     };
 });
+
+// console.log(app.factory()._invokeQueue[1][2]["0"]);
+
