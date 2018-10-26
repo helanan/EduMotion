@@ -2,25 +2,29 @@
 
 app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, UserFactory) {
 
+    //carousel move to main controller 
     $('.carousel.carousel-slider').carousel({
-        fullWidth: true
+        fullWidth: true,
     });
 
     $scope.loginContainer = true;
     $scope.registerContainer = false;
     $scope.login = {};
 
+    //logout functionality
     if ($location.path() === "#!/logout") {
         AuthFactory.logout();
         $rootScope.user = {};
         $location.url("#!/auth");
     }
 
+
     let logMeIn = function(loginStuff) {
         AuthFactory.authenticate(loginStuff)
             .then(function(didLogin) {
                 return UserFactory.getUser(didLogin.uid);
-            }).then(function(userCreds) {
+            })
+            .then(function(userCreds) {
                 $rootScope.user = userCreds;
                 $scope.login = {};
                 $scope.register = {};
@@ -63,5 +67,19 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
                 var email = error.email;
                 var credential = error.credential;
             });
+    };
+});
+
+app.directive("ngEnter", function() {
+    return function(scope, element, attrs) {
+        element.bind("keydown keypress", function(event) {
+            if(event.which === 13) {
+                scope.$apply(function(){
+                    scope.$eval(attrs.ngEnter, {'event': event});
+                });
+
+                event.preventDefault();
+            }
+        });
     };
 });

@@ -8,6 +8,7 @@ app.controller("StudentListCtrl", function($scope, $rootScope, $http, StudentFac
     StudentFactory.getStudentList(user)
         .then(function(studentCollection) {
             $scope.students = studentCollection;
+            console.log(studentCollection);
         });
 
     let getStudents = function() {

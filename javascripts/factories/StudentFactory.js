@@ -10,6 +10,7 @@ app.factory("StudentFactory", ($q, $http, FIREBASE_CONFIG) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/students.json?orderBy="uid"&equalTo="${user.uid}"`)
                 .then((studentObject) => {
                     let studentCollection = studentObject.data;
+                    console.log(studentObject.data);
                     Object.keys(studentCollection).forEach((key, studentFullName) => {
                         studentCollection[key].id = key;
                         students.push(studentCollection[key]);

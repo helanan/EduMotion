@@ -1,6 +1,7 @@
 "use strict";
 
 let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
+
     if (AuthFactory.isAuthenticated()) {
         resolve();
     } else {
@@ -34,6 +35,11 @@ app.config(function($routeProvider) {
         .when('/auth', {
             templateUrl: 'partials/auth.html',
             controller: 'AuthCtrl'
+        })
+
+        .when('/user/classroom', {
+            templateUrl: 'partials/classroom-view.html',
+            controller: 'UserCtrl'
         })
 
         .when('/students/new', {
